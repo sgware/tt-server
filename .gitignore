@@ -1,0 +1,8 @@
+bin
+.settings
+.classpath
+.project
+target
+database.json
+log.txt
+sessions
