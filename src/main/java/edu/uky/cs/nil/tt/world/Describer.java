@@ -667,18 +667,22 @@ public class Describer {
 	/**
 	 * Applies this describer's rules to generate a natural language description
 	 * of the given object for a given role, with the first letter capitalized
-	 * and ending in a period.
+	 * and ending in a period. If the string given is empty, an empty string is
+	 * returned.
 	 * 
 	 * @param object the object to be described
 	 * @param to the role for whom the description is being generated, and the
 	 * value that will be assigned to {@link Key#TO}
 	 * @return a description of the object suitable for the given role as a
-	 * sentence with a capitalized first letter and ending with a period
+	 * sentence with a capitalized first letter and ending with a period, or an
+	 * empty string if an empty string was given
 	 * @see #getPhrase(Object, Role)
 	 */
 	public String getSentence(Object object, Role to) {
 		String sentence = getPhrase(object, to);
-		if(sentence != null) {
+		if(sentence == null || sentence.isEmpty())
+			return sentence;
+		else {
 			sentence = Utilities.capitalize(sentence);
 			if(!sentence.endsWith("."))
 				sentence += ".";

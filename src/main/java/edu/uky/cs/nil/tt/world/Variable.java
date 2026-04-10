@@ -108,6 +108,8 @@ public final class Variable extends SignedAsset implements Comparable<Variable>,
 	 * @throws RuntimeException if the object cannot be decoded
 	 */
 	public Value decode(Object value) {
+		if(value instanceof Constant constant)
+			return decode(constant.value);
 		value = Encoding.get(encoding).decode(value);
 		if(value == null)
 			return Constant.NULL;
