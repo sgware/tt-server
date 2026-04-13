@@ -109,19 +109,26 @@ public class Effect implements Logical {
 	}
 	
 	/**
-	 * Evaluates the {@link #condition condition} (if it not not null), and if
-	 * it is true (or was null), returns a new state with {@link #variable this
-	 * effect's variable} set to the value that results from evaluating {@link
-	 * #value this effect's value expression} in the given state.
+	 * If this effect's {@link #condition condition} holds, this method applies
+	 * this effect's change to a given state. Specifically, if this effect's
+	 * condition is null or if it {@link Proposition#evaluate(State) evaluates}
+	 * to {@link Constant#TRUE true} in the state before this effect would
+	 * occur, this method returns a copy of the given state with this effect's
+	 * {@link #variable variable} set to this effect's {@link #value value}.
+	 * Evaluating the condition and the value both happen in the state before
+	 * this effect is applied, and the effect is applied to the state after.
 	 * 
-	 * @param state the state in which the condition and value expression will
-	 * be evaluated
-	 * @return the given state, if the condition was false, or a new state with
-	 * the variable set to the value, if the condition was null or true
+	 * @param before the state in which this effect's condition and value will
+	 * be evaluated in
+	 * @param after the state to which this effect will be applied (this state
+	 * will not be modified by this method)
+	 * @return a copy of the after state with this effect's variable set to this
+	 * effect's value (if the condition was null or hold in the before state),
+	 * or the after state if the condition does not hold in the before state
 	 */
-	public State apply(State state) {
-		if(condition == null || condition.evaluate(state).toBoolean())
-			state = state.set(new Assignment(variable, value.evaluate(state)));
-		return state;
+	public State apply(State before, State after) {
+		if(condition == null || condition.evaluate(before).toBoolean())
+			after = after.set(new Assignment(variable, value.evaluate(before)));
+		return after;
 	}
 }

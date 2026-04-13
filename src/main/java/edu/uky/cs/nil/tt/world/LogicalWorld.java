@@ -504,10 +504,12 @@ public class LogicalWorld extends WorldModel {
 			history.add(turn);
 			// If an action succeeds...
 			if(turn.type == Turn.Type.SUCCEED) {
+				State actualBefore = actual;
+				State observedBefore = observed;
 				// Apply the action's effects to the actual and observed states.
 				for(Effect effect : getEffects(turn.action)) {
-					actual = effect.apply(actual);
-					observed = effect.apply(observed);
+					actual = effect.apply(actualBefore, actual);
+					observed = effect.apply(observedBefore, observed);
 				}
 				// Describe all assignments in the observed state.
 				for(Assignment assignment : observed.getAssignments()) {
