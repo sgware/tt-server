@@ -416,8 +416,8 @@ public class Agent extends SerialSocket implements Named {
 		// Take the indicated turn.
 		Turn turn = choices.get(choice.index);
 		server.log.append("Agent " + id + " chose \"" + turn.getDescription() + "\"");
-		onTurn(turn);
-		getPartner().onTurn(turn);
+		getPlayer().onTurn(turn); // Update the player first, since they need the GM's state before the transition.
+		getGM().onTurn(turn);
 		session.append(turn, getGM().getState(), getPlayer().getState());
 		// Check if the story has ended.
 		if(session.getResult() == null) {
