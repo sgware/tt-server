@@ -347,10 +347,10 @@ public abstract class ClientFactory implements Callable<Void>, AutoCloseable {
 		queue.offer(new Operation() {
 			@Override
 			protected void run() throws Exception {
-				waiting.remove(client);
-				running.remove(client);
-				if(waiting.size() == 0)
+				if(running.remove(client) && waiting.size() == 0)
 					createNewClient();
+				else
+					waiting.remove(client);
 			}
 		});
 	}
