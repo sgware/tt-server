@@ -632,7 +632,9 @@ public abstract class Client implements Callable<String>, AutoCloseable {
 	 */
 	protected SSLSocket connect(String url, int port) throws Exception {
 		SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
-		return (SSLSocket) factory.createSocket(url, port);
+		SSLSocket socket = (SSLSocket) factory.createSocket(url, port);
+		socket.startHandshake();
+		return socket;
 	}
 	
 	/**
