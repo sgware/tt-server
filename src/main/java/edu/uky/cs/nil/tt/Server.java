@@ -280,7 +280,7 @@ public class Server extends SerialServerSocket {
 			if(agent.getName().equals(first.name))
 				firstCount++;
 		Database.AgentEntry firstEntry = database.getAgent(first.name);
-		if(firstEntry != null && firstEntry.getLimit() >= 0 && firstCount >= firstEntry.getLimit())
+		if(firstEntry != null && firstEntry.getLimit() > 0 && firstCount >= firstEntry.getLimit())
 			return false;
 		// Check if the limits allow the second agent to play.
 		int secondCount = 0;
@@ -290,7 +290,7 @@ public class Server extends SerialServerSocket {
 		if(second.name.equals(first.name))
 			secondCount++;
 		Database.AgentEntry secondEntry = database.getAgent(second.name);
-		if(secondEntry != null && secondEntry.getLimit() >= 0 && secondCount >= secondEntry.getLimit())
+		if(secondEntry != null && secondEntry.getLimit() > 0 && secondCount >= secondEntry.getLimit())
 			return false;
 		// Allow the match.
 		return true;

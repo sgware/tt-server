@@ -10,6 +10,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import edu.uky.cs.nil.tt.io.Error;
 import edu.uky.cs.nil.tt.io.Message;
 import edu.uky.cs.nil.tt.io.Stop;
 
@@ -105,7 +106,7 @@ final class ClientInput extends Thread implements Closeable {
 		else {
 			closed = true;
 			received.clear();
-			throw new IllegalArgumentException("Expected \"" + type.getSimpleName() + "\" message but received \"" + message.getClass().getSimpleName() + "\" message.");
+			throw new IllegalArgumentException("Expected \"" + type.getSimpleName() + "\" message but received \"" + message.getClass().getSimpleName() + "\" message" + (message instanceof Error error ? ": \"" + error.message + "\"" : "") + ".");
 		}
 	}
 }

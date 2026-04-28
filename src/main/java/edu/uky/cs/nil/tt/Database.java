@@ -532,11 +532,11 @@ public class Database {
 			if(entry == null) {
 				entry = new WorldEntry(world);
 				worlds.put(world.getName(), entry);
-				Log.append("Added world \"" + world.getName() + "\" to database.", log);
+				Log.append("World \"" + world.getName() + "\" added to database.", log);
 			}
 			else {
 				entry.setWorld(world);
-				Log.append("Updated world \"" + world.getName() + "\".", log);
+				Log.append("World \"" + world.getName() + "\" updated.", log);
 			}
 			entry.setPath(path);
 		});
