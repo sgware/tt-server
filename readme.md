@@ -109,14 +109,21 @@ list tutorial
 The JavaDoc API for all Java source files can be
 [found here](http://sgware.github.io/tt-server).
 
-## Author and License ##
+## License ##
 
-Tandem Tales was created by Stephen G. Ware in 2026 while he was an Associate
-Professor of Computer Science at the University of Kentucky.
+Tandem Tales was developed by Stephen G. Ware PhD, Associate Professor of
+Computer Science at the University of Kentucky. Development was sponsored in
+part by a grant from the US National Science Foundation, #2145153.
 
-This software is still in the process of being disclosed to the University of
-Kentucky's Technology Commercialization team, but the author has requested that
-it be released under the
-[GNU General Public License 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
-When the university makes an official decision, the license for this repository
-will be updated. Until then, the University of Kentucky reserves all rights.
+Tandem Tales is released under the GNU General Public License version 3.0 (GPL
+3). This means you are free to share and modify this software, even for
+commercial purposes, as long as you give credit to the original creators and you
+also release your modifications under the GPL 3 license. See the license file
+for details. The University of Kentucky retains all right not specifically
+granted.
+
+To license Tandem Tales for a project not compatible with the terms of the GPL
+license, contact the University of Kentucky Office of Technology
+Commercialization at <otcinfo@uky.edu>.
+
+Special thanks to Molly Siler for her help with testing and development.
