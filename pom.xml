@@ -161,6 +161,7 @@
                 </artifactItem>
               </artifactItems>
               <outputDirectory>${basedir}/jar</outputDirectory>
+              <stripVersion>true</stripVersion>
             </configuration>
           </execution>
         </executions>
