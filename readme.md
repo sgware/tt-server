@@ -67,14 +67,14 @@ key is needed by any client that wishes to connect.
 Assuming you are in the project root directory (`tt-server`), you can show the
 Tandem Tales Server usage message like this.
 ```
-java -jar jar/tt-server-0.9.0.jar -help
+java -jar jar/tt-server.jar -help
 ```
 
 Start the server with logs that will be written to the default locations, with
 the default database file, and using the self-signed certificate like this.
 Replace `***` below with the server keystore password used above.
 ```
-java -Djavax.net.ssl.keyStore="server.keystore" -Djavax.net.ssl.keyStorePassword="***" -jar jar/tt-server-0.9.0.jar -l -s -db
+java -Djavax.net.ssl.keyStore="server.keystore" -Djavax.net.ssl.keyStorePassword="***" -jar jar/tt-server.jar -l -s -db
 ```
 
 The server's database contains two important lists. The first is a list of story
