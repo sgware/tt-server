@@ -53,6 +53,13 @@ public class Settings {
 	/** The default port the server will listen on, if one is not specified */
 	public static final int DEFAULT_PORT = 9005;
 	
+	/**
+	 * The number of characters that can be read from a client socket before
+	 * an exception is thrown. This limit is used to avoid Out of Memory Errors
+	 * from malicious clients that send overly long inputs.
+	 */
+	public static final int READ_LIMIT = 1024;
+	
 	private Settings() {
 		// Do nothing.
 	}

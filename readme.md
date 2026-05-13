@@ -1,4 +1,4 @@
-# Tandem Tales Server #
+# Tandem Tales Server
 
 Tandem Tales is a platform that facilities simple text-based two-player
 interactive storytelling sessions between a player who controls one character in
@@ -109,7 +109,45 @@ list tutorial
 The JavaDoc API for all Java source files can be
 [found here](http://sgware.github.io/tt-server).
 
-## License ##
+## Security and Privacy
+
+The following policies are in place to ensure the security of the server and the
+privacy of those who use it:
+- Clients rarely send arbitrary text to the server. The exceptions are names,
+  passwords, and comments on reports. This text is never shown to other clients.
+  So while clients are free to choose offensive names for themselves, these
+  names are never shown to other clients (unless that name has been explicitly
+  added to the list of publicly approved names by the server administrator).
+  Comments in reports are never shown to other clients. Thus, clients have no
+  way to send arbitrary or potentially offensive text to one another.
+- No identifying information about clients is collected, except for their IP
+  addresses. IP addresses are recorded in the system log, but not in session
+  logs. This means session logs are fully anonymized and can only be used to
+  identify individual users if those users intentionally include their
+  identifying information in their client name or report comments, which they
+  are encouraged not to do.
+- Clients cannot take arbitrary actions in a session. When offered a choice of
+  actions, clients simply respond with the index of their choice, meaning they
+  cannot take turns out of sequence and cannot take actions which are not
+  allowed in the current state.
+- The server defines a maximum amount of time that a client can wait before
+  taking a valid turn during a session. If a client exceeds this amount of time,
+  they will be automatically disconnected. This prevents malicious clients from
+  starting a session and then never taking turns or taking turns very slowly.
+- The validity of client messages and each part of those messages (including
+  whether important fields are null) is always checked by the server before they
+  are processed. This prevents the server from crashing if malicious clients
+  intentionally send malformed messages.
+- The messages that clients send to the server are typically short and are
+  terminated by a new line character. The server defines a limit on the length
+  of lines. If a client sends more than the allowed number of characters without
+  sending a new line character, that client is automatically disconnected. This
+  prevents malicious clients from sending messages so long they would cause the
+  server to run out of memory.
+- The Java I/O utilities used in this server are memory safe, preventing
+  malicious clients from using buffer overflow attacks.
+
+## License
 
 Tandem Tales was developed by Stephen G. Ware PhD, Associate Professor of
 Computer Science at the University of Kentucky. Development was sponsored in

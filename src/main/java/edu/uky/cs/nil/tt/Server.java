@@ -1,7 +1,9 @@
 package edu.uky.cs.nil.tt;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
@@ -138,6 +140,11 @@ public class Server extends SerialServerSocket {
 		if(!((SSLSocket) socket).getSession().isValid())
 			throw new SocketException("Failed to establish secure socket with client.");
 		return new Agent(this, (SSLSocket) socket, nextID++);
+	}
+	
+	@Override
+	protected BufferedReader createReader(Socket socket) throws Exception {
+		return new BufferedReader(new LimitedLineLengthReader(new InputStreamReader(socket.getInputStream()), Settings.READ_LIMIT));
 	}
 	
 	@Override

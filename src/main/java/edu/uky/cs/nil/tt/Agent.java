@@ -558,6 +558,11 @@ public class Agent extends SerialSocket implements Named {
 	}
 	
 	@Override
+	protected void onException(Exception exception) {
+		server.log.append("An error occurred that caused agent " + id + " to be disconnected:", exception);
+	}
+	
+	@Override
 	protected void onClose() throws Exception {
 		if(getStatus() != null && !getStopped()) {
 			if(server.getStopped())
