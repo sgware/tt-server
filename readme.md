@@ -113,6 +113,9 @@ The JavaDoc API for all Java source files can be
 
 The following policies are in place to ensure the security of the server and the
 privacy of those who use it:
+- Connections to the server are made via encrypted TCP sockets (TLS, or
+  Transport Layer Security). This prevents third parties from seeing any
+  information sent between the clients and the server.
 - Clients rarely send arbitrary text to the server. The exceptions are names,
   passwords, and comments on reports. This text is never shown to other clients.
   So while clients are free to choose offensive names for themselves, these
