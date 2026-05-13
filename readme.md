@@ -129,10 +129,13 @@ privacy of those who use it:
   identify individual users if those users intentionally include their
   identifying information in their client name or report comments, which they
   are encouraged not to do.
-- Clients cannot take arbitrary actions in a session. When offered a choice of
-  actions, clients simply respond with the index of their choice, meaning they
-  cannot take turns out of sequence and cannot take actions which are not
-  allowed in the current state.
+- When clients take turns in a storytelling session, they are choosing from a
+  pre-defined list of possible actions. They cannot take arbitrary actions that
+  they define. This allows the server strict control over the types of content
+  clients might see during a story. When offered a choice of actions, clients
+  simply respond with the index of their choice, meaning they cannot take turns
+  out of sequence and cannot take actions which are not allowed in the current
+  state.
 - The server defines a maximum amount of time that a client can wait before
   taking a valid turn during a session. If a client exceeds this amount of time,
   they will be automatically disconnected. This prevents malicious clients from
