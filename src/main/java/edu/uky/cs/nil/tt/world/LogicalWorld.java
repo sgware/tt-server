@@ -516,14 +516,18 @@ public class LogicalWorld extends WorldModel {
 					assignment = assignment.setDescription(getDescription(assignment, status.role));
 					observed = observed.set(assignment);
 				}
-				// Update the observed state with any information that is
-				// visible but not already covered by the action's effects.
+				// Update the visibility of assignments in the observed state
+				// and update newly visible values.
 				String description = turn.getDescription();
-				for(Assignment assignment : actual.getAssignments()) {
-					if(isVisible(status.role, assignment.variable, actual) && !assignment.value.equals(observed.get(assignment.variable))) {
-						observed = observed.set(assignment);
-						description += (description.isEmpty() ? "" : " ") + getDescription(assignment, status.role);
+				for(Assignment assignment : observed.getAssignments()) {
+					Assignment updated = assignment.setVisible(isVisible(status.role, assignment.variable, actual));
+					if(updated.visible && !updated.value.equals(actual.get(assignment.variable))) {
+						updated = updated.setValue(actual.get(assignment.variable));
+						updated = updated.setDescription(getDescription(updated, status.role));
+						description += (description.isEmpty() ? "" : " ") + updated.getDescription();
 					}
+					if(!assignment.equals(updated))
+						observed = observed.set(updated);
 				}
 				observed = observed.setDescription(description);
 			}
@@ -607,7 +611,7 @@ public class LogicalWorld extends WorldModel {
 	protected String getEntityDescription(Role role, Turn[] history, State state, Entity entity) {
 		String description = getDescription(entity, role) + ":";
 		for(Assignment assignment : state.getAssignments())
-			if(assignment.variable.signature.getArguments().contains(entity) || assignment.value.equals(entity))
+			if(assignment.visible && (assignment.variable.signature.getArguments().contains(entity) || assignment.value.equals(entity)))
 				description += " " + assignment.getDescription();
 		return description;
 	}
