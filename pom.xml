@@ -32,7 +32,7 @@
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
-      <version>2.13.2</version>
+      <version>2.14.0</version>
     </dependency>
 	<!-- Serial Server Sockets -->
     <dependency>
@@ -66,7 +66,7 @@
               <directory>${basedir}/docs</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/jar</directory>
+              <directory>${basedir}/build</directory>
             </fileset>
             <fileset>
               <directory>${basedir}</directory>
@@ -160,7 +160,7 @@
                   <type>${project.packaging}</type>
                 </artifactItem>
               </artifactItems>
-              <outputDirectory>${basedir}/jar</outputDirectory>
+              <outputDirectory>${basedir}/build/jar</outputDirectory>
               <stripVersion>true</stripVersion>
             </configuration>
           </execution>

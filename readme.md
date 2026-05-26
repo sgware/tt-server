@@ -15,7 +15,10 @@ story, and records logs of all events.
 ## Pre-Compiled Executable
 
 The JAR file containing the server executable and all dependencies can be
-[downloaded here](jar).
+[downloaded here](build/jar).
+
+The JavaDoc API for all Java source files can be
+[found here](http://sgware.github.io/tt-server).
 
 ## Build from Source
 
@@ -103,11 +106,6 @@ set world tutorial title Tutorial
 set world tutorial description A short story about buying a drink that shows you how to play as either the player or game master.
 list tutorial
 ```
-
-## Documentation
-
-The JavaDoc API for all Java source files can be
-[found here](http://sgware.github.io/tt-server).
 
 ## Security and Privacy
 
