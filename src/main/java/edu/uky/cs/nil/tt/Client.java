@@ -508,7 +508,7 @@ public abstract class Client implements Callable<String>, AutoCloseable {
 			if(connect != null) {
 				// Warn if the server's version number does not match.
 				if(!connect.version.equals(Settings.VERSION))
-					onWarning("This client is using version " + Settings.VERSION + " of the communication protocol, but the server is using version \"" + connect.version + ". This may cause misconnunications.");
+					onWarning("This client is using version " + Settings.VERSION + " of the communication protocol, but the server is using version " + connect.version + ". This may cause misconnunications.");
 				// Notify the client is has connected.
 				onConnect(connect);
 				// Send the join message.
@@ -806,7 +806,7 @@ public abstract class Client implements Callable<String>, AutoCloseable {
 	 * the {@link #close()} method.
 	 * <p>
 	 * By default, this method does nothing. It can be overridden if the client
-	 * wants to react to be closed.
+	 * wants to react to being closed.
 	 * 
 	 * @throws Exception if a problem occurs during this method
 	 */

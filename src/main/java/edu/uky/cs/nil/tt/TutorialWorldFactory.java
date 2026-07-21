@@ -73,7 +73,7 @@ public class TutorialWorldFactory {
 		Action tradePlayerMoneyBaristaCoffee = builder.addAction(new Signature("trade", player, money, barista, coffee), new Entity[]{ player, barista }, "The player trades some money to the barista for a cup of coffee.");
 		Action tradePlayerMoneyBaristaTea = builder.addAction(new Signature("trade", player, money, barista, tea), new Entity[]{ player, barista }, "The player trades some money to the barista for a cup of herbal tea.");
 		// Endings
-		Ending donation = builder.addEnding(new Signature("donation"), "The player gave money to the barista but got not drink.");
+		Ending donation = builder.addEnding(new Signature("donation"), "The player gave money to the barista but got no drink.");
 		Ending freeCoffee = builder.addEnding(new Signature("free", coffee), "The player got a cup of coffee for free.");
 		Ending freeTea = builder.addEnding(new Signature("free", tea), "The player got a cup of herbal tea for free.");
 		Ending boughtCoffee = builder.addEnding(new Signature("bought", coffee), "The player purchased a coffee.");
@@ -81,6 +81,9 @@ public class TutorialWorldFactory {
 		// World
 		LogicalWorld world = new LogicalWorld(builder);
 		Describer describer = world.getDescriber();
+		// Introduction
+		world.setIntroduction(Role.PLAYER, "You are standing outside your favorite corner store. You're thirsty for a drink, and you have money in your pocket.");
+		world.setIntroduction(Role.GAME_MASTER, "You are a barista working in a corner store. Your job is to sell coffee and herbal tea to customers. A customer is waiting outside right now!");
 		// Entity Visibility
 		world.setVisibility(player, Proposition.TRUE);
 		world.setVisibility(barista, eq(atPlayer, atBarista));
@@ -177,7 +180,7 @@ public class TutorialWorldFactory {
 		describer.add(new Rule().roleIs(Role.PLAYER).turnIs(Turn.Type.FAIL).nameIs("trade").write("{ARG_2} {OFFER} {ARG_3} to {ARG_0} for {ARG_1}, but {ARG_0} {REFUSE}."));
 		// Endings
 		world.setCondition(donation, and(eq(atPlayer, outside), eq(hasMoney, barista), neq(hasCoffee, player), neq(hasTea, player)));
-		describer.add(new Rule().endingIs(donation).to(Role.GAME_MASTER).write("The player decided they weren't thirsy and made a generous donation to the barista."));
+		describer.add(new Rule().endingIs(donation).to(Role.GAME_MASTER).write("The player decided they weren't thirsty and made a generous donation to the barista."));
 		describer.add(new Rule().endingIs(donation).to(Role.PLAYER).write("You decided you weren't thirsy and made a generous donation to the barista."));
 		world.setCondition(freeCoffee, and(eq(atPlayer, outside), eq(hasMoney, player), eq(hasCoffee, player)));
 		world.setCondition(freeTea, and(eq(atPlayer, outside), eq(hasMoney, player), eq(hasTea, player)));

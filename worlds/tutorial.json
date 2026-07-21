@@ -2527,6 +2527,10 @@
       "type": "Proposition"
     }
   ],
+  "introduction": [
+    "You are a barista working in a corner store. Your job is to sell coffee and herbal tea to customers. A customer is waiting outside right now!",
+    "You are standing outside your favorite corner store. You\u0027re thirsty for a drink, and you have money in your pocket."
+  ],
   "describer": {
     "verbs": {
       "{BE}": {
@@ -2679,7 +2683,7 @@
           "NAME": "donation",
           "TO": "GAME_MASTER"
         },
-        "template": "The player decided they weren\u0027t thirsy and made a generous donation to the barista."
+        "template": "The player decided they weren\u0027t thirsty and made a generous donation to the barista."
       },
       {
         "context": {
@@ -2958,8 +2962,6 @@
     ]
   },
   "name": "tutorial",
-  "title": "Tutorial",
-  "description": "A short tutorial about buying a drink to show how these games work.",
   "entities": [
     {
       "code": "001",
@@ -3577,7 +3579,7 @@
       },
       "id": 0,
       "name": "donation()",
-      "description": "The player gave money to the barista but got not drink."
+      "description": "The player gave money to the barista but got no drink."
     },
     {
       "code": "010",
