@@ -279,12 +279,8 @@ public class CommandParser extends Thread {
 		String line = null;
 		do {
 			try {
+				line = null;
 				line = readLine();
-			}
-			catch(InterruptedException | IOException exception) {
-				break;
-			}
-			try {
 				parse(line);
 			}
 			catch(Exception exception) {

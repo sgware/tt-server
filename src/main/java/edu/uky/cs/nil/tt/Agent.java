@@ -299,6 +299,7 @@ public class Agent extends SerialSocket implements Named {
 		catch(Exception exception) {
 			server.log.append("An error occurred while processing a message from agent " + id + ":", exception);
 			send(new Error(exception));
+			throw exception;
 		}
 	}
 	
@@ -309,7 +310,7 @@ public class Agent extends SerialSocket implements Named {
 			message.setAgent(this);
 			return message;
 		}
-		catch(JsonSyntaxException exception) {
+		catch(NullPointerException | JsonSyntaxException exception) {
 			throw new IllegalArgumentException("The message could not be parsed as a JSON object.", exception);
 		}
 	}
