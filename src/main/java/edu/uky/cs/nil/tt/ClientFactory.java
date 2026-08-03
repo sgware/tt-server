@@ -3,6 +3,7 @@ package edu.uky.cs.nil.tt;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -91,6 +92,9 @@ public abstract class ClientFactory implements Callable<Void>, AutoCloseable {
 	/** Whether {@link #close()} has been called */
 	private boolean closed = false;
 	
+	/** Used to await the full shutdown of the server */
+	private final CountDownLatch latch = new CountDownLatch(1);
+	
 	/**
 	 * Creates a new client factory with an upper limit on the number of clients
 	 * that it will create simultaneously.
@@ -100,6 +104,16 @@ public abstract class ClientFactory implements Callable<Void>, AutoCloseable {
 	 */
 	public ClientFactory(int maxClients) {
 		this.maxClients = maxClients;
+		// If the JVM shuts down, close the server and wait for it to shut down.
+		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+			close();
+			try {
+				latch.await();
+			}
+			catch(InterruptedException exception) {
+				// do nothing
+			}
+		}));
 	}
 	
 	/**
@@ -211,6 +225,8 @@ public abstract class ClientFactory implements Callable<Void>, AutoCloseable {
 		waiting.clear();
 		running.clear();
 		queue.clear();
+		// Signal that the server is done shutting down.
+		latch.countDown();
 		// Return or throw uncaught exception.
 		if(uncaught == null)
 			return null;
