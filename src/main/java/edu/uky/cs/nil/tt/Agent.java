@@ -283,8 +283,9 @@ public class Agent extends SerialSocket implements Named {
 	
 	@Override
 	protected void receive(String string) throws Exception {
+		Message message = null;
 		try {
-			Message message = parse(string);
+			message = parse(string);
 			if(message instanceof Join join)
 				onJoin(join);
 			else if(message instanceof Choice choice)
@@ -293,13 +294,12 @@ public class Agent extends SerialSocket implements Named {
 				onReport(report);
 			else if(message instanceof Stop stop)
 				onStop(stop);
-			else
+			else 
 				throw new IllegalArgumentException("The message type \"" + message.getClass().getSimpleName() + "\" is not recognized.");
 		}
 		catch(Exception exception) {
 			server.log.append("An error occurred while processing a message from agent " + id + ":", exception);
 			send(new Error(exception));
-			throw exception;
 		}
 	}
 	
@@ -311,6 +311,7 @@ public class Agent extends SerialSocket implements Named {
 			return message;
 		}
 		catch(NullPointerException | JsonSyntaxException exception) {
+			close();
 			throw new IllegalArgumentException("The message could not be parsed as a JSON object.", exception);
 		}
 	}
