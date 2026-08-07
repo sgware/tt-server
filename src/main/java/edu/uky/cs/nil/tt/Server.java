@@ -1,26 +1,20 @@
 package edu.uky.cs.nil.tt;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.net.ssl.SSLServerSocket;
-import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSocket;
 
+import com.sgware.serialsoc.CheckedRunnable;
+import com.sgware.serialsoc.SecureSerialServerSocket;
 import edu.uky.cs.nil.tt.io.Connect.Available;
 import edu.uky.cs.nil.tt.io.End;
 import edu.uky.cs.nil.tt.io.Join;
 import edu.uky.cs.nil.tt.world.World;
 import edu.uky.cs.nil.tt.world.WorldModel;
-import com.sgware.serialsoc.CheckedRunnable;
-import com.sgware.serialsoc.SerialServerSocket;
 
 /**
  * The server listens for new connections from the network, reports which story
@@ -29,7 +23,7 @@ import com.sgware.serialsoc.SerialServerSocket;
  * 
  * @author Stephen G. Ware
  */
-public class Server extends SerialServerSocket {
+public class Server extends SecureSerialServerSocket {
 	
 	/** Used to record system messages and data from completed sessions */
 	public final Log log;
@@ -72,6 +66,7 @@ public class Server extends SerialServerSocket {
 	 * created or read during setup
 	 */
 	public Server(File log, File sessions, File database, int port) throws IOException {
+		super(port);
 		try {
 			this.log = new Log(log, sessions);
 		}
@@ -105,30 +100,32 @@ public class Server extends SerialServerSocket {
 	}
 	
 	@Override
-	protected SSLServerSocket createServer() throws IOException {
+	protected void connect() throws IOException {
 		if(System.getProperty("javax.net.ssl.keyStore") == null)
 			log.append("Warning: The system property \"javax.net.ssl.keyStore\" is not set. The server may not be able to establish SSL sockets.");
 		else if(System.getProperty("javax.net.ssl.keyStorePassword") == null)
 			log.append("Warning: The system property \"javax.net.ssl.keyStorePassword\" is not set. The server may not be able to establish SSL sockets.");
-		SSLServerSocketFactory factory = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
-		SSLServerSocket server = (SSLServerSocket) factory.createServerSocket(port);
+		super.connect();
 		clock.start();
-		log.append("Server now listening for new connections on port " + server.getLocalPort() + ".");
-		return server;
+		log.append("Server now listening for new connections on port " + port + ".");
 	}
 	
 	@Override
-	protected SSLSocket accept(ServerSocket server) throws IOException {
-		SSLServerSocket secure = (SSLServerSocket) server;
+	protected SSLSocket accept() throws IOException {
 		SSLSocket socket = null;
-		while(socket == null) {			
-			socket = (SSLSocket) secure.accept();
+		while(socket == null) {
+			socket = super.accept();
 			try {
 				socket.startHandshake();
 			}
 			catch(IOException exception) {
 				log.append("An exception occurred while a client was attempting to connect.", exception);
-				socket.close();
+				try {
+					socket.close();
+				}
+				catch(Exception other) {
+					// Ignore exceptions from closing the socket.
+				}
 				socket = null;
 			}
 		}
@@ -136,15 +133,8 @@ public class Server extends SerialServerSocket {
 	}
 	
 	@Override
-	protected Agent createSocket(Socket socket) throws Exception {
-		if(!((SSLSocket) socket).getSession().isValid())
-			throw new SocketException("Failed to establish secure socket with client.");
+	protected Agent create(Socket socket) throws IOException {
 		return new Agent(this, (SSLSocket) socket, nextID++);
-	}
-	
-	@Override
-	protected BufferedReader createReader(Socket socket) throws Exception {
-		return new BufferedReader(new LimitedLineLengthReader(new InputStreamReader(socket.getInputStream()), Settings.READ_LIMIT));
 	}
 	
 	@Override

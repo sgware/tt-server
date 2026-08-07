@@ -1,5 +1,8 @@
 package edu.uky.cs.nil.tt;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.List;
 
 import javax.net.ssl.SSLSocket;
@@ -15,7 +18,7 @@ import edu.uky.cs.nil.tt.world.State;
 import edu.uky.cs.nil.tt.world.Status;
 import edu.uky.cs.nil.tt.world.Turn;
 import edu.uky.cs.nil.tt.world.WorldModel;
-import com.sgware.serialsoc.SerialSocket;
+import com.sgware.serialsoc.SimpleSerialSocket;
 
 /**
  * An agent represents an individual connection to a {@link Server server} that
@@ -34,13 +37,16 @@ import com.sgware.serialsoc.SerialSocket;
  * 
  * @author Stephen G. Ware
  */
-public class Agent extends SerialSocket implements Named {
+public class Agent extends SimpleSerialSocket implements Named {
 	
 	/** The server which manages this agent */
 	public final Server server;
 	
 	/** A unique, sequential ID number assigned to this agent */
 	public final int id;
+	
+	/** The network socket to which this agent reads and writers */
+	protected final SSLSocket socket;
 	
 	/** Used to encode and decode network messages as JSON */
 	private final Gson gson;
@@ -96,12 +102,19 @@ public class Agent extends SerialSocket implements Named {
 	 * @param server the server that manages this agent
 	 * @param socket the socket this agent uses to send and receive messages
 	 * @param id a unique ID number assigned to the agent by the server
-	 * @throws Exception if a problem occurs when creating the agent
+	 * @throws IOException if a network problem occurs when getting the socket's
+	 * input and output streams
 	 */
-	protected Agent(Server server, SSLSocket socket, int id) throws Exception {
-		super(server, socket);
-		this.id = id;
+	protected Agent(Server server, SSLSocket socket, int id) throws IOException {
+		super(
+			server,
+			socket,
+			new LimitedLineLengthReader(new InputStreamReader(socket.getInputStream()), Settings.READ_LIMIT),
+			new OutputStreamWriter(socket.getOutputStream())
+		);
 		this.server = server;
+		this.id = id;
+		this.socket = socket;
 		GsonBuilder builder = new GsonBuilder();
 		Message.configure(builder);
 		this.gson = builder.create();
@@ -283,8 +296,8 @@ public class Agent extends SerialSocket implements Named {
 	
 	@Override
 	protected void receive(String string) throws Exception {
+		Message message = parse(string);
 		try {
-			Message message = parse(string);
 			if(message instanceof Join join)
 				onJoin(join);
 			else if(message instanceof Choice choice)
@@ -310,8 +323,9 @@ public class Agent extends SerialSocket implements Named {
 			return message;
 		}
 		catch(NullPointerException | JsonSyntaxException exception) {
-			close();
-			throw new IllegalArgumentException("The message could not be parsed as a JSON object.", exception);
+			if(string.length() > 40)
+				string = string.substring(0, 40) + "...";
+			throw new IllegalArgumentException("A message from agent " + id + " could not be parsed: \"" + string + "\".", exception);
 		}
 	}
 	
