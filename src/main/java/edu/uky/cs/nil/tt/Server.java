@@ -30,10 +30,7 @@ public class Server extends SecureSerialServerSocket {
 	
 	/** A set of story worlds and agent types supported by this server */
 	public final Database database;
-	
-	/** The network port on which the server listens for new connections */
-	public final int port;
-	
+		
 	/** The ID number to assign to the next agent that connects */
 	private int nextID = 0;
 	
@@ -42,9 +39,6 @@ public class Server extends SecureSerialServerSocket {
 	
 	/** A list of agents in active sessions */
 	private final List<Agent> playing = new ArrayList<>();
-	
-	/** A thread that regularly calls {@link #tick()} */
-	private final ClockThread clock;
 	
 	/** Whether the server has been instructed to begin shutting down */
 	private boolean stopped = false;
@@ -84,8 +78,6 @@ public class Server extends SecureSerialServerSocket {
 			this.log.close();
 			throw exception;
 		}
-		this.port = port;
-		this.clock = new ClockThread(this);
 		this.log.append("Server created.");
 	}
 	
@@ -106,8 +98,7 @@ public class Server extends SecureSerialServerSocket {
 		else if(System.getProperty("javax.net.ssl.keyStorePassword") == null)
 			log.append("Warning: The system property \"javax.net.ssl.keyStorePassword\" is not set. The server may not be able to establish SSL sockets.");
 		super.connect();
-		clock.start();
-		log.append("Server now listening for new connections on port " + port + ".");
+		log.append("Server now listening for new connections on port " + getPort() + ".");
 	}
 	
 	@Override
@@ -311,36 +302,7 @@ public class Server extends SecureSerialServerSocket {
 		player.onStart(session, gm, player);
 		session.append(null, gm.getStatus().getState(), player.getStatus().getState());
 	}
-	
-	/**
-	 * This method is called regularly by the {@link ClockThread clock thread}
-	 * to check things that are time-sensative but not triggered by events, such
-	 * as disconnecting agents who have taken too long to send a message.
-	 * 
-	 * @throws Exception if a problem occurs while this method is running
-	 */
-	protected void tick() throws Exception {
-		tickEach(playing.size() - 1);
-	}
-	
-	/**
-	 * Iterates through the list of {@link #playing agents in sessions} and
-	 * calls {@link Agent#tick()} for each one. This method is recursive to
-	 * avoid iterating through the list (which might cause problems with
-	 * concurrent modification) and to avoid allocating on the heap.
-	 * 
-	 * @param index the index of an agent in the list of playing agents
-	 * @throws Exception if a problem occurs while calling an agent's {@link
-	 * Agent#tick()} method
-	 */
-	private final void tickEach(int index) throws Exception {
-		if(index >= 0) {
-			Agent agent = playing.get(index);
-			tickEach(index - 1);
-			agent.tick();
-		}
-	}
-	
+		
 	/**
 	 * This method is called each time a {@link Session session} ends. Note that
 	 * this method is not called immediately after its story ends, but only
@@ -380,7 +342,6 @@ public class Server extends SecureSerialServerSocket {
 	protected void onClose() {
 		log.append("Server stopped.");
 		stopped = true;
-		clock.interrupt();
 	}
 	
 	@Override

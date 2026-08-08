@@ -2,6 +2,8 @@ package edu.uky.cs.nil.tt;
 
 import java.io.File;
 
+import com.sgware.serialsoc.Clock;
+
 /**
  * The main entry point for the Tandem Tales server. This class includes the
  * {@link #main(String[]) main method} to launch the server and its components.
@@ -91,11 +93,14 @@ public class ServerMain {
 		Server server = new Server(log, sessions, database, port);
 		CommandParser parser = new CommandParser(server);
 		// Run
+		Clock clock = new Clock(server, Settings.TICK_SPEED);
+		clock.start();
 		parser.start();
 		try {
 			server.run();
 		}
 		finally {
+			clock.interrupt();
 			parser.interrupt();
 		}
 	}

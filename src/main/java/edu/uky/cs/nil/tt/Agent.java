@@ -45,9 +45,6 @@ public class Agent extends SimpleSerialSocket implements Named {
 	/** A unique, sequential ID number assigned to this agent */
 	public final int id;
 	
-	/** The network socket to which this agent reads and writers */
-	protected final SSLSocket socket;
-	
 	/** Used to encode and decode network messages as JSON */
 	private final Gson gson;
 	
@@ -114,7 +111,6 @@ public class Agent extends SimpleSerialSocket implements Named {
 		);
 		this.server = server;
 		this.id = id;
-		this.socket = socket;
 		GsonBuilder builder = new GsonBuilder();
 		Message.configure(builder);
 		this.gson = builder.create();
@@ -274,7 +270,7 @@ public class Agent extends SimpleSerialSocket implements Named {
 	
 	@Override
 	protected void onConnect() throws Exception {
-		String address = socket.getInetAddress().toString();
+		String address = getRemoteAddress().toString();
 		if(address.startsWith("/"))
 			address = address.substring(1);
 		server.log.append("Agent " + id + " connected from IP address " + address + ".");
@@ -515,8 +511,9 @@ public class Agent extends SimpleSerialSocket implements Named {
 		timeout = System.currentTimeMillis() + Settings.AGENT_TIMEOUT;
 	}
 	
+	@Override
 	/**
-	 * This method is called regularly by the Server to check things that are
+	 * This method is called regularly by the clock to check things that are
 	 * time-sensative but not triggered by events, such as disconnecting agents
 	 * who have taken too long to send a message.
 	 * 

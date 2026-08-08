@@ -33,8 +33,7 @@ public class Settings {
 	);
 	
 	/**
-	 * The amount of time in milliseconds between {@link ClockThread clock
-	 * thread} {@link Server#tick() ticks}
+	 * The amount of time in milliseconds between clock ticks.
 	 */
 	public static final long TICK_SPEED = 5000; // Every 5 seconds
 	
