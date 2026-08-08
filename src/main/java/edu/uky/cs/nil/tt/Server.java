@@ -3,6 +3,7 @@ package edu.uky.cs.nil.tt;
 import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,17 +106,28 @@ public class Server extends SecureSerialServerSocket {
 	protected SSLSocket accept() throws IOException {
 		SSLSocket socket = null;
 		while(socket == null) {
-			socket = super.accept();
+			// Accept the socket.
+			try {
+				socket = super.accept();
+			}
+			catch(SocketException exception) {
+				// Re-throw exception from server socket closing.
+				throw exception;
+			}
+			catch(Exception exception) {
+				log.append("A connection was rejected: " + exception.getMessage());
+				continue;
+			}
+			// Perform the TLS handshake.
 			try {
 				socket.startHandshake();
 			}
-			catch(IOException exception) {
-				log.append("An exception occurred while a client was attempting to connect.", exception);
-				try {
-					socket.close();
-				}
-				catch(Exception other) {
-					// Ignore exceptions from closing the socket.
+			catch(Exception exception) {
+				log.append("A connection from " + Utilities.toIPAddress(socket.getInetAddress()) + " was rejected: " + exception.getMessage());
+				// Ensure the socket is closed.
+				if(socket != null) {
+					try { socket.close(); }
+					catch(Exception other) {/* ignore */}
 				}
 				socket = null;
 			}

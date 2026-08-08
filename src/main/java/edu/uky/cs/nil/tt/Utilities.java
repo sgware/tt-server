@@ -1,5 +1,6 @@
 package edu.uky.cs.nil.tt;
 
+import java.net.InetAddress;
 import java.util.Objects;
 import java.util.Random;
 
@@ -187,6 +188,13 @@ public class Utilities {
 	public static final String capitalize(String string) {
 		if(string != null && string.length() > 1)
 			string = string.substring(0, 1).toUpperCase() + string.substring(1);
+		return string;
+	}
+	
+	public static final String toIPAddress(InetAddress address) {
+		String string = address.toString();
+		if(string.startsWith("/"))
+			string = string.substring(1);
 		return string;
 	}
 	

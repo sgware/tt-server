@@ -9,7 +9,6 @@ import javax.net.ssl.SSLSocket;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
 
 import edu.uky.cs.nil.tt.io.*;
 import edu.uky.cs.nil.tt.io.Error;
@@ -270,10 +269,7 @@ public class Agent extends SimpleSerialSocket implements Named {
 	
 	@Override
 	protected void onConnect() throws Exception {
-		String address = getRemoteAddress().toString();
-		if(address.startsWith("/"))
-			address = address.substring(1);
-		server.log.append("Agent " + id + " connected from IP address " + address + ".");
+		server.log.append("Agent " + id + " connected from IP address " + Utilities.toIPAddress(getRemoteAddress()) + ".");
 		Connect connect = new Connect(server.database.getListedWorlds(), server.database.getListedAgents(), server.getAvailable());
 		send(connect);
 	}
@@ -292,7 +288,23 @@ public class Agent extends SimpleSerialSocket implements Named {
 	
 	@Override
 	protected void receive(String string) throws Exception {
-		Message message = parse(string);
+		Message message = null;
+		// Parse the message.
+		try {
+			message = gson.fromJson(string, Message.class);
+			message.verify();
+			message.setAgent(this);
+		}
+		// If the message could not be parsed, close the connection, because
+		// one bad message is likely to be followed by others.
+		catch(Exception exception) {
+			String clip = string.length() > 40 ? string.substring(0, 40) + "..." : string;
+			server.log.append("Agent " + id + " sent a message that could not be parsed: \"" + clip + "\".");
+			send(new Error("Your message could not be parsed as a Tandem Tales JSON message."));
+			close();
+			return;
+		}
+		// Process the message.
 		try {
 			if(message instanceof Join join)
 				onJoin(join);
@@ -305,23 +317,11 @@ public class Agent extends SimpleSerialSocket implements Named {
 			else
 				throw new IllegalArgumentException("The message type \"" + message.getClass().getSimpleName() + "\" is not recognized.");
 		}
+		// If there is a logical problem with this message, explain the error
+		// and do not disconnect the agent.
 		catch(Exception exception) {
 			server.log.append("An error occurred while processing a message from agent " + id + ":", exception);
 			send(new Error(exception));
-		}
-	}
-	
-	private final Message parse(String string) {
-		try {
-			Message message = gson.fromJson(string, Message.class);
-			message.verify();
-			message.setAgent(this);
-			return message;
-		}
-		catch(NullPointerException | JsonSyntaxException exception) {
-			if(string.length() > 40)
-				string = string.substring(0, 40) + "...";
-			throw new IllegalArgumentException("A message from agent " + id + " could not be parsed: \"" + string + "\".", exception);
 		}
 	}
 	
