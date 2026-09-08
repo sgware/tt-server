@@ -33,6 +33,15 @@ public class Arguments {
 	}
 	
 	/**
+	 * Returns the number of arguments in this set.
+	 * 
+	 * @return the number or arguments
+	 */
+	public int size() {
+		return args.length;
+	}
+	
+	/**
 	 * Tests whether a given key appears in the list of arguments. The key
 	 * should be given without its preceding dash. Case is ignored. For example,
 	 * if this method is called with {@code "key"}, it will return true if
@@ -52,6 +61,54 @@ public class Arguments {
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * Returns the argument at the given index (where the first argument is
+	 * index 0) and marks it as used. If the index does not exist, this method
+	 * returns null.
+	 * 
+	 * @param index the index of the desired argument
+	 * @return the argument at the given index, or null if the index does not
+	 * exist
+	 */
+	public String get(int index) {
+		if(index < args.length) {
+			used[index] = true;
+			return args[index];
+		}
+		else
+			return null;
+	}
+	
+	/**
+	 * Returns the value immediately after a given key, or null if the key does
+	 * not appear or has not value after it. The key should be given without its
+	 * preceding dash, and case is ignored when searching for the key. For
+	 * example, if this method is called with {@code "key"} and {@code "value"},
+	 * it will return {@code "value"} if {@code "-KEY"} appears in the list of
+	 * arguments. If the key is found, it (and its value, if found) are marked
+	 * as used.
+	 * 
+	 * @param key the key whose value is desired, without a dash as its first
+	 * character
+	 * @return the value immediately after the key, or null if the key does not
+	 * appear or has no value
+	 */
+	public String getValue(String key) {
+		key = "-" + key;
+		for(int i = 0; i < args.length; i++) {
+			if(args[i].equalsIgnoreCase(key)) {
+				if(i < args.length - 1 && !args[i + 1].startsWith("-")) {
+					used[i] = true;
+					used[i + 1] = true;
+					return args[i + 1];
+				}
+				else
+					break;
+			}
+		}
+		return null;
 	}
 	
 	/**
