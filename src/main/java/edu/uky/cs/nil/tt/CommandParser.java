@@ -283,6 +283,9 @@ public class CommandParser extends Thread {
 				line = readLine();
 				parse(line);
 			}
+			catch(InterruptedException exception) {
+				break;
+			}
 			catch(Exception exception) {
 				exception.printStackTrace();
 			}
@@ -356,7 +359,14 @@ public class CommandParser extends Thread {
 				String[] arguments = new String[matcher.groupCount()];
 				for(int i = 0; i < arguments.length; i++)
 					arguments[i] = matcher.group(i + 1);
-				server.execute(() -> c.operation.execute(server, arguments));
+				server.execute(() -> {
+					try {
+						c.operation.execute(server, arguments);
+					}
+					catch(Exception exception) {
+						exception.printStackTrace();
+					}
+				});
 				return;
 			}
 		}
