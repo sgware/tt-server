@@ -191,6 +191,13 @@ public class Utilities {
 		return string;
 	}
 	
+	/**
+	 * Returns a string representation of an {@link InetAddress} as an IP
+	 * Address.
+	 * 
+	 * @param address the network address object
+	 * @return a string representation of the IP address
+	 */
 	public static final String toIPAddress(InetAddress address) {
 		String string = address.toString();
 		if(string.startsWith("/"))

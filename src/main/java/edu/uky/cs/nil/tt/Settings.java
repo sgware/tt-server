@@ -10,7 +10,7 @@ import java.util.Set;
 public class Settings {
 	
 	/** The name of this project */
-	public static final String NAME = "Tandem Tails Server";
+	public static final String NAME = "Tandem Tales Server";
 	
 	/** The current version of this project */
 	public static final String VERSION = "0.9.0";
