@@ -46,7 +46,7 @@
       <artifactId>gson</artifactId>
       <version>2.14.0</version>
     </dependency>
-  <!-- Serial Server Sockets -->
+    <!-- Serial Server Sockets -->
     <dependency>
       <groupId>com.sgware</groupId>
       <artifactId>serialsoc</artifactId>
@@ -57,7 +57,7 @@
   <build>
     <!-- Plugins -->
     <plugins>
-      <!-- Delete `docs` and `build` directories during clean phase. -->
+      <!-- Delete `docs` and `build` directories and logs during clean phase. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
