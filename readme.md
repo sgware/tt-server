@@ -51,7 +51,7 @@ like this:
   <dependencies>
     <!-- Tandem Tales Server -->
     <dependency>
-      <groupId>edu.uky.cs.nil</groupId>
+      <groupId>edu.uky.cs.nil.tt</groupId>
       <artifactId>tt-server</artifactId>
       <version>0.9.0</version> <!-- use most recent version -->
     </dependency>
