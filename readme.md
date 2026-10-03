@@ -169,3 +169,27 @@ license, contact the University of Kentucky Office of Technology
 Commercialization at <otcinfo@uky.edu>.
 
 Special thanks to Molly Siler for her help with testing and development.
+
+# Version History
+
+- Version 0.9.0: First public release.
+
+## Citation
+
+Please cite this paper when referring to Tandem Tales:
+
+> Stephen G. Ware, Molly Siler, and Lasantha Senanayake, "Tandem Tales: A Paired
+> Storytelling Research Platform," in Proceedings of the Experimental AI in
+> Games workshop at the 22nd AAAI conference on Artificial Intelligence and
+> Interactive Digital Entertainment, 2026.
+
+BiBTeX entry:
+
+```
+@inproceedings{ware2026tandemtales,
+  title={{Tandem Tales}: a paired storytelling research platform},
+  author={Ware, Stephen G. and Siler, Molly and Senanayake, Lasantha},
+  booktitle={Proceedings of the Experimental AI in Games workshop at the 22nd AAAI conference on Artificial Intelligence and Interactive Digital Entertainment},
+  year={2026}
+}
+```
