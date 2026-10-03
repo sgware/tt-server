@@ -8,6 +8,26 @@
   <name>Tandem Tales Server</name>
   <description>A platform that handles hosting and matchmaking for simple two-player interactive stories played over a network.</description>
   <url>http://github.com/sgware/tt-server</url>
+  <!-- License -->
+  <licenses>
+    <license>
+      <name>GPL-3.0</name>
+      <url>http://opensource.org/license/gpl-3.0</url>
+    </license>
+  </licenses>
+  <!-- Developers -->
+  <developers>
+    <developer>
+      <name>Stephen G. Ware</name>
+      <email>sgware@cs.uky.edu</email>
+    </developer>
+  </developers>
+  <!-- Source Control -->
+  <scm>
+    <connection>scm:git:git://github.com/sgware/tt-server.git</connection>
+    <developerConnection>scm:git:ssh://github.com:sgware/tt-server.git</developerConnection>
+    <url>http://github.com/sgware/tt-server/tree/main</url>
+  </scm>
   <!-- Properties -->
   <properties>
     <!-- UTF-8 Encoding -->
@@ -18,14 +38,6 @@
     <maven.compiler.target>21</maven.compiler.target>
     <maven.compiler.release>21</maven.compiler.release>
   </properties>
-  <!-- Repositories -->
-  <repositories>
-    <repository>
-      <id>github</id>
-      <name>GitHub Packages</name>
-      <url>maven.pkg.github.com</url>
-    </repository>
-  </repositories>
   <!-- Dependencies -->
   <dependencies>
     <!-- Google GSON -->
@@ -43,19 +55,9 @@
   </dependencies>
   <!-- Build -->
   <build>
-    <!-- Resources -->
-    <resources>
-      <!-- Include Java source files in JAR file. -->
-      <resource>
-        <directory>src/main/java</directory>
-        <includes>
-          <include>**/*.java</include>
-        </includes>
-      </resource>
-    </resources>
     <!-- Plugins -->
     <plugins>
-      <!-- Delete files and folders during clean phase. -->
+      <!-- Delete `docs` and `build` directories during clean phase. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
@@ -95,7 +97,41 @@
           </execution>
         </executions>
       </plugin>
-      <!-- Copy Javadoc into /docs for GitHub Pages. -->
+      <!-- Create a JAR for source files. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.4.0</version>
+        <executions>
+          <execution>
+            <id>attach-source</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Create a JAR file the includes both the compiled code and source. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <descriptors>
+            <descriptor>src/assembly/jar-all.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+          <execution>
+            <id>jar-all</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Copy Javadoc into `docs` directory for GitHub Pages. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -118,28 +154,7 @@
           </execution>
         </executions>
       </plugin>
-      <!-- Include dependency class files in a runnable "fat" JAR. -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.6.1</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-            <configuration>
-              <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>edu.uky.cs.nil.tt.ServerMain</mainClass>
-                </transformer>
-              </transformers>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- Copy the JAR file into the /jar folder. -->
+      <!-- Copy the JAR file with source into the `build/jar` directory. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -157,14 +172,41 @@
                   <groupId>${project.groupId}</groupId>
                   <artifactId>${project.artifactId}</artifactId>
                   <version>${project.version}</version>
+									<classifier>all</classifier>
                   <type>${project.packaging}</type>
                 </artifactItem>
               </artifactItems>
               <outputDirectory>${basedir}/build/jar</outputDirectory>
               <stripVersion>true</stripVersion>
+							<stripClassifier>true</stripClassifier>
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <!-- Generate file checksums -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.2.8</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Publish to the Maven Central Repository -->
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.10.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+        </configuration>
       </plugin>
     </plugins>
   </build>
