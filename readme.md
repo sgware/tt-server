@@ -20,34 +20,45 @@ The JAR file containing the server executable and all dependencies can be
 The JavaDoc API for all Java source files can be
 [found here](http://sgware.github.io/tt-server).
 
+The [Tandem Tales Web Server project](https://github.com/sgware/tt-web) provides
+a [Docker](https://www.docker.com) image that makes it easy to set up and run a
+local copy of this server for testing and development.
+
 ## Build from Source
 
-The Tandem Tales server is written in Java and published as a Maven project.
+The Tandem Tales server is written in [Java](https://java.com) and published as
+a [Maven](https://maven.apache.org/) project.
 
-Two dependencies need to be installed in Maven:
+It has two dependencies:
 - [Google GSON](https://github.com/google/gson)
 - [Serial Server Sockets](https://github.com/sgware/serialsoc)
 
 Assuming you have [Git](https://git-scm.com/install), the
-[Java Development Kit](https://www.oracle.com/java/technologies/downloads/), and
-[Maven](https://maven.apache.org/) installed and on your path, you can download
+[Java Development Kit](https://www.oracle.com/java/technologies/downloads), and
+[Maven](https://maven.apache.org) installed and on your path, you can download
 the dependencies and compile Tandem Tales Server from source like this.
 ```
-git clone https://github.com/google/gson.git
-cd gson
-mvn clean install
-cd ..
-git clone https://github.com/sgware/serialsoc.git
-cd serialsoc
-mvn clean install
-cd ..
 git clone https://github.com/sgware/tt-server.git
 cd tt-server
 mvn clean install
 ```
 
-For testing, you may also want to install the
-[Tandem Tales Test Client](https://github.com/sgware/tt-test-client).
+You can add this library as a dependency to a Maven project's `pom.xml` file
+like this:
+```
+<project>
+  ...
+  <dependencies>
+    <!-- Tandem Tales Server -->
+    <dependency>
+      <groupId>edu.uky.cs.nil</groupId>
+      <artifactId>tt-server</artifactId>
+      <version>0.9.0</version> <!-- use most recent version -->
+    </dependency>
+  </dependencies>
+  ...
+</project>
+```
 
 ## Usage
 
