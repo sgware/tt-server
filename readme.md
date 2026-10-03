@@ -181,7 +181,7 @@ Commercialization at <otcinfo@uky.edu>.
 
 Special thanks to Molly Siler for her help with testing and development.
 
-# Version History
+## Version History
 
 - Version 0.9.0: First public release.
 
