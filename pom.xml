@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.uky.cs.nil.tt</groupId>
   <artifactId>tt-server</artifactId>
-  <version>0.9.0</version>
+  <version>0.9.1</version>
   <packaging>jar</packaging>
   <name>Tandem Tales Server</name>
   <description>A platform that handles hosting and matchmaking for simple two-player interactive stories played over a network.</description>
@@ -128,6 +128,13 @@
             <goals>
               <goal>single</goal>
             </goals>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>edu.uky.cs.nil.tt.ServerMain</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
           </execution>
         </executions>
       </plugin>
