@@ -646,11 +646,14 @@ public class LogicalWorld extends WorldModel {
 	 * the current state
 	 */
 	protected String getEntityDescription(Role role, Turn[] history, State state, Entity entity) {
-		String description = getDescription(entity, role) + ":";
+		String description = "";
 		for(Assignment assignment : state.getAssignments())
 			if(assignment.visible && (assignment.variable.signature.getArguments().contains(entity) || assignment.value.equals(entity)))
-				description += " " + assignment.getDescription();
-		return description;
+				description += (description.isEmpty() ? "" : " ") + assignment.getDescription();
+		if(description.isEmpty())
+			return "This is " + getDescription(entity, role) + ".";
+		else
+			return description;
 	}
 	
 	/**

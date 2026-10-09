@@ -183,8 +183,8 @@ Special thanks to Molly Siler for her help with testing and development.
 
 ## Version History
 
-- Version 0.9.2: Update text in Tutorial and The Crown worlds. Added
-  introduction text to LogicalWorld's describe method.
+- Version 0.9.2: Update entity description text and LogicalWorld description.
+  Update description text in some worlds.
 - Version 0.9.1: Fixed a bug that prevented the JAR from being runnable.
 - Version 0.9.0: First public release.
 
