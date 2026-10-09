@@ -561,7 +561,7 @@ public class LogicalWorld extends WorldModel {
 					if(updated.visible && !updated.value.equals(actual.get(assignment.variable))) {
 						updated = updated.setValue(actual.get(assignment.variable));
 						updated = updated.setDescription(getDescription(updated, status.role));
-						description += (description.isEmpty() ? "" : " ") + updated.getDescription();
+						description = Utilities.spaced(description, updated.getDescription());
 					}
 					if(!assignment.equals(updated))
 						observed = observed.set(updated);
@@ -649,7 +649,7 @@ public class LogicalWorld extends WorldModel {
 		String description = "";
 		for(Assignment assignment : state.getAssignments())
 			if(assignment.visible && (assignment.variable.signature.getArguments().contains(entity) || assignment.value.equals(entity)))
-				description += (description.isEmpty() ? "" : " ") + assignment.getDescription();
+				description = Utilities.spaced(description, assignment.getDescription());
 		if(description.isEmpty())
 			return "This is " + getDescription(entity, role) + ".";
 		else

@@ -192,6 +192,22 @@ public class Utilities {
 	}
 	
 	/**
+	 * Concatenates two non-empty string with a space between them. If the first
+	 * or second string is empty, no space will be added between them.
+	 * 
+	 * @param s1 the first string, or null
+	 * @param s2 the second string, or null
+	 * @return the results of concatenating s1 and s2, and if both strings were
+	 * non-null and non-empty, as space is added between them
+	 */
+	public static final String spaced(String s1, String s2) {
+		String left = s1 == null ? "" : s1;
+		String right = s2 == null ? "" : s2;
+		String space = s1.isEmpty() || s2.isEmpty() ? "" : " ";
+		return left + space + right;
+	}
+	
+	/**
 	 * Returns a string representation of an {@link InetAddress} as an IP
 	 * Address.
 	 * 
