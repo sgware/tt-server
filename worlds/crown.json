@@ -623055,7 +623055,7 @@
       },
       "id": 120,
       "name": "enthrone(Adventurer)",
-      "description": "the player dies"
+      "description": "the player is crowned monarch"
     },
     {
       "consenting": [
@@ -623082,7 +623082,7 @@
       },
       "id": 121,
       "name": "enthrone(Alchemist)",
-      "description": "the alchemist dies"
+      "description": "the alchemist is crowned monarch"
     },
     {
       "consenting": [
@@ -623109,7 +623109,7 @@
       },
       "id": 122,
       "name": "enthrone(Bandit)",
-      "description": "the bandit dies"
+      "description": "the bandit is crowned monarch"
     },
     {
       "consenting": [
@@ -623136,7 +623136,7 @@
       },
       "id": 123,
       "name": "enthrone(Guard)",
-      "description": "the guard dies"
+      "description": "the guard is crowned monarch"
     },
     {
       "consenting": [
@@ -623163,7 +623163,7 @@
       },
       "id": 124,
       "name": "enthrone(Heir)",
-      "description": "the heir dies"
+      "description": "the heir is crowned monarch"
     },
     {
       "consenting": [
@@ -635320,7 +635320,7 @@
       },
       "id": 412,
       "name": "sicken(Adventurer)",
-      "description": "the player recovers from injury"
+      "description": "the player falls ill"
     },
     {
       "consenting": [],
@@ -635339,7 +635339,7 @@
       },
       "id": 413,
       "name": "sicken(Alchemist)",
-      "description": "the alchemist recovers from injury"
+      "description": "the alchemist falls ill"
     },
     {
       "consenting": [],
@@ -635358,7 +635358,7 @@
       },
       "id": 414,
       "name": "sicken(Bandit)",
-      "description": "the bandit recovers from injury"
+      "description": "the bandit falls ill"
     },
     {
       "consenting": [],
@@ -635377,7 +635377,7 @@
       },
       "id": 415,
       "name": "sicken(Guard)",
-      "description": "the guard recovers from injury"
+      "description": "the guard falls ill"
     },
     {
       "consenting": [],
@@ -635396,7 +635396,7 @@
       },
       "id": 416,
       "name": "sicken(Heir)",
-      "description": "the heir recovers from injury"
+      "description": "the heir falls ill"
     },
     {
       "consenting": [
@@ -640371,7 +640371,7 @@
       },
       "id": 537,
       "name": "trade(Adventurer, Coin, Alchemist, Crown)",
-      "description": "the player gives the crown to the alchemist"
+      "description": "the player trades a coin to the alchemist for the crown"
     },
     {
       "consenting": [
@@ -640426,7 +640426,7 @@
       },
       "id": 538,
       "name": "trade(Adventurer, Coin, Alchemist, CursePotion)",
-      "description": "the player gives a potion of cursing to the alchemist"
+      "description": "the player trades a coin to the alchemist for a potion of cursing"
     },
     {
       "consenting": [
@@ -640481,7 +640481,7 @@
       },
       "id": 539,
       "name": "trade(Adventurer, Coin, Alchemist, Flower)",
-      "description": "the player gives a flower to the alchemist"
+      "description": "the player trades a coin to the alchemist for a flower"
     },
     {
       "consenting": [
@@ -640536,7 +640536,7 @@
       },
       "id": 540,
       "name": "trade(Adventurer, Coin, Alchemist, HidePotion)",
-      "description": "the player gives a potion of hiding to the alchemist"
+      "description": "the player trades a coin to the alchemist for a potion of hiding"
     },
     {
       "consenting": [
@@ -640591,7 +640591,7 @@
       },
       "id": 541,
       "name": "trade(Adventurer, Coin, Alchemist, Sword)",
-      "description": "the player gives a sword to the alchemist"
+      "description": "the player trades a coin to the alchemist for a sword"
     },
     {
       "consenting": [
@@ -640646,7 +640646,7 @@
       },
       "id": 542,
       "name": "trade(Adventurer, Crown, Alchemist, Coin)",
-      "description": "the player gives a coin to the alchemist"
+      "description": "the player trades the crown to the alchemist for a coin"
     },
     {
       "consenting": [
@@ -640701,7 +640701,7 @@
       },
       "id": 543,
       "name": "trade(Adventurer, Crown, Alchemist, CursePotion)",
-      "description": "the player gives a potion of cursing to the alchemist"
+      "description": "the player trades the crown to the alchemist for a potion of cursing"
     },
     {
       "consenting": [
@@ -640756,7 +640756,7 @@
       },
       "id": 544,
       "name": "trade(Adventurer, Crown, Alchemist, Flower)",
-      "description": "the player gives a flower to the alchemist"
+      "description": "the player trades the crown to the alchemist for a flower"
     },
     {
       "consenting": [
@@ -640811,7 +640811,7 @@
       },
       "id": 545,
       "name": "trade(Adventurer, Crown, Alchemist, HidePotion)",
-      "description": "the player gives a potion of hiding to the alchemist"
+      "description": "the player trades the crown to the alchemist for a potion of hiding"
     },
     {
       "consenting": [
@@ -640866,7 +640866,7 @@
       },
       "id": 546,
       "name": "trade(Adventurer, Crown, Alchemist, Sword)",
-      "description": "the player gives a sword to the alchemist"
+      "description": "the player trades the crown to the alchemist for a sword"
     },
     {
       "consenting": [
@@ -640921,7 +640921,7 @@
       },
       "id": 547,
       "name": "trade(Adventurer, CursePotion, Alchemist, Coin)",
-      "description": "the player gives a coin to the alchemist"
+      "description": "the player trades a potion of cursing to the alchemist for a coin"
     },
     {
       "consenting": [
@@ -640976,7 +640976,7 @@
       },
       "id": 548,
       "name": "trade(Adventurer, CursePotion, Alchemist, Crown)",
-      "description": "the player gives the crown to the alchemist"
+      "description": "the player trades a potion of cursing to the alchemist for the crown"
     },
     {
       "consenting": [
@@ -641031,7 +641031,7 @@
       },
       "id": 549,
       "name": "trade(Adventurer, CursePotion, Alchemist, Flower)",
-      "description": "the player gives a flower to the alchemist"
+      "description": "the player trades a potion of cursing to the alchemist for a flower"
     },
     {
       "consenting": [
@@ -641086,7 +641086,7 @@
       },
       "id": 550,
       "name": "trade(Adventurer, CursePotion, Alchemist, HidePotion)",
-      "description": "the player gives a potion of hiding to the alchemist"
+      "description": "the player trades a potion of cursing to the alchemist for a potion of hiding"
     },
     {
       "consenting": [
@@ -641141,7 +641141,7 @@
       },
       "id": 551,
       "name": "trade(Adventurer, CursePotion, Alchemist, Sword)",
-      "description": "the player gives a sword to the alchemist"
+      "description": "the player trades a potion of cursing to the alchemist for a sword"
     },
     {
       "consenting": [
@@ -641196,7 +641196,7 @@
       },
       "id": 552,
       "name": "trade(Adventurer, Flower, Alchemist, Coin)",
-      "description": "the player gives a coin to the alchemist"
+      "description": "the player trades a flower to the alchemist for a coin"
     },
     {
       "consenting": [
@@ -641251,7 +641251,7 @@
       },
       "id": 553,
       "name": "trade(Adventurer, Flower, Alchemist, Crown)",
-      "description": "the player gives the crown to the alchemist"
+      "description": "the player trades a flower to the alchemist for the crown"
     },
     {
       "consenting": [
@@ -641306,7 +641306,7 @@
       },
       "id": 554,
       "name": "trade(Adventurer, Flower, Alchemist, CursePotion)",
-      "description": "the player gives a potion of cursing to the alchemist"
+      "description": "the player trades a flower to the alchemist for a potion of cursing"
     },
     {
       "consenting": [
@@ -641361,7 +641361,7 @@
       },
       "id": 555,
       "name": "trade(Adventurer, Flower, Alchemist, HidePotion)",
-      "description": "the player gives a potion of hiding to the alchemist"
+      "description": "the player trades a flower to the alchemist for a potion of hiding"
     },
     {
       "consenting": [
@@ -641416,7 +641416,7 @@
       },
       "id": 556,
       "name": "trade(Adventurer, Flower, Alchemist, Sword)",
-      "description": "the player gives a sword to the alchemist"
+      "description": "the player trades a flower to the alchemist for a sword"
     },
     {
       "consenting": [
@@ -641471,7 +641471,7 @@
       },
       "id": 557,
       "name": "trade(Adventurer, HidePotion, Alchemist, Coin)",
-      "description": "the player gives a coin to the alchemist"
+      "description": "the player trades a potion of hiding to the alchemist for a coin"
     },
     {
       "consenting": [
@@ -641526,7 +641526,7 @@
       },
       "id": 558,
       "name": "trade(Adventurer, HidePotion, Alchemist, Crown)",
-      "description": "the player gives the crown to the alchemist"
+      "description": "the player trades a potion of hiding to the alchemist for the crown"
     },
     {
       "consenting": [
@@ -641581,7 +641581,7 @@
       },
       "id": 559,
       "name": "trade(Adventurer, HidePotion, Alchemist, CursePotion)",
-      "description": "the player gives a potion of cursing to the alchemist"
+      "description": "the player trades a potion of hiding to the alchemist for a potion of cursing"
     },
     {
       "consenting": [
@@ -641636,7 +641636,7 @@
       },
       "id": 560,
       "name": "trade(Adventurer, HidePotion, Alchemist, Flower)",
-      "description": "the player gives a flower to the alchemist"
+      "description": "the player trades a potion of hiding to the alchemist for a flower"
     },
     {
       "consenting": [
@@ -641691,7 +641691,7 @@
       },
       "id": 561,
       "name": "trade(Adventurer, HidePotion, Alchemist, Sword)",
-      "description": "the player gives a sword to the alchemist"
+      "description": "the player trades a potion of hiding to the alchemist for a sword"
     },
     {
       "consenting": [
@@ -641746,7 +641746,7 @@
       },
       "id": 562,
       "name": "trade(Adventurer, Sword, Alchemist, Coin)",
-      "description": "the player gives a coin to the alchemist"
+      "description": "the player trades a sword to the alchemist for a coin"
     },
     {
       "consenting": [
@@ -641801,7 +641801,7 @@
       },
       "id": 563,
       "name": "trade(Adventurer, Sword, Alchemist, Crown)",
-      "description": "the player gives the crown to the alchemist"
+      "description": "the player trades a sword to the alchemist for the crown"
     },
     {
       "consenting": [
@@ -641856,7 +641856,7 @@
       },
       "id": 564,
       "name": "trade(Adventurer, Sword, Alchemist, CursePotion)",
-      "description": "the player gives a potion of cursing to the alchemist"
+      "description": "the player trades a sword to the alchemist for a potion of cursing"
     },
     {
       "consenting": [
@@ -641911,7 +641911,7 @@
       },
       "id": 565,
       "name": "trade(Adventurer, Sword, Alchemist, Flower)",
-      "description": "the player gives a flower to the alchemist"
+      "description": "the player trades a sword to the alchemist for a flower"
     },
     {
       "consenting": [
@@ -641966,7 +641966,7 @@
       },
       "id": 566,
       "name": "trade(Adventurer, Sword, Alchemist, HidePotion)",
-      "description": "the player gives a potion of hiding to the alchemist"
+      "description": "the player trades a sword to the alchemist for a potion of hiding"
     },
     {
       "consenting": [
@@ -642021,7 +642021,7 @@
       },
       "id": 567,
       "name": "trade(Adventurer, Coin, Bandit, Crown)",
-      "description": "the player gives the crown to the bandit"
+      "description": "the player trades a coin to the bandit for the crown"
     },
     {
       "consenting": [
@@ -642076,7 +642076,7 @@
       },
       "id": 568,
       "name": "trade(Adventurer, Coin, Bandit, CursePotion)",
-      "description": "the player gives a potion of cursing to the bandit"
+      "description": "the player trades a coin to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -642131,7 +642131,7 @@
       },
       "id": 569,
       "name": "trade(Adventurer, Coin, Bandit, Flower)",
-      "description": "the player gives a flower to the bandit"
+      "description": "the player trades a coin to the bandit for a flower"
     },
     {
       "consenting": [
@@ -642186,7 +642186,7 @@
       },
       "id": 570,
       "name": "trade(Adventurer, Coin, Bandit, HidePotion)",
-      "description": "the player gives a potion of hiding to the bandit"
+      "description": "the player trades a coin to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -642241,7 +642241,7 @@
       },
       "id": 571,
       "name": "trade(Adventurer, Coin, Bandit, Sword)",
-      "description": "the player gives a sword to the bandit"
+      "description": "the player trades a coin to the bandit for a sword"
     },
     {
       "consenting": [
@@ -642296,7 +642296,7 @@
       },
       "id": 572,
       "name": "trade(Adventurer, Crown, Bandit, Coin)",
-      "description": "the player gives a coin to the bandit"
+      "description": "the player trades the crown to the bandit for a coin"
     },
     {
       "consenting": [
@@ -642351,7 +642351,7 @@
       },
       "id": 573,
       "name": "trade(Adventurer, Crown, Bandit, CursePotion)",
-      "description": "the player gives a potion of cursing to the bandit"
+      "description": "the player trades the crown to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -642406,7 +642406,7 @@
       },
       "id": 574,
       "name": "trade(Adventurer, Crown, Bandit, Flower)",
-      "description": "the player gives a flower to the bandit"
+      "description": "the player trades the crown to the bandit for a flower"
     },
     {
       "consenting": [
@@ -642461,7 +642461,7 @@
       },
       "id": 575,
       "name": "trade(Adventurer, Crown, Bandit, HidePotion)",
-      "description": "the player gives a potion of hiding to the bandit"
+      "description": "the player trades the crown to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -642516,7 +642516,7 @@
       },
       "id": 576,
       "name": "trade(Adventurer, Crown, Bandit, Sword)",
-      "description": "the player gives a sword to the bandit"
+      "description": "the player trades the crown to the bandit for a sword"
     },
     {
       "consenting": [
@@ -642571,7 +642571,7 @@
       },
       "id": 577,
       "name": "trade(Adventurer, CursePotion, Bandit, Coin)",
-      "description": "the player gives a coin to the bandit"
+      "description": "the player trades a potion of cursing to the bandit for a coin"
     },
     {
       "consenting": [
@@ -642626,7 +642626,7 @@
       },
       "id": 578,
       "name": "trade(Adventurer, CursePotion, Bandit, Crown)",
-      "description": "the player gives the crown to the bandit"
+      "description": "the player trades a potion of cursing to the bandit for the crown"
     },
     {
       "consenting": [
@@ -642681,7 +642681,7 @@
       },
       "id": 579,
       "name": "trade(Adventurer, CursePotion, Bandit, Flower)",
-      "description": "the player gives a flower to the bandit"
+      "description": "the player trades a potion of cursing to the bandit for a flower"
     },
     {
       "consenting": [
@@ -642736,7 +642736,7 @@
       },
       "id": 580,
       "name": "trade(Adventurer, CursePotion, Bandit, HidePotion)",
-      "description": "the player gives a potion of hiding to the bandit"
+      "description": "the player trades a potion of cursing to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -642791,7 +642791,7 @@
       },
       "id": 581,
       "name": "trade(Adventurer, CursePotion, Bandit, Sword)",
-      "description": "the player gives a sword to the bandit"
+      "description": "the player trades a potion of cursing to the bandit for a sword"
     },
     {
       "consenting": [
@@ -642846,7 +642846,7 @@
       },
       "id": 582,
       "name": "trade(Adventurer, Flower, Bandit, Coin)",
-      "description": "the player gives a coin to the bandit"
+      "description": "the player trades a flower to the bandit for a coin"
     },
     {
       "consenting": [
@@ -642901,7 +642901,7 @@
       },
       "id": 583,
       "name": "trade(Adventurer, Flower, Bandit, Crown)",
-      "description": "the player gives the crown to the bandit"
+      "description": "the player trades a flower to the bandit for the crown"
     },
     {
       "consenting": [
@@ -642956,7 +642956,7 @@
       },
       "id": 584,
       "name": "trade(Adventurer, Flower, Bandit, CursePotion)",
-      "description": "the player gives a potion of cursing to the bandit"
+      "description": "the player trades a flower to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -643011,7 +643011,7 @@
       },
       "id": 585,
       "name": "trade(Adventurer, Flower, Bandit, HidePotion)",
-      "description": "the player gives a potion of hiding to the bandit"
+      "description": "the player trades a flower to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -643066,7 +643066,7 @@
       },
       "id": 586,
       "name": "trade(Adventurer, Flower, Bandit, Sword)",
-      "description": "the player gives a sword to the bandit"
+      "description": "the player trades a flower to the bandit for a sword"
     },
     {
       "consenting": [
@@ -643121,7 +643121,7 @@
       },
       "id": 587,
       "name": "trade(Adventurer, HidePotion, Bandit, Coin)",
-      "description": "the player gives a coin to the bandit"
+      "description": "the player trades a potion of hiding to the bandit for a coin"
     },
     {
       "consenting": [
@@ -643176,7 +643176,7 @@
       },
       "id": 588,
       "name": "trade(Adventurer, HidePotion, Bandit, Crown)",
-      "description": "the player gives the crown to the bandit"
+      "description": "the player trades a potion of hiding to the bandit for the crown"
     },
     {
       "consenting": [
@@ -643231,7 +643231,7 @@
       },
       "id": 589,
       "name": "trade(Adventurer, HidePotion, Bandit, CursePotion)",
-      "description": "the player gives a potion of cursing to the bandit"
+      "description": "the player trades a potion of hiding to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -643286,7 +643286,7 @@
       },
       "id": 590,
       "name": "trade(Adventurer, HidePotion, Bandit, Flower)",
-      "description": "the player gives a flower to the bandit"
+      "description": "the player trades a potion of hiding to the bandit for a flower"
     },
     {
       "consenting": [
@@ -643341,7 +643341,7 @@
       },
       "id": 591,
       "name": "trade(Adventurer, HidePotion, Bandit, Sword)",
-      "description": "the player gives a sword to the bandit"
+      "description": "the player trades a potion of hiding to the bandit for a sword"
     },
     {
       "consenting": [
@@ -643396,7 +643396,7 @@
       },
       "id": 592,
       "name": "trade(Adventurer, Sword, Bandit, Coin)",
-      "description": "the player gives a coin to the bandit"
+      "description": "the player trades a sword to the bandit for a coin"
     },
     {
       "consenting": [
@@ -643451,7 +643451,7 @@
       },
       "id": 593,
       "name": "trade(Adventurer, Sword, Bandit, Crown)",
-      "description": "the player gives the crown to the bandit"
+      "description": "the player trades a sword to the bandit for the crown"
     },
     {
       "consenting": [
@@ -643506,7 +643506,7 @@
       },
       "id": 594,
       "name": "trade(Adventurer, Sword, Bandit, CursePotion)",
-      "description": "the player gives a potion of cursing to the bandit"
+      "description": "the player trades a sword to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -643561,7 +643561,7 @@
       },
       "id": 595,
       "name": "trade(Adventurer, Sword, Bandit, Flower)",
-      "description": "the player gives a flower to the bandit"
+      "description": "the player trades a sword to the bandit for a flower"
     },
     {
       "consenting": [
@@ -643616,7 +643616,7 @@
       },
       "id": 596,
       "name": "trade(Adventurer, Sword, Bandit, HidePotion)",
-      "description": "the player gives a potion of hiding to the bandit"
+      "description": "the player trades a sword to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -643671,7 +643671,7 @@
       },
       "id": 597,
       "name": "trade(Adventurer, Coin, Guard, Crown)",
-      "description": "the player gives the crown to the guard"
+      "description": "the player trades a coin to the guard for the crown"
     },
     {
       "consenting": [
@@ -643726,7 +643726,7 @@
       },
       "id": 598,
       "name": "trade(Adventurer, Coin, Guard, CursePotion)",
-      "description": "the player gives a potion of cursing to the guard"
+      "description": "the player trades a coin to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -643781,7 +643781,7 @@
       },
       "id": 599,
       "name": "trade(Adventurer, Coin, Guard, Flower)",
-      "description": "the player gives a flower to the guard"
+      "description": "the player trades a coin to the guard for a flower"
     },
     {
       "consenting": [
@@ -643836,7 +643836,7 @@
       },
       "id": 600,
       "name": "trade(Adventurer, Coin, Guard, HidePotion)",
-      "description": "the player gives a potion of hiding to the guard"
+      "description": "the player trades a coin to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -643891,7 +643891,7 @@
       },
       "id": 601,
       "name": "trade(Adventurer, Coin, Guard, Sword)",
-      "description": "the player gives a sword to the guard"
+      "description": "the player trades a coin to the guard for a sword"
     },
     {
       "consenting": [
@@ -643946,7 +643946,7 @@
       },
       "id": 602,
       "name": "trade(Adventurer, Crown, Guard, Coin)",
-      "description": "the player gives a coin to the guard"
+      "description": "the player trades the crown to the guard for a coin"
     },
     {
       "consenting": [
@@ -644001,7 +644001,7 @@
       },
       "id": 603,
       "name": "trade(Adventurer, Crown, Guard, CursePotion)",
-      "description": "the player gives a potion of cursing to the guard"
+      "description": "the player trades the crown to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -644056,7 +644056,7 @@
       },
       "id": 604,
       "name": "trade(Adventurer, Crown, Guard, Flower)",
-      "description": "the player gives a flower to the guard"
+      "description": "the player trades the crown to the guard for a flower"
     },
     {
       "consenting": [
@@ -644111,7 +644111,7 @@
       },
       "id": 605,
       "name": "trade(Adventurer, Crown, Guard, HidePotion)",
-      "description": "the player gives a potion of hiding to the guard"
+      "description": "the player trades the crown to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -644166,7 +644166,7 @@
       },
       "id": 606,
       "name": "trade(Adventurer, Crown, Guard, Sword)",
-      "description": "the player gives a sword to the guard"
+      "description": "the player trades the crown to the guard for a sword"
     },
     {
       "consenting": [
@@ -644221,7 +644221,7 @@
       },
       "id": 607,
       "name": "trade(Adventurer, CursePotion, Guard, Coin)",
-      "description": "the player gives a coin to the guard"
+      "description": "the player trades a potion of cursing to the guard for a coin"
     },
     {
       "consenting": [
@@ -644276,7 +644276,7 @@
       },
       "id": 608,
       "name": "trade(Adventurer, CursePotion, Guard, Crown)",
-      "description": "the player gives the crown to the guard"
+      "description": "the player trades a potion of cursing to the guard for the crown"
     },
     {
       "consenting": [
@@ -644331,7 +644331,7 @@
       },
       "id": 609,
       "name": "trade(Adventurer, CursePotion, Guard, Flower)",
-      "description": "the player gives a flower to the guard"
+      "description": "the player trades a potion of cursing to the guard for a flower"
     },
     {
       "consenting": [
@@ -644386,7 +644386,7 @@
       },
       "id": 610,
       "name": "trade(Adventurer, CursePotion, Guard, HidePotion)",
-      "description": "the player gives a potion of hiding to the guard"
+      "description": "the player trades a potion of cursing to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -644441,7 +644441,7 @@
       },
       "id": 611,
       "name": "trade(Adventurer, CursePotion, Guard, Sword)",
-      "description": "the player gives a sword to the guard"
+      "description": "the player trades a potion of cursing to the guard for a sword"
     },
     {
       "consenting": [
@@ -644496,7 +644496,7 @@
       },
       "id": 612,
       "name": "trade(Adventurer, Flower, Guard, Coin)",
-      "description": "the player gives a coin to the guard"
+      "description": "the player trades a flower to the guard for a coin"
     },
     {
       "consenting": [
@@ -644551,7 +644551,7 @@
       },
       "id": 613,
       "name": "trade(Adventurer, Flower, Guard, Crown)",
-      "description": "the player gives the crown to the guard"
+      "description": "the player trades a flower to the guard for the crown"
     },
     {
       "consenting": [
@@ -644606,7 +644606,7 @@
       },
       "id": 614,
       "name": "trade(Adventurer, Flower, Guard, CursePotion)",
-      "description": "the player gives a potion of cursing to the guard"
+      "description": "the player trades a flower to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -644661,7 +644661,7 @@
       },
       "id": 615,
       "name": "trade(Adventurer, Flower, Guard, HidePotion)",
-      "description": "the player gives a potion of hiding to the guard"
+      "description": "the player trades a flower to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -644716,7 +644716,7 @@
       },
       "id": 616,
       "name": "trade(Adventurer, Flower, Guard, Sword)",
-      "description": "the player gives a sword to the guard"
+      "description": "the player trades a flower to the guard for a sword"
     },
     {
       "consenting": [
@@ -644771,7 +644771,7 @@
       },
       "id": 617,
       "name": "trade(Adventurer, HidePotion, Guard, Coin)",
-      "description": "the player gives a coin to the guard"
+      "description": "the player trades a potion of hiding to the guard for a coin"
     },
     {
       "consenting": [
@@ -644826,7 +644826,7 @@
       },
       "id": 618,
       "name": "trade(Adventurer, HidePotion, Guard, Crown)",
-      "description": "the player gives the crown to the guard"
+      "description": "the player trades a potion of hiding to the guard for the crown"
     },
     {
       "consenting": [
@@ -644881,7 +644881,7 @@
       },
       "id": 619,
       "name": "trade(Adventurer, HidePotion, Guard, CursePotion)",
-      "description": "the player gives a potion of cursing to the guard"
+      "description": "the player trades a potion of hiding to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -644936,7 +644936,7 @@
       },
       "id": 620,
       "name": "trade(Adventurer, HidePotion, Guard, Flower)",
-      "description": "the player gives a flower to the guard"
+      "description": "the player trades a potion of hiding to the guard for a flower"
     },
     {
       "consenting": [
@@ -644991,7 +644991,7 @@
       },
       "id": 621,
       "name": "trade(Adventurer, HidePotion, Guard, Sword)",
-      "description": "the player gives a sword to the guard"
+      "description": "the player trades a potion of hiding to the guard for a sword"
     },
     {
       "consenting": [
@@ -645046,7 +645046,7 @@
       },
       "id": 622,
       "name": "trade(Adventurer, Sword, Guard, Coin)",
-      "description": "the player gives a coin to the guard"
+      "description": "the player trades a sword to the guard for a coin"
     },
     {
       "consenting": [
@@ -645101,7 +645101,7 @@
       },
       "id": 623,
       "name": "trade(Adventurer, Sword, Guard, Crown)",
-      "description": "the player gives the crown to the guard"
+      "description": "the player trades a sword to the guard for the crown"
     },
     {
       "consenting": [
@@ -645156,7 +645156,7 @@
       },
       "id": 624,
       "name": "trade(Adventurer, Sword, Guard, CursePotion)",
-      "description": "the player gives a potion of cursing to the guard"
+      "description": "the player trades a sword to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -645211,7 +645211,7 @@
       },
       "id": 625,
       "name": "trade(Adventurer, Sword, Guard, Flower)",
-      "description": "the player gives a flower to the guard"
+      "description": "the player trades a sword to the guard for a flower"
     },
     {
       "consenting": [
@@ -645266,7 +645266,7 @@
       },
       "id": 626,
       "name": "trade(Adventurer, Sword, Guard, HidePotion)",
-      "description": "the player gives a potion of hiding to the guard"
+      "description": "the player trades a sword to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -645321,7 +645321,7 @@
       },
       "id": 627,
       "name": "trade(Adventurer, Coin, Heir, Crown)",
-      "description": "the player gives the crown to the heir"
+      "description": "the player trades a coin to the heir for the crown"
     },
     {
       "consenting": [
@@ -645376,7 +645376,7 @@
       },
       "id": 628,
       "name": "trade(Adventurer, Coin, Heir, CursePotion)",
-      "description": "the player gives a potion of cursing to the heir"
+      "description": "the player trades a coin to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -645431,7 +645431,7 @@
       },
       "id": 629,
       "name": "trade(Adventurer, Coin, Heir, Flower)",
-      "description": "the player gives a flower to the heir"
+      "description": "the player trades a coin to the heir for a flower"
     },
     {
       "consenting": [
@@ -645486,7 +645486,7 @@
       },
       "id": 630,
       "name": "trade(Adventurer, Coin, Heir, HidePotion)",
-      "description": "the player gives a potion of hiding to the heir"
+      "description": "the player trades a coin to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -645541,7 +645541,7 @@
       },
       "id": 631,
       "name": "trade(Adventurer, Coin, Heir, Sword)",
-      "description": "the player gives a sword to the heir"
+      "description": "the player trades a coin to the heir for a sword"
     },
     {
       "consenting": [
@@ -645596,7 +645596,7 @@
       },
       "id": 632,
       "name": "trade(Adventurer, Crown, Heir, Coin)",
-      "description": "the player gives a coin to the heir"
+      "description": "the player trades the crown to the heir for a coin"
     },
     {
       "consenting": [
@@ -645651,7 +645651,7 @@
       },
       "id": 633,
       "name": "trade(Adventurer, Crown, Heir, CursePotion)",
-      "description": "the player gives a potion of cursing to the heir"
+      "description": "the player trades the crown to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -645706,7 +645706,7 @@
       },
       "id": 634,
       "name": "trade(Adventurer, Crown, Heir, Flower)",
-      "description": "the player gives a flower to the heir"
+      "description": "the player trades the crown to the heir for a flower"
     },
     {
       "consenting": [
@@ -645761,7 +645761,7 @@
       },
       "id": 635,
       "name": "trade(Adventurer, Crown, Heir, HidePotion)",
-      "description": "the player gives a potion of hiding to the heir"
+      "description": "the player trades the crown to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -645816,7 +645816,7 @@
       },
       "id": 636,
       "name": "trade(Adventurer, Crown, Heir, Sword)",
-      "description": "the player gives a sword to the heir"
+      "description": "the player trades the crown to the heir for a sword"
     },
     {
       "consenting": [
@@ -645871,7 +645871,7 @@
       },
       "id": 637,
       "name": "trade(Adventurer, CursePotion, Heir, Coin)",
-      "description": "the player gives a coin to the heir"
+      "description": "the player trades a potion of cursing to the heir for a coin"
     },
     {
       "consenting": [
@@ -645926,7 +645926,7 @@
       },
       "id": 638,
       "name": "trade(Adventurer, CursePotion, Heir, Crown)",
-      "description": "the player gives the crown to the heir"
+      "description": "the player trades a potion of cursing to the heir for the crown"
     },
     {
       "consenting": [
@@ -645981,7 +645981,7 @@
       },
       "id": 639,
       "name": "trade(Adventurer, CursePotion, Heir, Flower)",
-      "description": "the player gives a flower to the heir"
+      "description": "the player trades a potion of cursing to the heir for a flower"
     },
     {
       "consenting": [
@@ -646036,7 +646036,7 @@
       },
       "id": 640,
       "name": "trade(Adventurer, CursePotion, Heir, HidePotion)",
-      "description": "the player gives a potion of hiding to the heir"
+      "description": "the player trades a potion of cursing to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -646091,7 +646091,7 @@
       },
       "id": 641,
       "name": "trade(Adventurer, CursePotion, Heir, Sword)",
-      "description": "the player gives a sword to the heir"
+      "description": "the player trades a potion of cursing to the heir for a sword"
     },
     {
       "consenting": [
@@ -646146,7 +646146,7 @@
       },
       "id": 642,
       "name": "trade(Adventurer, Flower, Heir, Coin)",
-      "description": "the player gives a coin to the heir"
+      "description": "the player trades a flower to the heir for a coin"
     },
     {
       "consenting": [
@@ -646201,7 +646201,7 @@
       },
       "id": 643,
       "name": "trade(Adventurer, Flower, Heir, Crown)",
-      "description": "the player gives the crown to the heir"
+      "description": "the player trades a flower to the heir for the crown"
     },
     {
       "consenting": [
@@ -646256,7 +646256,7 @@
       },
       "id": 644,
       "name": "trade(Adventurer, Flower, Heir, CursePotion)",
-      "description": "the player gives a potion of cursing to the heir"
+      "description": "the player trades a flower to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -646311,7 +646311,7 @@
       },
       "id": 645,
       "name": "trade(Adventurer, Flower, Heir, HidePotion)",
-      "description": "the player gives a potion of hiding to the heir"
+      "description": "the player trades a flower to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -646366,7 +646366,7 @@
       },
       "id": 646,
       "name": "trade(Adventurer, Flower, Heir, Sword)",
-      "description": "the player gives a sword to the heir"
+      "description": "the player trades a flower to the heir for a sword"
     },
     {
       "consenting": [
@@ -646421,7 +646421,7 @@
       },
       "id": 647,
       "name": "trade(Adventurer, HidePotion, Heir, Coin)",
-      "description": "the player gives a coin to the heir"
+      "description": "the player trades a potion of hiding to the heir for a coin"
     },
     {
       "consenting": [
@@ -646476,7 +646476,7 @@
       },
       "id": 648,
       "name": "trade(Adventurer, HidePotion, Heir, Crown)",
-      "description": "the player gives the crown to the heir"
+      "description": "the player trades a potion of hiding to the heir for the crown"
     },
     {
       "consenting": [
@@ -646531,7 +646531,7 @@
       },
       "id": 649,
       "name": "trade(Adventurer, HidePotion, Heir, CursePotion)",
-      "description": "the player gives a potion of cursing to the heir"
+      "description": "the player trades a potion of hiding to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -646586,7 +646586,7 @@
       },
       "id": 650,
       "name": "trade(Adventurer, HidePotion, Heir, Flower)",
-      "description": "the player gives a flower to the heir"
+      "description": "the player trades a potion of hiding to the heir for a flower"
     },
     {
       "consenting": [
@@ -646641,7 +646641,7 @@
       },
       "id": 651,
       "name": "trade(Adventurer, HidePotion, Heir, Sword)",
-      "description": "the player gives a sword to the heir"
+      "description": "the player trades a potion of hiding to the heir for a sword"
     },
     {
       "consenting": [
@@ -646696,7 +646696,7 @@
       },
       "id": 652,
       "name": "trade(Adventurer, Sword, Heir, Coin)",
-      "description": "the player gives a coin to the heir"
+      "description": "the player trades a sword to the heir for a coin"
     },
     {
       "consenting": [
@@ -646751,7 +646751,7 @@
       },
       "id": 653,
       "name": "trade(Adventurer, Sword, Heir, Crown)",
-      "description": "the player gives the crown to the heir"
+      "description": "the player trades a sword to the heir for the crown"
     },
     {
       "consenting": [
@@ -646806,7 +646806,7 @@
       },
       "id": 654,
       "name": "trade(Adventurer, Sword, Heir, CursePotion)",
-      "description": "the player gives a potion of cursing to the heir"
+      "description": "the player trades a sword to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -646861,7 +646861,7 @@
       },
       "id": 655,
       "name": "trade(Adventurer, Sword, Heir, Flower)",
-      "description": "the player gives a flower to the heir"
+      "description": "the player trades a sword to the heir for a flower"
     },
     {
       "consenting": [
@@ -646916,7 +646916,7 @@
       },
       "id": 656,
       "name": "trade(Adventurer, Sword, Heir, HidePotion)",
-      "description": "the player gives a potion of hiding to the heir"
+      "description": "the player trades a sword to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -646971,7 +646971,7 @@
       },
       "id": 657,
       "name": "trade(Alchemist, Coin, Bandit, Crown)",
-      "description": "the alchemist gives the crown to the bandit"
+      "description": "the alchemist trades a coin to the bandit for the crown"
     },
     {
       "consenting": [
@@ -647026,7 +647026,7 @@
       },
       "id": 658,
       "name": "trade(Alchemist, Coin, Bandit, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the bandit"
+      "description": "the alchemist trades a coin to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -647081,7 +647081,7 @@
       },
       "id": 659,
       "name": "trade(Alchemist, Coin, Bandit, Flower)",
-      "description": "the alchemist gives a flower to the bandit"
+      "description": "the alchemist trades a coin to the bandit for a flower"
     },
     {
       "consenting": [
@@ -647136,7 +647136,7 @@
       },
       "id": 660,
       "name": "trade(Alchemist, Coin, Bandit, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the bandit"
+      "description": "the alchemist trades a coin to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -647191,7 +647191,7 @@
       },
       "id": 661,
       "name": "trade(Alchemist, Coin, Bandit, Sword)",
-      "description": "the alchemist gives a sword to the bandit"
+      "description": "the alchemist trades a coin to the bandit for a sword"
     },
     {
       "consenting": [
@@ -647246,7 +647246,7 @@
       },
       "id": 662,
       "name": "trade(Alchemist, Crown, Bandit, Coin)",
-      "description": "the alchemist gives a coin to the bandit"
+      "description": "the alchemist trades the crown to the bandit for a coin"
     },
     {
       "consenting": [
@@ -647301,7 +647301,7 @@
       },
       "id": 663,
       "name": "trade(Alchemist, Crown, Bandit, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the bandit"
+      "description": "the alchemist trades the crown to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -647356,7 +647356,7 @@
       },
       "id": 664,
       "name": "trade(Alchemist, Crown, Bandit, Flower)",
-      "description": "the alchemist gives a flower to the bandit"
+      "description": "the alchemist trades the crown to the bandit for a flower"
     },
     {
       "consenting": [
@@ -647411,7 +647411,7 @@
       },
       "id": 665,
       "name": "trade(Alchemist, Crown, Bandit, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the bandit"
+      "description": "the alchemist trades the crown to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -647466,7 +647466,7 @@
       },
       "id": 666,
       "name": "trade(Alchemist, Crown, Bandit, Sword)",
-      "description": "the alchemist gives a sword to the bandit"
+      "description": "the alchemist trades the crown to the bandit for a sword"
     },
     {
       "consenting": [
@@ -647521,7 +647521,7 @@
       },
       "id": 667,
       "name": "trade(Alchemist, CursePotion, Bandit, Coin)",
-      "description": "the alchemist gives a coin to the bandit"
+      "description": "the alchemist trades a potion of cursing to the bandit for a coin"
     },
     {
       "consenting": [
@@ -647576,7 +647576,7 @@
       },
       "id": 668,
       "name": "trade(Alchemist, CursePotion, Bandit, Crown)",
-      "description": "the alchemist gives the crown to the bandit"
+      "description": "the alchemist trades a potion of cursing to the bandit for the crown"
     },
     {
       "consenting": [
@@ -647631,7 +647631,7 @@
       },
       "id": 669,
       "name": "trade(Alchemist, CursePotion, Bandit, Flower)",
-      "description": "the alchemist gives a flower to the bandit"
+      "description": "the alchemist trades a potion of cursing to the bandit for a flower"
     },
     {
       "consenting": [
@@ -647686,7 +647686,7 @@
       },
       "id": 670,
       "name": "trade(Alchemist, CursePotion, Bandit, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the bandit"
+      "description": "the alchemist trades a potion of cursing to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -647741,7 +647741,7 @@
       },
       "id": 671,
       "name": "trade(Alchemist, CursePotion, Bandit, Sword)",
-      "description": "the alchemist gives a sword to the bandit"
+      "description": "the alchemist trades a potion of cursing to the bandit for a sword"
     },
     {
       "consenting": [
@@ -647796,7 +647796,7 @@
       },
       "id": 672,
       "name": "trade(Alchemist, Flower, Bandit, Coin)",
-      "description": "the alchemist gives a coin to the bandit"
+      "description": "the alchemist trades a flower to the bandit for a coin"
     },
     {
       "consenting": [
@@ -647851,7 +647851,7 @@
       },
       "id": 673,
       "name": "trade(Alchemist, Flower, Bandit, Crown)",
-      "description": "the alchemist gives the crown to the bandit"
+      "description": "the alchemist trades a flower to the bandit for the crown"
     },
     {
       "consenting": [
@@ -647906,7 +647906,7 @@
       },
       "id": 674,
       "name": "trade(Alchemist, Flower, Bandit, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the bandit"
+      "description": "the alchemist trades a flower to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -647961,7 +647961,7 @@
       },
       "id": 675,
       "name": "trade(Alchemist, Flower, Bandit, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the bandit"
+      "description": "the alchemist trades a flower to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -648016,7 +648016,7 @@
       },
       "id": 676,
       "name": "trade(Alchemist, Flower, Bandit, Sword)",
-      "description": "the alchemist gives a sword to the bandit"
+      "description": "the alchemist trades a flower to the bandit for a sword"
     },
     {
       "consenting": [
@@ -648071,7 +648071,7 @@
       },
       "id": 677,
       "name": "trade(Alchemist, HidePotion, Bandit, Coin)",
-      "description": "the alchemist gives a coin to the bandit"
+      "description": "the alchemist trades a potion of hiding to the bandit for a coin"
     },
     {
       "consenting": [
@@ -648126,7 +648126,7 @@
       },
       "id": 678,
       "name": "trade(Alchemist, HidePotion, Bandit, Crown)",
-      "description": "the alchemist gives the crown to the bandit"
+      "description": "the alchemist trades a potion of hiding to the bandit for the crown"
     },
     {
       "consenting": [
@@ -648181,7 +648181,7 @@
       },
       "id": 679,
       "name": "trade(Alchemist, HidePotion, Bandit, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the bandit"
+      "description": "the alchemist trades a potion of hiding to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -648236,7 +648236,7 @@
       },
       "id": 680,
       "name": "trade(Alchemist, HidePotion, Bandit, Flower)",
-      "description": "the alchemist gives a flower to the bandit"
+      "description": "the alchemist trades a potion of hiding to the bandit for a flower"
     },
     {
       "consenting": [
@@ -648291,7 +648291,7 @@
       },
       "id": 681,
       "name": "trade(Alchemist, HidePotion, Bandit, Sword)",
-      "description": "the alchemist gives a sword to the bandit"
+      "description": "the alchemist trades a potion of hiding to the bandit for a sword"
     },
     {
       "consenting": [
@@ -648346,7 +648346,7 @@
       },
       "id": 682,
       "name": "trade(Alchemist, Sword, Bandit, Coin)",
-      "description": "the alchemist gives a coin to the bandit"
+      "description": "the alchemist trades a sword to the bandit for a coin"
     },
     {
       "consenting": [
@@ -648401,7 +648401,7 @@
       },
       "id": 683,
       "name": "trade(Alchemist, Sword, Bandit, Crown)",
-      "description": "the alchemist gives the crown to the bandit"
+      "description": "the alchemist trades a sword to the bandit for the crown"
     },
     {
       "consenting": [
@@ -648456,7 +648456,7 @@
       },
       "id": 684,
       "name": "trade(Alchemist, Sword, Bandit, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the bandit"
+      "description": "the alchemist trades a sword to the bandit for a potion of cursing"
     },
     {
       "consenting": [
@@ -648511,7 +648511,7 @@
       },
       "id": 685,
       "name": "trade(Alchemist, Sword, Bandit, Flower)",
-      "description": "the alchemist gives a flower to the bandit"
+      "description": "the alchemist trades a sword to the bandit for a flower"
     },
     {
       "consenting": [
@@ -648566,7 +648566,7 @@
       },
       "id": 686,
       "name": "trade(Alchemist, Sword, Bandit, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the bandit"
+      "description": "the alchemist trades a sword to the bandit for a potion of hiding"
     },
     {
       "consenting": [
@@ -648621,7 +648621,7 @@
       },
       "id": 687,
       "name": "trade(Alchemist, Coin, Guard, Crown)",
-      "description": "the alchemist gives the crown to the guard"
+      "description": "the alchemist trades a coin to the guard for the crown"
     },
     {
       "consenting": [
@@ -648676,7 +648676,7 @@
       },
       "id": 688,
       "name": "trade(Alchemist, Coin, Guard, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the guard"
+      "description": "the alchemist trades a coin to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -648731,7 +648731,7 @@
       },
       "id": 689,
       "name": "trade(Alchemist, Coin, Guard, Flower)",
-      "description": "the alchemist gives a flower to the guard"
+      "description": "the alchemist trades a coin to the guard for a flower"
     },
     {
       "consenting": [
@@ -648786,7 +648786,7 @@
       },
       "id": 690,
       "name": "trade(Alchemist, Coin, Guard, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the guard"
+      "description": "the alchemist trades a coin to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -648841,7 +648841,7 @@
       },
       "id": 691,
       "name": "trade(Alchemist, Coin, Guard, Sword)",
-      "description": "the alchemist gives a sword to the guard"
+      "description": "the alchemist trades a coin to the guard for a sword"
     },
     {
       "consenting": [
@@ -648896,7 +648896,7 @@
       },
       "id": 692,
       "name": "trade(Alchemist, Crown, Guard, Coin)",
-      "description": "the alchemist gives a coin to the guard"
+      "description": "the alchemist trades the crown to the guard for a coin"
     },
     {
       "consenting": [
@@ -648951,7 +648951,7 @@
       },
       "id": 693,
       "name": "trade(Alchemist, Crown, Guard, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the guard"
+      "description": "the alchemist trades the crown to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -649006,7 +649006,7 @@
       },
       "id": 694,
       "name": "trade(Alchemist, Crown, Guard, Flower)",
-      "description": "the alchemist gives a flower to the guard"
+      "description": "the alchemist trades the crown to the guard for a flower"
     },
     {
       "consenting": [
@@ -649061,7 +649061,7 @@
       },
       "id": 695,
       "name": "trade(Alchemist, Crown, Guard, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the guard"
+      "description": "the alchemist trades the crown to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -649116,7 +649116,7 @@
       },
       "id": 696,
       "name": "trade(Alchemist, Crown, Guard, Sword)",
-      "description": "the alchemist gives a sword to the guard"
+      "description": "the alchemist trades the crown to the guard for a sword"
     },
     {
       "consenting": [
@@ -649171,7 +649171,7 @@
       },
       "id": 697,
       "name": "trade(Alchemist, CursePotion, Guard, Coin)",
-      "description": "the alchemist gives a coin to the guard"
+      "description": "the alchemist trades a potion of cursing to the guard for a coin"
     },
     {
       "consenting": [
@@ -649226,7 +649226,7 @@
       },
       "id": 698,
       "name": "trade(Alchemist, CursePotion, Guard, Crown)",
-      "description": "the alchemist gives the crown to the guard"
+      "description": "the alchemist trades a potion of cursing to the guard for the crown"
     },
     {
       "consenting": [
@@ -649281,7 +649281,7 @@
       },
       "id": 699,
       "name": "trade(Alchemist, CursePotion, Guard, Flower)",
-      "description": "the alchemist gives a flower to the guard"
+      "description": "the alchemist trades a potion of cursing to the guard for a flower"
     },
     {
       "consenting": [
@@ -649336,7 +649336,7 @@
       },
       "id": 700,
       "name": "trade(Alchemist, CursePotion, Guard, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the guard"
+      "description": "the alchemist trades a potion of cursing to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -649391,7 +649391,7 @@
       },
       "id": 701,
       "name": "trade(Alchemist, CursePotion, Guard, Sword)",
-      "description": "the alchemist gives a sword to the guard"
+      "description": "the alchemist trades a potion of cursing to the guard for a sword"
     },
     {
       "consenting": [
@@ -649446,7 +649446,7 @@
       },
       "id": 702,
       "name": "trade(Alchemist, Flower, Guard, Coin)",
-      "description": "the alchemist gives a coin to the guard"
+      "description": "the alchemist trades a flower to the guard for a coin"
     },
     {
       "consenting": [
@@ -649501,7 +649501,7 @@
       },
       "id": 703,
       "name": "trade(Alchemist, Flower, Guard, Crown)",
-      "description": "the alchemist gives the crown to the guard"
+      "description": "the alchemist trades a flower to the guard for the crown"
     },
     {
       "consenting": [
@@ -649556,7 +649556,7 @@
       },
       "id": 704,
       "name": "trade(Alchemist, Flower, Guard, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the guard"
+      "description": "the alchemist trades a flower to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -649611,7 +649611,7 @@
       },
       "id": 705,
       "name": "trade(Alchemist, Flower, Guard, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the guard"
+      "description": "the alchemist trades a flower to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -649666,7 +649666,7 @@
       },
       "id": 706,
       "name": "trade(Alchemist, Flower, Guard, Sword)",
-      "description": "the alchemist gives a sword to the guard"
+      "description": "the alchemist trades a flower to the guard for a sword"
     },
     {
       "consenting": [
@@ -649721,7 +649721,7 @@
       },
       "id": 707,
       "name": "trade(Alchemist, HidePotion, Guard, Coin)",
-      "description": "the alchemist gives a coin to the guard"
+      "description": "the alchemist trades a potion of hiding to the guard for a coin"
     },
     {
       "consenting": [
@@ -649776,7 +649776,7 @@
       },
       "id": 708,
       "name": "trade(Alchemist, HidePotion, Guard, Crown)",
-      "description": "the alchemist gives the crown to the guard"
+      "description": "the alchemist trades a potion of hiding to the guard for the crown"
     },
     {
       "consenting": [
@@ -649831,7 +649831,7 @@
       },
       "id": 709,
       "name": "trade(Alchemist, HidePotion, Guard, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the guard"
+      "description": "the alchemist trades a potion of hiding to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -649886,7 +649886,7 @@
       },
       "id": 710,
       "name": "trade(Alchemist, HidePotion, Guard, Flower)",
-      "description": "the alchemist gives a flower to the guard"
+      "description": "the alchemist trades a potion of hiding to the guard for a flower"
     },
     {
       "consenting": [
@@ -649941,7 +649941,7 @@
       },
       "id": 711,
       "name": "trade(Alchemist, HidePotion, Guard, Sword)",
-      "description": "the alchemist gives a sword to the guard"
+      "description": "the alchemist trades a potion of hiding to the guard for a sword"
     },
     {
       "consenting": [
@@ -649996,7 +649996,7 @@
       },
       "id": 712,
       "name": "trade(Alchemist, Sword, Guard, Coin)",
-      "description": "the alchemist gives a coin to the guard"
+      "description": "the alchemist trades a sword to the guard for a coin"
     },
     {
       "consenting": [
@@ -650051,7 +650051,7 @@
       },
       "id": 713,
       "name": "trade(Alchemist, Sword, Guard, Crown)",
-      "description": "the alchemist gives the crown to the guard"
+      "description": "the alchemist trades a sword to the guard for the crown"
     },
     {
       "consenting": [
@@ -650106,7 +650106,7 @@
       },
       "id": 714,
       "name": "trade(Alchemist, Sword, Guard, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the guard"
+      "description": "the alchemist trades a sword to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -650161,7 +650161,7 @@
       },
       "id": 715,
       "name": "trade(Alchemist, Sword, Guard, Flower)",
-      "description": "the alchemist gives a flower to the guard"
+      "description": "the alchemist trades a sword to the guard for a flower"
     },
     {
       "consenting": [
@@ -650216,7 +650216,7 @@
       },
       "id": 716,
       "name": "trade(Alchemist, Sword, Guard, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the guard"
+      "description": "the alchemist trades a sword to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -650271,7 +650271,7 @@
       },
       "id": 717,
       "name": "trade(Alchemist, Coin, Heir, Crown)",
-      "description": "the alchemist gives the crown to the heir"
+      "description": "the alchemist trades a coin to the heir for the crown"
     },
     {
       "consenting": [
@@ -650326,7 +650326,7 @@
       },
       "id": 718,
       "name": "trade(Alchemist, Coin, Heir, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the heir"
+      "description": "the alchemist trades a coin to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -650381,7 +650381,7 @@
       },
       "id": 719,
       "name": "trade(Alchemist, Coin, Heir, Flower)",
-      "description": "the alchemist gives a flower to the heir"
+      "description": "the alchemist trades a coin to the heir for a flower"
     },
     {
       "consenting": [
@@ -650436,7 +650436,7 @@
       },
       "id": 720,
       "name": "trade(Alchemist, Coin, Heir, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the heir"
+      "description": "the alchemist trades a coin to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -650491,7 +650491,7 @@
       },
       "id": 721,
       "name": "trade(Alchemist, Coin, Heir, Sword)",
-      "description": "the alchemist gives a sword to the heir"
+      "description": "the alchemist trades a coin to the heir for a sword"
     },
     {
       "consenting": [
@@ -650546,7 +650546,7 @@
       },
       "id": 722,
       "name": "trade(Alchemist, Crown, Heir, Coin)",
-      "description": "the alchemist gives a coin to the heir"
+      "description": "the alchemist trades the crown to the heir for a coin"
     },
     {
       "consenting": [
@@ -650601,7 +650601,7 @@
       },
       "id": 723,
       "name": "trade(Alchemist, Crown, Heir, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the heir"
+      "description": "the alchemist trades the crown to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -650656,7 +650656,7 @@
       },
       "id": 724,
       "name": "trade(Alchemist, Crown, Heir, Flower)",
-      "description": "the alchemist gives a flower to the heir"
+      "description": "the alchemist trades the crown to the heir for a flower"
     },
     {
       "consenting": [
@@ -650711,7 +650711,7 @@
       },
       "id": 725,
       "name": "trade(Alchemist, Crown, Heir, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the heir"
+      "description": "the alchemist trades the crown to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -650766,7 +650766,7 @@
       },
       "id": 726,
       "name": "trade(Alchemist, Crown, Heir, Sword)",
-      "description": "the alchemist gives a sword to the heir"
+      "description": "the alchemist trades the crown to the heir for a sword"
     },
     {
       "consenting": [
@@ -650821,7 +650821,7 @@
       },
       "id": 727,
       "name": "trade(Alchemist, CursePotion, Heir, Coin)",
-      "description": "the alchemist gives a coin to the heir"
+      "description": "the alchemist trades a potion of cursing to the heir for a coin"
     },
     {
       "consenting": [
@@ -650876,7 +650876,7 @@
       },
       "id": 728,
       "name": "trade(Alchemist, CursePotion, Heir, Crown)",
-      "description": "the alchemist gives the crown to the heir"
+      "description": "the alchemist trades a potion of cursing to the heir for the crown"
     },
     {
       "consenting": [
@@ -650931,7 +650931,7 @@
       },
       "id": 729,
       "name": "trade(Alchemist, CursePotion, Heir, Flower)",
-      "description": "the alchemist gives a flower to the heir"
+      "description": "the alchemist trades a potion of cursing to the heir for a flower"
     },
     {
       "consenting": [
@@ -650986,7 +650986,7 @@
       },
       "id": 730,
       "name": "trade(Alchemist, CursePotion, Heir, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the heir"
+      "description": "the alchemist trades a potion of cursing to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -651041,7 +651041,7 @@
       },
       "id": 731,
       "name": "trade(Alchemist, CursePotion, Heir, Sword)",
-      "description": "the alchemist gives a sword to the heir"
+      "description": "the alchemist trades a potion of cursing to the heir for a sword"
     },
     {
       "consenting": [
@@ -651096,7 +651096,7 @@
       },
       "id": 732,
       "name": "trade(Alchemist, Flower, Heir, Coin)",
-      "description": "the alchemist gives a coin to the heir"
+      "description": "the alchemist trades a flower to the heir for a coin"
     },
     {
       "consenting": [
@@ -651151,7 +651151,7 @@
       },
       "id": 733,
       "name": "trade(Alchemist, Flower, Heir, Crown)",
-      "description": "the alchemist gives the crown to the heir"
+      "description": "the alchemist trades a flower to the heir for the crown"
     },
     {
       "consenting": [
@@ -651206,7 +651206,7 @@
       },
       "id": 734,
       "name": "trade(Alchemist, Flower, Heir, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the heir"
+      "description": "the alchemist trades a flower to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -651261,7 +651261,7 @@
       },
       "id": 735,
       "name": "trade(Alchemist, Flower, Heir, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the heir"
+      "description": "the alchemist trades a flower to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -651316,7 +651316,7 @@
       },
       "id": 736,
       "name": "trade(Alchemist, Flower, Heir, Sword)",
-      "description": "the alchemist gives a sword to the heir"
+      "description": "the alchemist trades a flower to the heir for a sword"
     },
     {
       "consenting": [
@@ -651371,7 +651371,7 @@
       },
       "id": 737,
       "name": "trade(Alchemist, HidePotion, Heir, Coin)",
-      "description": "the alchemist gives a coin to the heir"
+      "description": "the alchemist trades a potion of hiding to the heir for a coin"
     },
     {
       "consenting": [
@@ -651426,7 +651426,7 @@
       },
       "id": 738,
       "name": "trade(Alchemist, HidePotion, Heir, Crown)",
-      "description": "the alchemist gives the crown to the heir"
+      "description": "the alchemist trades a potion of hiding to the heir for the crown"
     },
     {
       "consenting": [
@@ -651481,7 +651481,7 @@
       },
       "id": 739,
       "name": "trade(Alchemist, HidePotion, Heir, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the heir"
+      "description": "the alchemist trades a potion of hiding to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -651536,7 +651536,7 @@
       },
       "id": 740,
       "name": "trade(Alchemist, HidePotion, Heir, Flower)",
-      "description": "the alchemist gives a flower to the heir"
+      "description": "the alchemist trades a potion of hiding to the heir for a flower"
     },
     {
       "consenting": [
@@ -651591,7 +651591,7 @@
       },
       "id": 741,
       "name": "trade(Alchemist, HidePotion, Heir, Sword)",
-      "description": "the alchemist gives a sword to the heir"
+      "description": "the alchemist trades a potion of hiding to the heir for a sword"
     },
     {
       "consenting": [
@@ -651646,7 +651646,7 @@
       },
       "id": 742,
       "name": "trade(Alchemist, Sword, Heir, Coin)",
-      "description": "the alchemist gives a coin to the heir"
+      "description": "the alchemist trades a sword to the heir for a coin"
     },
     {
       "consenting": [
@@ -651701,7 +651701,7 @@
       },
       "id": 743,
       "name": "trade(Alchemist, Sword, Heir, Crown)",
-      "description": "the alchemist gives the crown to the heir"
+      "description": "the alchemist trades a sword to the heir for the crown"
     },
     {
       "consenting": [
@@ -651756,7 +651756,7 @@
       },
       "id": 744,
       "name": "trade(Alchemist, Sword, Heir, CursePotion)",
-      "description": "the alchemist gives a potion of cursing to the heir"
+      "description": "the alchemist trades a sword to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -651811,7 +651811,7 @@
       },
       "id": 745,
       "name": "trade(Alchemist, Sword, Heir, Flower)",
-      "description": "the alchemist gives a flower to the heir"
+      "description": "the alchemist trades a sword to the heir for a flower"
     },
     {
       "consenting": [
@@ -651866,7 +651866,7 @@
       },
       "id": 746,
       "name": "trade(Alchemist, Sword, Heir, HidePotion)",
-      "description": "the alchemist gives a potion of hiding to the heir"
+      "description": "the alchemist trades a sword to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -651921,7 +651921,7 @@
       },
       "id": 747,
       "name": "trade(Bandit, Coin, Guard, Crown)",
-      "description": "the bandit gives the crown to the guard"
+      "description": "the bandit trades a coin to the guard for the crown"
     },
     {
       "consenting": [
@@ -651976,7 +651976,7 @@
       },
       "id": 748,
       "name": "trade(Bandit, Coin, Guard, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the guard"
+      "description": "the bandit trades a coin to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -652031,7 +652031,7 @@
       },
       "id": 749,
       "name": "trade(Bandit, Coin, Guard, Flower)",
-      "description": "the bandit gives a flower to the guard"
+      "description": "the bandit trades a coin to the guard for a flower"
     },
     {
       "consenting": [
@@ -652086,7 +652086,7 @@
       },
       "id": 750,
       "name": "trade(Bandit, Coin, Guard, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the guard"
+      "description": "the bandit trades a coin to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -652141,7 +652141,7 @@
       },
       "id": 751,
       "name": "trade(Bandit, Coin, Guard, Sword)",
-      "description": "the bandit gives a sword to the guard"
+      "description": "the bandit trades a coin to the guard for a sword"
     },
     {
       "consenting": [
@@ -652196,7 +652196,7 @@
       },
       "id": 752,
       "name": "trade(Bandit, Crown, Guard, Coin)",
-      "description": "the bandit gives a coin to the guard"
+      "description": "the bandit trades the crown to the guard for a coin"
     },
     {
       "consenting": [
@@ -652251,7 +652251,7 @@
       },
       "id": 753,
       "name": "trade(Bandit, Crown, Guard, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the guard"
+      "description": "the bandit trades the crown to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -652306,7 +652306,7 @@
       },
       "id": 754,
       "name": "trade(Bandit, Crown, Guard, Flower)",
-      "description": "the bandit gives a flower to the guard"
+      "description": "the bandit trades the crown to the guard for a flower"
     },
     {
       "consenting": [
@@ -652361,7 +652361,7 @@
       },
       "id": 755,
       "name": "trade(Bandit, Crown, Guard, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the guard"
+      "description": "the bandit trades the crown to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -652416,7 +652416,7 @@
       },
       "id": 756,
       "name": "trade(Bandit, Crown, Guard, Sword)",
-      "description": "the bandit gives a sword to the guard"
+      "description": "the bandit trades the crown to the guard for a sword"
     },
     {
       "consenting": [
@@ -652471,7 +652471,7 @@
       },
       "id": 757,
       "name": "trade(Bandit, CursePotion, Guard, Coin)",
-      "description": "the bandit gives a coin to the guard"
+      "description": "the bandit trades a potion of cursing to the guard for a coin"
     },
     {
       "consenting": [
@@ -652526,7 +652526,7 @@
       },
       "id": 758,
       "name": "trade(Bandit, CursePotion, Guard, Crown)",
-      "description": "the bandit gives the crown to the guard"
+      "description": "the bandit trades a potion of cursing to the guard for the crown"
     },
     {
       "consenting": [
@@ -652581,7 +652581,7 @@
       },
       "id": 759,
       "name": "trade(Bandit, CursePotion, Guard, Flower)",
-      "description": "the bandit gives a flower to the guard"
+      "description": "the bandit trades a potion of cursing to the guard for a flower"
     },
     {
       "consenting": [
@@ -652636,7 +652636,7 @@
       },
       "id": 760,
       "name": "trade(Bandit, CursePotion, Guard, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the guard"
+      "description": "the bandit trades a potion of cursing to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -652691,7 +652691,7 @@
       },
       "id": 761,
       "name": "trade(Bandit, CursePotion, Guard, Sword)",
-      "description": "the bandit gives a sword to the guard"
+      "description": "the bandit trades a potion of cursing to the guard for a sword"
     },
     {
       "consenting": [
@@ -652746,7 +652746,7 @@
       },
       "id": 762,
       "name": "trade(Bandit, Flower, Guard, Coin)",
-      "description": "the bandit gives a coin to the guard"
+      "description": "the bandit trades a flower to the guard for a coin"
     },
     {
       "consenting": [
@@ -652801,7 +652801,7 @@
       },
       "id": 763,
       "name": "trade(Bandit, Flower, Guard, Crown)",
-      "description": "the bandit gives the crown to the guard"
+      "description": "the bandit trades a flower to the guard for the crown"
     },
     {
       "consenting": [
@@ -652856,7 +652856,7 @@
       },
       "id": 764,
       "name": "trade(Bandit, Flower, Guard, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the guard"
+      "description": "the bandit trades a flower to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -652911,7 +652911,7 @@
       },
       "id": 765,
       "name": "trade(Bandit, Flower, Guard, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the guard"
+      "description": "the bandit trades a flower to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -652966,7 +652966,7 @@
       },
       "id": 766,
       "name": "trade(Bandit, Flower, Guard, Sword)",
-      "description": "the bandit gives a sword to the guard"
+      "description": "the bandit trades a flower to the guard for a sword"
     },
     {
       "consenting": [
@@ -653021,7 +653021,7 @@
       },
       "id": 767,
       "name": "trade(Bandit, HidePotion, Guard, Coin)",
-      "description": "the bandit gives a coin to the guard"
+      "description": "the bandit trades a potion of hiding to the guard for a coin"
     },
     {
       "consenting": [
@@ -653076,7 +653076,7 @@
       },
       "id": 768,
       "name": "trade(Bandit, HidePotion, Guard, Crown)",
-      "description": "the bandit gives the crown to the guard"
+      "description": "the bandit trades a potion of hiding to the guard for the crown"
     },
     {
       "consenting": [
@@ -653131,7 +653131,7 @@
       },
       "id": 769,
       "name": "trade(Bandit, HidePotion, Guard, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the guard"
+      "description": "the bandit trades a potion of hiding to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -653186,7 +653186,7 @@
       },
       "id": 770,
       "name": "trade(Bandit, HidePotion, Guard, Flower)",
-      "description": "the bandit gives a flower to the guard"
+      "description": "the bandit trades a potion of hiding to the guard for a flower"
     },
     {
       "consenting": [
@@ -653241,7 +653241,7 @@
       },
       "id": 771,
       "name": "trade(Bandit, HidePotion, Guard, Sword)",
-      "description": "the bandit gives a sword to the guard"
+      "description": "the bandit trades a potion of hiding to the guard for a sword"
     },
     {
       "consenting": [
@@ -653296,7 +653296,7 @@
       },
       "id": 772,
       "name": "trade(Bandit, Sword, Guard, Coin)",
-      "description": "the bandit gives a coin to the guard"
+      "description": "the bandit trades a sword to the guard for a coin"
     },
     {
       "consenting": [
@@ -653351,7 +653351,7 @@
       },
       "id": 773,
       "name": "trade(Bandit, Sword, Guard, Crown)",
-      "description": "the bandit gives the crown to the guard"
+      "description": "the bandit trades a sword to the guard for the crown"
     },
     {
       "consenting": [
@@ -653406,7 +653406,7 @@
       },
       "id": 774,
       "name": "trade(Bandit, Sword, Guard, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the guard"
+      "description": "the bandit trades a sword to the guard for a potion of cursing"
     },
     {
       "consenting": [
@@ -653461,7 +653461,7 @@
       },
       "id": 775,
       "name": "trade(Bandit, Sword, Guard, Flower)",
-      "description": "the bandit gives a flower to the guard"
+      "description": "the bandit trades a sword to the guard for a flower"
     },
     {
       "consenting": [
@@ -653516,7 +653516,7 @@
       },
       "id": 776,
       "name": "trade(Bandit, Sword, Guard, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the guard"
+      "description": "the bandit trades a sword to the guard for a potion of hiding"
     },
     {
       "consenting": [
@@ -653571,7 +653571,7 @@
       },
       "id": 777,
       "name": "trade(Bandit, Coin, Heir, Crown)",
-      "description": "the bandit gives the crown to the heir"
+      "description": "the bandit trades a coin to the heir for the crown"
     },
     {
       "consenting": [
@@ -653626,7 +653626,7 @@
       },
       "id": 778,
       "name": "trade(Bandit, Coin, Heir, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the heir"
+      "description": "the bandit trades a coin to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -653681,7 +653681,7 @@
       },
       "id": 779,
       "name": "trade(Bandit, Coin, Heir, Flower)",
-      "description": "the bandit gives a flower to the heir"
+      "description": "the bandit trades a coin to the heir for a flower"
     },
     {
       "consenting": [
@@ -653736,7 +653736,7 @@
       },
       "id": 780,
       "name": "trade(Bandit, Coin, Heir, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the heir"
+      "description": "the bandit trades a coin to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -653791,7 +653791,7 @@
       },
       "id": 781,
       "name": "trade(Bandit, Coin, Heir, Sword)",
-      "description": "the bandit gives a sword to the heir"
+      "description": "the bandit trades a coin to the heir for a sword"
     },
     {
       "consenting": [
@@ -653846,7 +653846,7 @@
       },
       "id": 782,
       "name": "trade(Bandit, Crown, Heir, Coin)",
-      "description": "the bandit gives a coin to the heir"
+      "description": "the bandit trades the crown to the heir for a coin"
     },
     {
       "consenting": [
@@ -653901,7 +653901,7 @@
       },
       "id": 783,
       "name": "trade(Bandit, Crown, Heir, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the heir"
+      "description": "the bandit trades the crown to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -653956,7 +653956,7 @@
       },
       "id": 784,
       "name": "trade(Bandit, Crown, Heir, Flower)",
-      "description": "the bandit gives a flower to the heir"
+      "description": "the bandit trades the crown to the heir for a flower"
     },
     {
       "consenting": [
@@ -654011,7 +654011,7 @@
       },
       "id": 785,
       "name": "trade(Bandit, Crown, Heir, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the heir"
+      "description": "the bandit trades the crown to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -654066,7 +654066,7 @@
       },
       "id": 786,
       "name": "trade(Bandit, Crown, Heir, Sword)",
-      "description": "the bandit gives a sword to the heir"
+      "description": "the bandit trades the crown to the heir for a sword"
     },
     {
       "consenting": [
@@ -654121,7 +654121,7 @@
       },
       "id": 787,
       "name": "trade(Bandit, CursePotion, Heir, Coin)",
-      "description": "the bandit gives a coin to the heir"
+      "description": "the bandit trades a potion of cursing to the heir for a coin"
     },
     {
       "consenting": [
@@ -654176,7 +654176,7 @@
       },
       "id": 788,
       "name": "trade(Bandit, CursePotion, Heir, Crown)",
-      "description": "the bandit gives the crown to the heir"
+      "description": "the bandit trades a potion of cursing to the heir for the crown"
     },
     {
       "consenting": [
@@ -654231,7 +654231,7 @@
       },
       "id": 789,
       "name": "trade(Bandit, CursePotion, Heir, Flower)",
-      "description": "the bandit gives a flower to the heir"
+      "description": "the bandit trades a potion of cursing to the heir for a flower"
     },
     {
       "consenting": [
@@ -654286,7 +654286,7 @@
       },
       "id": 790,
       "name": "trade(Bandit, CursePotion, Heir, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the heir"
+      "description": "the bandit trades a potion of cursing to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -654341,7 +654341,7 @@
       },
       "id": 791,
       "name": "trade(Bandit, CursePotion, Heir, Sword)",
-      "description": "the bandit gives a sword to the heir"
+      "description": "the bandit trades a potion of cursing to the heir for a sword"
     },
     {
       "consenting": [
@@ -654396,7 +654396,7 @@
       },
       "id": 792,
       "name": "trade(Bandit, Flower, Heir, Coin)",
-      "description": "the bandit gives a coin to the heir"
+      "description": "the bandit trades a flower to the heir for a coin"
     },
     {
       "consenting": [
@@ -654451,7 +654451,7 @@
       },
       "id": 793,
       "name": "trade(Bandit, Flower, Heir, Crown)",
-      "description": "the bandit gives the crown to the heir"
+      "description": "the bandit trades a flower to the heir for the crown"
     },
     {
       "consenting": [
@@ -654506,7 +654506,7 @@
       },
       "id": 794,
       "name": "trade(Bandit, Flower, Heir, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the heir"
+      "description": "the bandit trades a flower to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -654561,7 +654561,7 @@
       },
       "id": 795,
       "name": "trade(Bandit, Flower, Heir, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the heir"
+      "description": "the bandit trades a flower to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -654616,7 +654616,7 @@
       },
       "id": 796,
       "name": "trade(Bandit, Flower, Heir, Sword)",
-      "description": "the bandit gives a sword to the heir"
+      "description": "the bandit trades a flower to the heir for a sword"
     },
     {
       "consenting": [
@@ -654671,7 +654671,7 @@
       },
       "id": 797,
       "name": "trade(Bandit, HidePotion, Heir, Coin)",
-      "description": "the bandit gives a coin to the heir"
+      "description": "the bandit trades a potion of hiding to the heir for a coin"
     },
     {
       "consenting": [
@@ -654726,7 +654726,7 @@
       },
       "id": 798,
       "name": "trade(Bandit, HidePotion, Heir, Crown)",
-      "description": "the bandit gives the crown to the heir"
+      "description": "the bandit trades a potion of hiding to the heir for the crown"
     },
     {
       "consenting": [
@@ -654781,7 +654781,7 @@
       },
       "id": 799,
       "name": "trade(Bandit, HidePotion, Heir, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the heir"
+      "description": "the bandit trades a potion of hiding to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -654836,7 +654836,7 @@
       },
       "id": 800,
       "name": "trade(Bandit, HidePotion, Heir, Flower)",
-      "description": "the bandit gives a flower to the heir"
+      "description": "the bandit trades a potion of hiding to the heir for a flower"
     },
     {
       "consenting": [
@@ -654891,7 +654891,7 @@
       },
       "id": 801,
       "name": "trade(Bandit, HidePotion, Heir, Sword)",
-      "description": "the bandit gives a sword to the heir"
+      "description": "the bandit trades a potion of hiding to the heir for a sword"
     },
     {
       "consenting": [
@@ -654946,7 +654946,7 @@
       },
       "id": 802,
       "name": "trade(Bandit, Sword, Heir, Coin)",
-      "description": "the bandit gives a coin to the heir"
+      "description": "the bandit trades a sword to the heir for a coin"
     },
     {
       "consenting": [
@@ -655001,7 +655001,7 @@
       },
       "id": 803,
       "name": "trade(Bandit, Sword, Heir, Crown)",
-      "description": "the bandit gives the crown to the heir"
+      "description": "the bandit trades a sword to the heir for the crown"
     },
     {
       "consenting": [
@@ -655056,7 +655056,7 @@
       },
       "id": 804,
       "name": "trade(Bandit, Sword, Heir, CursePotion)",
-      "description": "the bandit gives a potion of cursing to the heir"
+      "description": "the bandit trades a sword to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -655111,7 +655111,7 @@
       },
       "id": 805,
       "name": "trade(Bandit, Sword, Heir, Flower)",
-      "description": "the bandit gives a flower to the heir"
+      "description": "the bandit trades a sword to the heir for a flower"
     },
     {
       "consenting": [
@@ -655166,7 +655166,7 @@
       },
       "id": 806,
       "name": "trade(Bandit, Sword, Heir, HidePotion)",
-      "description": "the bandit gives a potion of hiding to the heir"
+      "description": "the bandit trades a sword to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -655221,7 +655221,7 @@
       },
       "id": 807,
       "name": "trade(Guard, Coin, Heir, Crown)",
-      "description": "the guard gives the crown to the heir"
+      "description": "the guard trades a coin to the heir for the crown"
     },
     {
       "consenting": [
@@ -655276,7 +655276,7 @@
       },
       "id": 808,
       "name": "trade(Guard, Coin, Heir, CursePotion)",
-      "description": "the guard gives a potion of cursing to the heir"
+      "description": "the guard trades a coin to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -655331,7 +655331,7 @@
       },
       "id": 809,
       "name": "trade(Guard, Coin, Heir, Flower)",
-      "description": "the guard gives a flower to the heir"
+      "description": "the guard trades a coin to the heir for a flower"
     },
     {
       "consenting": [
@@ -655386,7 +655386,7 @@
       },
       "id": 810,
       "name": "trade(Guard, Coin, Heir, HidePotion)",
-      "description": "the guard gives a potion of hiding to the heir"
+      "description": "the guard trades a coin to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -655441,7 +655441,7 @@
       },
       "id": 811,
       "name": "trade(Guard, Coin, Heir, Sword)",
-      "description": "the guard gives a sword to the heir"
+      "description": "the guard trades a coin to the heir for a sword"
     },
     {
       "consenting": [
@@ -655496,7 +655496,7 @@
       },
       "id": 812,
       "name": "trade(Guard, Crown, Heir, Coin)",
-      "description": "the guard gives a coin to the heir"
+      "description": "the guard trades the crown to the heir for a coin"
     },
     {
       "consenting": [
@@ -655551,7 +655551,7 @@
       },
       "id": 813,
       "name": "trade(Guard, Crown, Heir, CursePotion)",
-      "description": "the guard gives a potion of cursing to the heir"
+      "description": "the guard trades the crown to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -655606,7 +655606,7 @@
       },
       "id": 814,
       "name": "trade(Guard, Crown, Heir, Flower)",
-      "description": "the guard gives a flower to the heir"
+      "description": "the guard trades the crown to the heir for a flower"
     },
     {
       "consenting": [
@@ -655661,7 +655661,7 @@
       },
       "id": 815,
       "name": "trade(Guard, Crown, Heir, HidePotion)",
-      "description": "the guard gives a potion of hiding to the heir"
+      "description": "the guard trades the crown to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -655716,7 +655716,7 @@
       },
       "id": 816,
       "name": "trade(Guard, Crown, Heir, Sword)",
-      "description": "the guard gives a sword to the heir"
+      "description": "the guard trades the crown to the heir for a sword"
     },
     {
       "consenting": [
@@ -655771,7 +655771,7 @@
       },
       "id": 817,
       "name": "trade(Guard, CursePotion, Heir, Coin)",
-      "description": "the guard gives a coin to the heir"
+      "description": "the guard trades a potion of cursing to the heir for a coin"
     },
     {
       "consenting": [
@@ -655826,7 +655826,7 @@
       },
       "id": 818,
       "name": "trade(Guard, CursePotion, Heir, Crown)",
-      "description": "the guard gives the crown to the heir"
+      "description": "the guard trades a potion of cursing to the heir for the crown"
     },
     {
       "consenting": [
@@ -655881,7 +655881,7 @@
       },
       "id": 819,
       "name": "trade(Guard, CursePotion, Heir, Flower)",
-      "description": "the guard gives a flower to the heir"
+      "description": "the guard trades a potion of cursing to the heir for a flower"
     },
     {
       "consenting": [
@@ -655936,7 +655936,7 @@
       },
       "id": 820,
       "name": "trade(Guard, CursePotion, Heir, HidePotion)",
-      "description": "the guard gives a potion of hiding to the heir"
+      "description": "the guard trades a potion of cursing to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -655991,7 +655991,7 @@
       },
       "id": 821,
       "name": "trade(Guard, CursePotion, Heir, Sword)",
-      "description": "the guard gives a sword to the heir"
+      "description": "the guard trades a potion of cursing to the heir for a sword"
     },
     {
       "consenting": [
@@ -656046,7 +656046,7 @@
       },
       "id": 822,
       "name": "trade(Guard, Flower, Heir, Coin)",
-      "description": "the guard gives a coin to the heir"
+      "description": "the guard trades a flower to the heir for a coin"
     },
     {
       "consenting": [
@@ -656101,7 +656101,7 @@
       },
       "id": 823,
       "name": "trade(Guard, Flower, Heir, Crown)",
-      "description": "the guard gives the crown to the heir"
+      "description": "the guard trades a flower to the heir for the crown"
     },
     {
       "consenting": [
@@ -656156,7 +656156,7 @@
       },
       "id": 824,
       "name": "trade(Guard, Flower, Heir, CursePotion)",
-      "description": "the guard gives a potion of cursing to the heir"
+      "description": "the guard trades a flower to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -656211,7 +656211,7 @@
       },
       "id": 825,
       "name": "trade(Guard, Flower, Heir, HidePotion)",
-      "description": "the guard gives a potion of hiding to the heir"
+      "description": "the guard trades a flower to the heir for a potion of hiding"
     },
     {
       "consenting": [
@@ -656266,7 +656266,7 @@
       },
       "id": 826,
       "name": "trade(Guard, Flower, Heir, Sword)",
-      "description": "the guard gives a sword to the heir"
+      "description": "the guard trades a flower to the heir for a sword"
     },
     {
       "consenting": [
@@ -656321,7 +656321,7 @@
       },
       "id": 827,
       "name": "trade(Guard, HidePotion, Heir, Coin)",
-      "description": "the guard gives a coin to the heir"
+      "description": "the guard trades a potion of hiding to the heir for a coin"
     },
     {
       "consenting": [
@@ -656376,7 +656376,7 @@
       },
       "id": 828,
       "name": "trade(Guard, HidePotion, Heir, Crown)",
-      "description": "the guard gives the crown to the heir"
+      "description": "the guard trades a potion of hiding to the heir for the crown"
     },
     {
       "consenting": [
@@ -656431,7 +656431,7 @@
       },
       "id": 829,
       "name": "trade(Guard, HidePotion, Heir, CursePotion)",
-      "description": "the guard gives a potion of cursing to the heir"
+      "description": "the guard trades a potion of hiding to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -656486,7 +656486,7 @@
       },
       "id": 830,
       "name": "trade(Guard, HidePotion, Heir, Flower)",
-      "description": "the guard gives a flower to the heir"
+      "description": "the guard trades a potion of hiding to the heir for a flower"
     },
     {
       "consenting": [
@@ -656541,7 +656541,7 @@
       },
       "id": 831,
       "name": "trade(Guard, HidePotion, Heir, Sword)",
-      "description": "the guard gives a sword to the heir"
+      "description": "the guard trades a potion of hiding to the heir for a sword"
     },
     {
       "consenting": [
@@ -656596,7 +656596,7 @@
       },
       "id": 832,
       "name": "trade(Guard, Sword, Heir, Coin)",
-      "description": "the guard gives a coin to the heir"
+      "description": "the guard trades a sword to the heir for a coin"
     },
     {
       "consenting": [
@@ -656651,7 +656651,7 @@
       },
       "id": 833,
       "name": "trade(Guard, Sword, Heir, Crown)",
-      "description": "the guard gives the crown to the heir"
+      "description": "the guard trades a sword to the heir for the crown"
     },
     {
       "consenting": [
@@ -656706,7 +656706,7 @@
       },
       "id": 834,
       "name": "trade(Guard, Sword, Heir, CursePotion)",
-      "description": "the guard gives a potion of cursing to the heir"
+      "description": "the guard trades a sword to the heir for a potion of cursing"
     },
     {
       "consenting": [
@@ -656761,7 +656761,7 @@
       },
       "id": 835,
       "name": "trade(Guard, Sword, Heir, Flower)",
-      "description": "the guard gives a flower to the heir"
+      "description": "the guard trades a sword to the heir for a flower"
     },
     {
       "consenting": [
@@ -656816,7 +656816,7 @@
       },
       "id": 836,
       "name": "trade(Guard, Sword, Heir, HidePotion)",
-      "description": "the guard gives a potion of hiding to the heir"
+      "description": "the guard trades a sword to the heir for a potion of hiding"
     },
     {
       "consenting": [

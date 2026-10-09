@@ -727,6 +727,9 @@ public class LogicalWorld extends WorldModel {
 	public String describe() {
 		StringWriter string = new StringWriter();
 		string.append("World " + getName() + ":");
+		// Introduction
+		string.append("\n  GM Introduction: " + this.getIntroduction(Role.GAME_MASTER));
+		string.append("\n  Player Introduction: " + this.getIntroduction(Role.PLAYER));
 		// Entities
 		string.append("\n  " + getEntities().size() + " entities:");
 		for(Entity entity : getEntities()) {

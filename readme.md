@@ -53,7 +53,7 @@ like this:
     <dependency>
       <groupId>edu.uky.cs.nil.tt</groupId>
       <artifactId>tt-server</artifactId>
-      <version>0.9.1</version> <!-- use most recent version -->
+      <version>0.9.2</version> <!-- use most recent version -->
     </dependency>
   </dependencies>
   ...
@@ -183,6 +183,8 @@ Special thanks to Molly Siler for her help with testing and development.
 
 ## Version History
 
+- Version 0.9.2: Update text in Tutorial and The Crown worlds. Added
+  introduction text to LogicalWorld's describe method.
 - Version 0.9.1: Fixed a bug that prevented the JAR from being runnable.
 - Version 0.9.0: First public release.
 

@@ -13,7 +13,7 @@ public class Settings {
 	public static final String NAME = "Tandem Tales Server";
 	
 	/** The current version of this project */
-	public static final String VERSION = "0.9.1";
+	public static final String VERSION = "0.9.2";
 	
 	/** The people who contributed significantly to this project */
 	public static final String AUTHORS = "Stephen G. Ware";
