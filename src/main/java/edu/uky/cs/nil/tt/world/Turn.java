@@ -1,5 +1,6 @@
 package edu.uky.cs.nil.tt.world;
 
+import edu.uky.cs.nil.tt.Described;
 import edu.uky.cs.nil.tt.Role;
 import edu.uky.cs.nil.tt.Utilities;
 

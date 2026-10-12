@@ -58,7 +58,7 @@ public class Database {
 	 * 
 	 * @author Stephen G. Ware
 	 */
-	public static class Entry implements Named {
+	public static class Entry implements Titled {
 		
 		/**
 		 * The unique system {@link Named name} for this element, which is
@@ -129,6 +129,7 @@ public class Database {
 		 * 
 		 * @return the title
 		 */
+		@Override
 		public String getTitle() {
 			if(title == null)
 				return Utilities.capitalize(getName());
@@ -152,6 +153,7 @@ public class Database {
 		 * 
 		 * @return the description
 		 */
+		@Override
 		public String getDescription() {
 			if(description == null)
 				return getTitle();

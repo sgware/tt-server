@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.uky.cs.nil.tt.Described;
+
 /**
  * A state is an {@link Assignment assignment} of {@link Value values} to each
  * {@link Variable variable} in a {@link World story world}.

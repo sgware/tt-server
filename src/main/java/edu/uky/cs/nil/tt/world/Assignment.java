@@ -3,6 +3,7 @@ package edu.uky.cs.nil.tt.world;
 import java.util.Objects;
 import java.util.function.Function;
 
+import edu.uky.cs.nil.tt.Described;
 import edu.uky.cs.nil.tt.Utilities;
 
 /**

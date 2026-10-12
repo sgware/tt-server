@@ -28,6 +28,67 @@ import edu.uky.cs.nil.tt.world.World;
 public class Session {
 	
 	/**
+	 * Represents one of the two agents that participated in a session by its
+	 * {@link Titled name, title, and description}.
+	 * 
+	 * @author Stephen G. Ware
+	 */
+	public static class TitledAgent implements Titled {
+		
+		/** The unique system name of the agent */
+		public final String name;
+		
+		/** A short natural language title for the agent */
+		public final String title;
+		
+		/** A longer natural language description of the agent */
+		public final String description;
+		
+		/**
+		 * Constructs a titled agent from its name, title, and description.
+		 * 
+		 * @param name the unique system name of the agent
+		 * @param title a short natural language title for the agent
+		 * @param description a longer natural language description of the agent
+		 */
+		public TitledAgent(String name, String title, String description) {
+			Utilities.requireNonNull(name, "name");
+			this.title = title;
+			this.name = name;
+			this.description = description;
+		}
+		
+		/**
+		 * Constructs a titled agent from its database entry.
+		 * 
+		 * @param entry the agent's entry in the database
+		 */
+		public TitledAgent(Database.AgentEntry entry) {
+			this(entry.getName(), entry.getTitle(), entry.getDescription());
+		}
+		
+		@Override
+		public String toString() {
+			return name;
+		}
+		
+		@Override
+		public String getName() {
+			return name;
+		}
+		
+		@Override
+		public String getTitle() {
+			return title;
+		}
+		
+		@Override
+		public String getDescription() {
+			return description;
+		}
+	}
+	
+	/**
 	 * A timestamped object records the moment at which it was created.
 	 * 
 	 * @author Stephen G. Ware
@@ -198,11 +259,11 @@ public class Session {
 	/** The world in which the session took place */
 	public final World world;
 	
-	/** The system name of the agent in the game master role */
-	public final String gm;
+	/** The name, title, and description of the agent in the game master role */
+	public final TitledAgent gm;
 	
-	/** The system name of the agent in the player role */
-	public final String player;
+	/** The name, title, and description of the agent in the player role */
+	public final TitledAgent player;
 	
 	/** A list of all story events */
 	private final List<Event> events;
@@ -218,10 +279,12 @@ public class Session {
 	 * master and player agents.
 	 * 
 	 * @param world the story world in which the session will take place
-	 * @param gm the name of the agent in the game mast role
-	 * @param player the name of the agent in the player role
+	 * @param gm the name, title, and description of the agent in the game
+	 * master role
+	 * @param player the name, title, and description of the agent in the player
+	 * role
 	 */
-	public Session(World world, String gm, String player) {
+	public Session(World world, TitledAgent gm, TitledAgent player) {
 		this.world = world;
 		this.gm = gm;
 		this.player = player;

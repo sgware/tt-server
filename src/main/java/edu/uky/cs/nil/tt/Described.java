@@ -1,4 +1,4 @@
-package edu.uky.cs.nil.tt.world;
+package edu.uky.cs.nil.tt;
 
 /**
  * A described object is associated with a human-readable natural language
