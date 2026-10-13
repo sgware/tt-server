@@ -183,8 +183,8 @@ Special thanks to Molly Siler for her help with testing and development.
 
 ## Version History
 
-- Version 0.9.2: Update entity description text and LogicalWorld description.
-  Update description text in some worlds.
+- Version 0.9.2: Updated entity descriptions and added additional information
+  to session logs.
 - Version 0.9.1: Fixed a bug that prevented the JAR from being runnable.
 - Version 0.9.0: First public release.
 

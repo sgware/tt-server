@@ -524,10 +524,10 @@ public class Agent extends SimpleSerialSocket implements Named {
 		if(getStatus() != null) {
 			// If the session has started, it's this agent's turn, but they haven't made a choice in a long time, stop.
 			if(session.getResult() == null && getStatus().getChoices().size() > 0 && System.currentTimeMillis() > timeout)
-				onStop(new Stop("The " + (getRole() == Role.GAME_MASTER ? "game master" : "player") + " waited too long to make a choice."));
+				onStop(new Stop(getRole(), "The " + (getRole() == Role.GAME_MASTER ? "game master" : "player") + " waited too long to make a choice."));
 			// If the session has ended, this agent hasn't sent their stop message yet, but they haven't sent a report in a long time, stop.
 			else if(session.getResult() != null && !getStopped() && System.currentTimeMillis() > timeout)
-				onStop(new Stop("The " + (getRole() == Role.GAME_MASTER ? "game master" : "player") + " waited too long to report their preceptions of the story."));
+				onStop(new Stop(getRole(), "The " + (getRole() == Role.GAME_MASTER ? "game master" : "player") + " waited too long to report their preceptions of the story."));
 		}
 	}
 	

@@ -65,19 +65,25 @@ public class Stop extends Message {
 	
 	/**
 	 * Constructs a stop message for the role who stopped the session before
+	 * it reached a pre-defined ending and the reason they stopped it.
+	 * 
+	 * @param role the role who stopped the story
+	 * @param message a string explaining why the role stopped the session
+	 */
+	public Stop(Role role, String message) {
+		this.ending = null;
+		this.role = role;
+		this.message = message;
+	}
+	
+	/**
+	 * Constructs a stop message for the role who stopped the session before
 	 * it reached a pre-defined ending.
 	 * 
 	 * @param role the role who stopped the story
 	 */
 	public Stop(Role role) {
-		this.ending = null;
-		this.role = role;
-		if(role == Role.GAME_MASTER)
-			this.message = "The game master ended the session early.";
-		else if(role == Role.PLAYER)
-			this.message = "The player ended the session early.";
-		else
-			this.message = null;
+		this(role, role == Role.GAME_MASTER ? "The game master ended the session early." : "The player ended the session early.");
 	}
 	
 	/**
