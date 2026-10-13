@@ -7,13 +7,12 @@ import java.util.List;
 
 import com.google.gson.GsonBuilder;
 
-import edu.uky.cs.nil.tt.io.GenericAdapter;
 import edu.uky.cs.nil.tt.io.Stop;
 import edu.uky.cs.nil.tt.world.Ending;
 import edu.uky.cs.nil.tt.world.Expression;
 import edu.uky.cs.nil.tt.world.State;
+import edu.uky.cs.nil.tt.world.TitledWorld;
 import edu.uky.cs.nil.tt.world.Turn;
-import edu.uky.cs.nil.tt.world.World;
 
 /**
  * A session records the {@link Event events} of a story, any {@link Report
@@ -253,11 +252,10 @@ public class Session {
 	 */
 	public static void configure(GsonBuilder builder) {
 		Expression.configure(builder);
-		builder.registerTypeAdapterFactory(new GenericAdapter<>(World.class));
 	}
 	
 	/** The world in which the session took place */
-	public final World world;
+	public final TitledWorld world;
 	
 	/** The name, title, and description of the agent in the game master role */
 	public final TitledAgent gm;
@@ -284,7 +282,7 @@ public class Session {
 	 * @param player the name, title, and description of the agent in the player
 	 * role
 	 */
-	public Session(World world, TitledAgent gm, TitledAgent player) {
+	public Session(TitledWorld world, TitledAgent gm, TitledAgent player) {
 		this.world = world;
 		this.gm = gm;
 		this.player = player;

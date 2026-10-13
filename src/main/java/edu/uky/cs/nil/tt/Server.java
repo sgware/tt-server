@@ -14,7 +14,7 @@ import com.sgware.serialsoc.SecureSerialServerSocket;
 import edu.uky.cs.nil.tt.io.Connect.Available;
 import edu.uky.cs.nil.tt.io.End;
 import edu.uky.cs.nil.tt.io.Join;
-import edu.uky.cs.nil.tt.world.World;
+import edu.uky.cs.nil.tt.world.TitledWorld;
 import edu.uky.cs.nil.tt.world.WorldModel;
 
 /**
@@ -305,17 +305,17 @@ public class Server extends SecureSerialServerSocket {
 	 * @param player the agent playing the player role
 	 * @throws Exception if a problem occurs while starting the new session
 	 */
-	protected void onStart(World world, Agent gm, Agent player) throws Exception {
+	protected void onStart(WorldModel world, Agent gm, Agent player) throws Exception {
 		log.append("New session started in world \"" + world.getName() + "\" with agent " + gm.id + " \"" + gm.getName() + "\" as game master and agent " + player.id + " \"" + player.getName() + "\" as player.");
 		playing.add(gm);
 		playing.add(player);
 		Session session = new Session(
-			world,
+			new TitledWorld(database.getWorld(world.getName())),
 			new Session.TitledAgent(database.getAgent(gm.getName())),
 			new Session.TitledAgent(database.getAgent(player.getName()))
 		);
-		gm.onStart(session, gm, player);
-		player.onStart(session, gm, player);
+		gm.onStart(world, gm, player, session);
+		player.onStart(world, gm, player, session);
 		session.append(null, gm.getStatus().getState(), player.getStatus().getState());
 	}
 		

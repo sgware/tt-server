@@ -2,7 +2,7 @@ package edu.uky.cs.nil.tt.io;
 
 import edu.uky.cs.nil.tt.Role;
 import edu.uky.cs.nil.tt.Utilities;
-import edu.uky.cs.nil.tt.world.World;
+import edu.uky.cs.nil.tt.world.TitledWorld;
 
 /**
  * The start message is sent from the {edu.uky.cs.nil.tt.Server server} to an
@@ -13,8 +13,11 @@ import edu.uky.cs.nil.tt.world.World;
  */
 public class Start extends Message {
 	
-	/** The story world in which the session will take place */
-	public final World world;
+	/**
+	 * The story world (with its title and description) in which the session
+	 * will take place
+	 */
+	public final TitledWorld world;
 	
 	/** The role the recipient of this message will have in the session */
 	public final Role role;
@@ -27,7 +30,7 @@ public class Start extends Message {
 	 * @param role the role the recipient of this message will play in the
 	 * session
 	 */
-	public Start(World world, Role role) {
+	public Start(TitledWorld world, Role role) {
 		this.role = role;
 		this.world = world;
 	}

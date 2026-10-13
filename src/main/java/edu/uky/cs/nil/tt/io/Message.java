@@ -4,7 +4,6 @@ import com.google.gson.GsonBuilder;
 
 import edu.uky.cs.nil.tt.Agent;
 import edu.uky.cs.nil.tt.world.Expression;
-import edu.uky.cs.nil.tt.world.World;
 
 /**
  * A message is information sent to or from a {@link edu.uky.cs.nil.tt.Server
@@ -27,8 +26,6 @@ public abstract class Message {
 		AbstractAdapter<Message> adapter = new AbstractAdapter<>(Message.class);
 		builder.registerTypeAdapterFactory(adapter);
 		builder.registerTypeAdapter(Message.class, adapter);
-		// Serialize all implementations of worlds as generic World objects.
-		builder.registerTypeAdapterFactory(new GenericAdapter<>(World.class));
 	}
 	
 	/**

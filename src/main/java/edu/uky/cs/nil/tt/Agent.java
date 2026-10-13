@@ -363,16 +363,17 @@ public class Agent extends SimpleSerialSocket implements Named {
 	 * ends. This method establishes things like the story world, this agent's
 	 * partner, etc.
 	 * 
-	 * @param session the new session this agent is participating in
+	 * @param world the world model in which the session takes place
 	 * @param gm the agent who is playing the game master role in the session
 	 * @param player the agent who is playing the player role in the session
+	 * @param session the new session this agent is participating in
 	 * @throws Exception if a problem occurs while the agent is joining the
 	 * session
 	 * @throws IllegalStateException if the agent has not yet {@link
 	 * #onJoin(Join) joined} or if the agent is already part of a different
 	 * session
 	 */
-	protected void onStart(Session session, Agent gm, Agent player) throws Exception {
+	protected void onStart(WorldModel world, Agent gm, Agent player, Session session) throws Exception {
 		if(getName() == null)
 			throw new IllegalStateException("You cannot start a session before joining the server.");
 		if(getStatus() != null)
@@ -387,9 +388,9 @@ public class Agent extends SimpleSerialSocket implements Named {
 			this.partner = gm;
 		}
 		this.session = session;
-		this.world = (WorldModel) session.world;
+		this.world = world;
 		// Start the session.
-		send(new Start(this.world, this.role));
+		send(new Start(session.world, this.role));
 		// Set the initial status.
 		this.status = world.start(role);
 		send(new Update(status));
