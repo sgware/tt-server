@@ -183,6 +183,7 @@ Special thanks to Molly Siler for her help with testing and development.
 
 ## Version History
 
+- Version 0.10.0: Removed client objects and moved them to a separate project.
 - Version 0.9.2: Updated entity descriptions and added additional information
   to session logs.
 - Version 0.9.1: Fixed a bug that prevented the JAR from being runnable.
