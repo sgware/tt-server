@@ -309,10 +309,16 @@ public class Server extends SecureSerialServerSocket {
 		log.append("New session started in world \"" + world.getName() + "\" with agent " + gm.id + " \"" + gm.getName() + "\" as game master and agent " + player.id + " \"" + player.getName() + "\" as player.");
 		playing.add(gm);
 		playing.add(player);
+		Titled gmEntry = database.getAgent(gm.getName());
+		if(gmEntry == null)
+			gmEntry = new Session.TitledAgent(gm.getName(), null, null);
+		Titled playerEntry = database.getAgent(player.getName());
+		if(playerEntry == null)
+			playerEntry = new Session.TitledAgent(player.getName(), null, null);
 		Session session = new Session(
 			new TitledWorld(database.getWorld(world.getName())),
-			new Session.TitledAgent(database.getAgent(gm.getName())),
-			new Session.TitledAgent(database.getAgent(player.getName()))
+			gmEntry,
+			playerEntry
 		);
 		gm.onStart(world, gm, player, session);
 		player.onStart(world, gm, player, session);

@@ -60,10 +60,10 @@ public class Session {
 		/**
 		 * Constructs a titled agent from its database entry.
 		 * 
-		 * @param entry the agent's entry in the database
+		 * @param titled a name, title, and description of an agent
 		 */
-		public TitledAgent(Database.AgentEntry entry) {
-			this(entry.getName(), entry.getTitle(), entry.getDescription());
+		public TitledAgent(Titled titled) {
+			this(titled.getName(), titled.getTitle(), titled.getDescription());
 		}
 		
 		@Override
@@ -282,10 +282,10 @@ public class Session {
 	 * @param player the name, title, and description of the agent in the player
 	 * role
 	 */
-	public Session(TitledWorld world, TitledAgent gm, TitledAgent player) {
+	public Session(TitledWorld world, Titled gm, Titled player) {
 		this.world = world;
-		this.gm = gm;
-		this.player = player;
+		this.gm = new TitledAgent(gm);
+		this.player = new TitledAgent(player);
 		this.events = new ArrayList<>();
 		this.reports = new ArrayList<>();
 	}
