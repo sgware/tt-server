@@ -53,7 +53,7 @@ like this:
     <dependency>
       <groupId>edu.uky.cs.nil.tt</groupId>
       <artifactId>tt-server</artifactId>
-      <version>0.9.2</version> <!-- use most recent version -->
+      <version>0.10.0</version> <!-- use most recent version -->
     </dependency>
   </dependencies>
   ...
