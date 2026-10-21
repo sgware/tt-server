@@ -19,7 +19,7 @@ public class ServerMain {
 	public static final String LOG_KEY = "l";
 	
 	/** The default location of the log file, if one is not specified */
-	public static final String DEFAULT_LOG_FILE = "log.txt";
+	public static final String DEFAULT_LOG_DIRECTORY = "logs/";
 	
 	/** The key used to specify that sessions should be logged to file */
 	public static final String SESSIONS_KEY = "s";
@@ -49,7 +49,7 @@ public class ServerMain {
 	public static final String USAGE =
 		"Command line arguments:\n" +
 		rpad("  -" + HELP_KEY) + "Print usage information.\n" +
-		rpad("  -" + LOG_KEY + " <file>") + "Log server events to file (if no value given, defaults to \"" + DEFAULT_LOG_FILE + "\").\n" +
+		rpad("  -" + LOG_KEY + " <directory>") + "Log server events to directory (if no value given, defaults to \"" + DEFAULT_LOG_DIRECTORY + "\").\n" +
 		rpad("  -" + SESSIONS_KEY + " <directory>") + "Log sessions to directory (if no value given, defaults to \"" + DEFAULT_SESSIONS_DIRECTORY + "\").\n" +
 		rpad("  -" + DATABASE_KEY + " <file>") + "Use a database of worlds and agents (if no value given, defaults to \"" + DEFAULT_DATABASE_FILE + "\").\n" +
 		rpad("  -" + PORT_KEY + " <number>") + "Listen on this network port (defaults to \"" + DEFAULT_PORT + "\").";
@@ -78,7 +78,7 @@ public class ServerMain {
 		// Arguments
 		File log = null;
 		if(arguments.contains(LOG_KEY))
-			log = new File(arguments.getValue(LOG_KEY, DEFAULT_LOG_FILE));
+			log = new File(arguments.getValue(LOG_KEY, DEFAULT_LOG_DIRECTORY));
 		File sessions = null;
 		if(arguments.contains(SESSIONS_KEY))
 			sessions = new File(arguments.getValue(SESSIONS_KEY, DEFAULT_SESSIONS_DIRECTORY));

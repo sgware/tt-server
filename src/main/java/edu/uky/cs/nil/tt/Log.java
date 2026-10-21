@@ -8,10 +8,10 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -25,6 +25,10 @@ import com.google.gson.GsonBuilder;
  * <li>Record completed storytelling {@link Session sessions}, each in its own
  * file in a directory.</li>
  * </ul>
+ * <p>
+ * To avoid creating huge files, a new system log file is created for each day
+ * the server is running. The files are named according to the date they were
+ * created so they can be easily located, searched, and archived.
  * 
  * @author Stephen G. Ware
  */
@@ -63,8 +67,8 @@ public class Log implements AutoCloseable {
 		append(string.toString().trim(), log, System.err);
 	}
 	
-	/** The data format prepended to all log messages */
-	private static DateFormat date = null;
+	/** The timestamp format prepended to all log messages */
+	private static DateTimeFormatter timestamp = null;
 	
 	/**
 	 * Writes a system message to a print stream (typically {@link System#out
@@ -77,16 +81,13 @@ public class Log implements AutoCloseable {
 	 * @param system the print stream to write to
 	 */
 	private static final void append(String message, Log log, PrintStream system) {
-		if(date == null) {
-			date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-			date.setTimeZone(TimeZone.getTimeZone("UTC"));
-		}
-		message = "[" + date.format(new Date()) + "] " + message + "\n";
+		if(timestamp == null)
+			timestamp = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'").withZone(ZoneOffset.UTC);
+		message = "[" + timestamp.format(Instant.now()) + "] " + message + "\n";
 		system.append(message);
 		if(log != null && log.writer != null) {
 			try {
 				log.writer.append(message);
-				log.writer.flush();
 			}
 			catch(IOException exception) {
 				exception.printStackTrace();
@@ -94,11 +95,20 @@ public class Log implements AutoCloseable {
 		}
 	}
 	
-	/** The file writer for the system message log */
-	private final FileWriter file;
+	/** The date format used to name log files */
+	private static DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy-MM-dd'Z'").withZone(ZoneOffset.UTC);
 	
-	/** The (possibly buffered) writer for system messages */
-	private final Writer writer;
+	/** The directory to which system logs will be written */
+	private final File logs;
+	
+	/** The date the current system log files was created */
+	private LocalDate today = null;
+	
+	/** The file writer for the current system log */
+	private FileWriter log = null;
+	
+	/** The (possibly buffered) writer for system log messages */
+	private Writer writer = null;
 	
 	/** The directory to which completed session files will be written */
 	private final File sessions;
@@ -106,23 +116,26 @@ public class Log implements AutoCloseable {
 	/**
 	 * Constructs a new server log.
 	 * 
-	 * @param log the file to which system message will be written, or null if
-	 * system message should only be written to standard output
+	 * @param logs the directory to which system log files should be written,
+	 * or null if system logs messages should not be recorded
 	 * @param sessions the directory to which completed session files should be
 	 * written, or null if sessions should not be recorded
 	 * @throws IOException if a problem occurs when creating or opening the log
-	 * file or session directory
+	 * files or session directory
 	 */
-	public Log(File log, File sessions) throws IOException {
-		if(log == null) {
-			append("Server log will not be written to file.");
-			this.file = null;
-			this.writer = null;
+	public Log(File logs, File sessions) throws IOException {
+		if(logs == null) {
+			append("Server logs will not be written to file.");
+			this.logs = null;
 		}
+		else if(logs.exists() && !logs.isDirectory())
+			throw new IOException("The path \"" + sessions.getPath() + "\" is not a directory.");
 		else {
-			this.file = new FileWriter(log, true);
-			this.writer = new BufferedWriter(file);
-			append("Server log will be written to \"" + log.getPath() + "\".");
+			if(!logs.exists())
+				logs.mkdir();
+			this.logs = logs;
+			checkDate();
+			append("Server logs will be written to \"" + logs.getPath() + "\".");
 		}
 		if(sessions == null) {
 			append("Sessions will not be written to file.");
@@ -145,6 +158,7 @@ public class Log implements AutoCloseable {
 	 * @param message the message to write
 	 */
 	public void append(String message) {
+		checkDate();
 		append(message, this);
 	}
 	
@@ -158,6 +172,7 @@ public class Log implements AutoCloseable {
 	 * written
 	 */
 	public void append(String message, Throwable throwable) {
+		checkDate();
 		append(message, throwable, this);
 	}
 	
@@ -188,9 +203,44 @@ public class Log implements AutoCloseable {
 		return name;
 	}
 	
+	/**
+	 * If a system log file is being used, and if the date has changed since
+	 * the current system log was created, create a new system log file.
+	 * 
+	 * @throws IOException if a problem occurs when closing an old log or
+	 * opening a new log
+	 */
+	private final void checkDate() {
+		if(logs == null)
+			return;
+		LocalDate today = LocalDate.now();
+		if(this.today == null || !today.equals(this.today)) {
+			if(writer != null) {
+				try {
+					writer.flush();
+					writer.close();
+				}
+				catch(IOException exception) {
+					exception.printStackTrace();
+				}
+			}
+			String url = logs.getPath() + "/" + date.format(today) + ".txt";
+			this.today = today;
+			try {
+				log = new FileWriter(url);
+				writer = new BufferedWriter(log);
+			}
+			catch(IOException exception) {
+				exception.printStackTrace();
+			}
+		}
+	}
+	
 	@Override
 	public void close() throws IOException {
-		if(file != null)
-			file.close();
+		if(log != null) {
+			writer.flush();
+			log.close();
+		}
 	}
 }

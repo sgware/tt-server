@@ -47,8 +47,8 @@ public class Server extends SecureSerialServerSocket {
 	/**
 	 * Constructs a server from its various components.
 	 * 
-	 * @param log the log file where system messages will be recorded, or null
-	 * if the server should not record a log
+	 * @param logs the directory where system messages will be recorded, or null
+	 * if the server should not record system logs
 	 * @param sessions the directory where the server should write completed
 	 * session files, or null if the server should not record session data
 	 * @param database the existing database the server should use (if the file
@@ -60,13 +60,13 @@ public class Server extends SecureSerialServerSocket {
 	 * @throws IOException if a problem occurs while reading the various files
 	 * created or read during setup
 	 */
-	public Server(File log, File sessions, File database, int port) throws IOException {
+	public Server(File logs, File sessions, File database, int port) throws IOException {
 		super(port);
 		try {
-			this.log = new Log(log, sessions);
+			this.log = new Log(logs, sessions);
 		}
 		catch(Exception exception) {
-			Log.append("An error occurred while creating the server log:", exception, null);
+			Log.append("An error occurred while creating the server logs:", exception, null);
 			close();
 			throw exception;
 		}
