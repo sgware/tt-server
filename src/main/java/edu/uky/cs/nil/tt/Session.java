@@ -254,6 +254,9 @@ public class Session {
 		Expression.configure(builder);
 	}
 	
+	/** The version number of the server that created this session */
+	public final String version = Settings.VERSION;
+	
 	/** The world in which the session took place */
 	public final TitledWorld world;
 	
