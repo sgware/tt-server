@@ -88,6 +88,7 @@ public class Log implements AutoCloseable {
 		if(log != null && log.writer != null) {
 			try {
 				log.writer.append(message);
+				log.writer.flush();
 			}
 			catch(IOException exception) {
 				exception.printStackTrace();
@@ -227,7 +228,7 @@ public class Log implements AutoCloseable {
 			String url = logs.getPath() + "/" + date.format(today) + ".txt";
 			this.today = today;
 			try {
-				log = new FileWriter(url);
+				log = new FileWriter(url, true);
 				writer = new BufferedWriter(log);
 			}
 			catch(IOException exception) {
