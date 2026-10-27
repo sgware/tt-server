@@ -2,7 +2,7 @@ package edu.uky.cs.nil.tt.io;
 
 import java.util.List;
 
-import edu.uky.cs.nil.tt.Database.Entry;
+import edu.uky.cs.nil.tt.Entry;
 import edu.uky.cs.nil.tt.Settings;
 import edu.uky.cs.nil.tt.Utilities;
 

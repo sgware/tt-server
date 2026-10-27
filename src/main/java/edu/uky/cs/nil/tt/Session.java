@@ -25,68 +25,7 @@ import edu.uky.cs.nil.tt.world.Turn;
  * @author Stephen G. Ware
  */
 public class Session {
-	
-	/**
-	 * Represents one of the two agents that participated in a session by its
-	 * {@link Titled name, title, and description}.
-	 * 
-	 * @author Stephen G. Ware
-	 */
-	public static class TitledAgent implements Titled {
 		
-		/** The unique system name of the agent */
-		public final String name;
-		
-		/** A short natural language title for the agent */
-		public final String title;
-		
-		/** A longer natural language description of the agent */
-		public final String description;
-		
-		/**
-		 * Constructs a titled agent from its name, title, and description.
-		 * 
-		 * @param name the unique system name of the agent
-		 * @param title a short natural language title for the agent
-		 * @param description a longer natural language description of the agent
-		 */
-		public TitledAgent(String name, String title, String description) {
-			Utilities.requireNonNull(name, "name");
-			this.title = title;
-			this.name = name;
-			this.description = description;
-		}
-		
-		/**
-		 * Constructs a titled agent from its database entry.
-		 * 
-		 * @param titled a name, title, and description of an agent
-		 */
-		public TitledAgent(Titled titled) {
-			this(titled.getName(), titled.getTitle(), titled.getDescription());
-		}
-		
-		@Override
-		public String toString() {
-			return name;
-		}
-		
-		@Override
-		public String getName() {
-			return name;
-		}
-		
-		@Override
-		public String getTitle() {
-			return title;
-		}
-		
-		@Override
-		public String getDescription() {
-			return description;
-		}
-	}
-	
 	/**
 	 * A timestamped object records the moment at which it was created.
 	 * 
@@ -261,10 +200,10 @@ public class Session {
 	public final TitledWorld world;
 	
 	/** The name, title, and description of the agent in the game master role */
-	public final TitledAgent gm;
+	public final Titled gm;
 	
 	/** The name, title, and description of the agent in the player role */
-	public final TitledAgent player;
+	public final Titled player;
 	
 	/** A list of all story events */
 	private final List<Event> events;
@@ -287,8 +226,8 @@ public class Session {
 	 */
 	public Session(TitledWorld world, Titled gm, Titled player) {
 		this.world = world;
-		this.gm = new TitledAgent(gm);
-		this.player = new TitledAgent(player);
+		this.gm = new Entry(gm);
+		this.player = new Entry(player);
 		this.events = new ArrayList<>();
 		this.reports = new ArrayList<>();
 	}

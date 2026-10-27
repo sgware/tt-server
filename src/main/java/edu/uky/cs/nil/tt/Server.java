@@ -155,12 +155,12 @@ public class Server extends SecureSerialServerSocket {
 	 */
 	public Available[] getAvailable() {
 		List<Available> available = new ArrayList<>();
-		List<Database.Entry> worlds = database.getListedWorlds();
+		List<Entry> worlds = database.getListedWorlds();
 		for(Join waiting : this.waiting) {
 			Database.AgentEntry entry = database.getAgent(waiting.name);
 			if(entry != null && entry.getListed()) {
 				if(waiting.world == null)
-					for(Database.Entry world : worlds)
+					for(Entry world : worlds)
 						available.add(new Available(world.getName(), waiting.name));
 				else
 					available.add(new Available(waiting.world, waiting.name));
@@ -311,10 +311,10 @@ public class Server extends SecureSerialServerSocket {
 		playing.add(player);
 		Titled gmEntry = database.getAgent(gm.getName());
 		if(gmEntry == null)
-			gmEntry = new Session.TitledAgent(gm.getName(), null, null);
+			gmEntry = new Entry(gm.getName(), null, null);
 		Titled playerEntry = database.getAgent(player.getName());
 		if(playerEntry == null)
-			playerEntry = new Session.TitledAgent(player.getName(), null, null);
+			playerEntry = new Entry(player.getName(), null, null);
 		Session session = new Session(
 			new TitledWorld(database.getWorld(world.getName())),
 			gmEntry,
