@@ -45,10 +45,10 @@ public class Join extends Message implements Timestamped {
 	public final String partner;
 	
 	/**
-	 * The time this message was sent or received as the number of milliseconds
-	 * from the epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
+	 * The time this agent joined the server as the number of milliseconds from
+	 * the epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
 	 */
-	public transient long time = Instant.now().toEpochMilli();
+	public transient long start = Instant.now().toEpochMilli();
 	
 	/**
 	 * Constructs a new join message with an agent's credentials and
@@ -63,13 +63,16 @@ public class Join extends Message implements Timestamped {
 	 * preference
 	 * @param partner the name of the partner this new agent wants to play with,
 	 * or null if they have no preference
+	 * @param start the time at which this agent joined the server, as the number
+	 * of milliseconds from the epoch
 	 */
-	public Join(String name, String password, String world, Role role, String partner) {
+	public Join(String name, String password, String world, Role role, String partner, long start) {
 		this.name = name;
 		this.password = password;
 		this.world = world;
 		this.role = role;
 		this.partner = partner;
+		this.start = start;
 	}
 	
 	@Override
@@ -93,12 +96,21 @@ public class Join extends Message implements Timestamped {
 			Utilities.requireName(world);
 		if(partner != null)
 			Utilities.requireName(partner);
-		time = Instant.now().toEpochMilli();
+		start = Instant.now().toEpochMilli();
 	}
 	
 	@Override
 	public long getTimestamp() {
-		return time;
+		return start;
+	}
+	
+	/**
+	 * Returns a copy of this message with the agent's password removed.
+	 * 
+	 * @return a copy of this message with no password
+	 */
+	public Join removePassword() {
+		return new Join(name, null, world, role, partner, start);
 	}
 	
 	/**

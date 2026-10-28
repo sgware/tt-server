@@ -309,7 +309,7 @@ public class Session {
 	 * session
 	 */
 	public long getEndTime() {
-		long end = 0;
+		long end = -1;
 		for(Event event : getEvents())
 			end = Math.max(end, event.getTimestamp());
 		for(Report report : getReports())
