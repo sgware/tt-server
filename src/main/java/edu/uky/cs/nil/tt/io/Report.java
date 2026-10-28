@@ -43,6 +43,7 @@ public class Report extends Message {
 	
 	@Override
 	public void verify() {
+		super.verify();
 		Utilities.requireNonNull(item, "item");
 		Utilities.requireNonNull(value, "value");
 	}

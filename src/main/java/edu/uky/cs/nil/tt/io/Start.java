@@ -42,6 +42,7 @@ public class Start extends Message {
 	
 	@Override
 	public void verify() {
+		super.verify();
 		Utilities.requireNonNull(world, "world");
 		Utilities.requireNonNull(role, "role");
 	}

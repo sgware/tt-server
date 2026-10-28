@@ -27,9 +27,4 @@ public class End extends Message {
 	public String toString() {
 		return "[End Message" + (session == null ? "" : ": session=\"" + session + "\"") + "]";
 	}
-	
-	@Override
-	public void verify() {
-		// Nothing to verify.
-	}
 }

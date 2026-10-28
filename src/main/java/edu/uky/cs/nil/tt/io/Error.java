@@ -41,6 +41,7 @@ public class Error extends Message {
 	
 	@Override
 	public void verify() {
+		super.verify();
 		Utilities.requireNonNull(message, "message");
 	}
 }

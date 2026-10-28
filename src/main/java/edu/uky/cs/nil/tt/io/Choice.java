@@ -38,6 +38,7 @@ public class Choice extends Message {
 	
 	@Override
 	public void verify() {
+		super.verify();
 		Utilities.requireNonNegative(index, "choice");
 	}
 }

@@ -92,6 +92,7 @@ public class Connect extends Message {
 	
 	@Override
 	public void verify() {
+		super.verify();
 		Utilities.requireNonNull(version, "version");
 		Utilities.requireNonNull(worlds, "worlds");
 		Utilities.requireNonNull(agents, "agents");

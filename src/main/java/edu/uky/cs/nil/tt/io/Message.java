@@ -83,5 +83,8 @@ public abstract class Message implements Timestamped {
 	 * parsed. It should check that all the necessary fields are set and that
 	 * their values are legal values. 
 	 */
-	public abstract void verify();
+	public void verify() {
+		if(time == 0)
+			time = Instant.now().toEpochMilli();
+	}
 }

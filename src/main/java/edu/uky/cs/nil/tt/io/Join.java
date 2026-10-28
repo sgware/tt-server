@@ -79,6 +79,7 @@ public class Join extends Message {
 	
 	@Override
 	public void verify() {
+		super.verify();
 		Utilities.requireName(name);
 		if(world != null)
 			Utilities.requireName(world);

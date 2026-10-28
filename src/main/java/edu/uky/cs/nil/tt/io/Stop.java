@@ -102,9 +102,4 @@ public class Stop extends Message {
 	public String toString() {
 		return "[Stop Message" + (message == null ? "" : ": \"" + message + "\"") + "]";
 	}
-	
-	@Override
-	public void verify() {
-		// Nothing to verify.
-	}
 }

@@ -37,6 +37,7 @@ public class Update extends Message {
 	
 	@Override
 	public void verify() {
+		super.verify();
 		Utilities.requireNonNull(status, "status");
 	}
 }
