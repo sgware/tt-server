@@ -170,12 +170,18 @@ public class Server extends SecureSerialServerSocket {
 			Titled agent = database.getAgent(join.name);
 			if(agent == null)
 				agent = new Entry(join.name);
-			Titled world = database.getWorld(join.world);
-			if(world == null)
-				world = new Entry(join.world);
-			Titled partner = database.getAgent(join.partner);
-			if(partner == null)
-				partner = new Entry(join.partner);
+			Titled world = null;
+			if(join.world != null) {
+				world = database.getWorld(join.world);
+				if(world == null)
+					world = new Entry(join.world);
+			}
+			Titled partner = null;
+			if(join.partner != null) {
+				partner = database.getAgent(join.partner);
+				if(partner == null)
+					partner = new Entry(join.partner);
+			}
 			waiting.add(new ServerStatus.Waiting(agent, world, join.role, partner, join.getTimestamp()));
 		}
 		return new ServerStatus(playing, waiting);
