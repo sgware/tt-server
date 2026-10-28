@@ -44,6 +44,9 @@ public class CommandParser extends Thread {
 	/** The command used to mark a database entry as not publicly available */
 	private static final String DELIST = "delist";
 	
+	/** The command used to print the server status */
+	private static final String STATUS = "status";
+	
 	/** The command used to shut down the server */
 	private static final String STOP = "stop";
 	
@@ -261,6 +264,14 @@ public class CommandParser extends Thread {
 		command = new Command(
 			new String[] { REMOVE, AGENT, NAME },
 			(svr, args) -> svr.database.removeAgent(args[0])
+		);
+		usage += "\n  " + command.format;
+		add(command);
+		// Status
+		usage += "\nTo see the current server status, type:";
+		command = new Command(
+			new String[] { STATUS },
+			(svr, args) -> svr.execute(() -> System.out.println(svr.getServerStatus()))
 		);
 		usage += "\n  " + command.format;
 		add(command);

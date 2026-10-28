@@ -1,8 +1,11 @@
 package edu.uky.cs.nil.tt.io;
 
+import java.time.Instant;
+
 import com.google.gson.GsonBuilder;
 
 import edu.uky.cs.nil.tt.Agent;
+import edu.uky.cs.nil.tt.Timestamped;
 import edu.uky.cs.nil.tt.world.Expression;
 
 /**
@@ -11,7 +14,7 @@ import edu.uky.cs.nil.tt.world.Expression;
  * 
  * @author Stephen G. Ware
  */
-public abstract class Message {
+public abstract class Message implements Timestamped {
 	
 	/**
 	 * Configures a {@link GsonBuilder} to encode and decode {@link Message}
@@ -33,6 +36,13 @@ public abstract class Message {
 	 * or null if this message was sent from the server.
 	 */
 	private transient Agent agent = null;
+	
+	/**
+	 * The moment this message object was created (which should roughly
+	 * correspond to when it was sent or received) as the number of milliseconds
+	 * from the epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
+	 */
+	private transient long time = Instant.now().toEpochMilli();
 	
 	/**
 	 * Constructs a message.
@@ -60,6 +70,11 @@ public abstract class Message {
 	 */
 	public void setAgent(Agent agent) {
 		this.agent = agent;
+	}
+	
+	@Override
+	public long getTimestamp() {
+		return time;
 	}
 	
 	/**

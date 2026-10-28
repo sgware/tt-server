@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.net.ssl.SSLSocket;
 
@@ -143,6 +145,35 @@ public class Server extends SecureSerialServerSocket {
 	@Override
 	protected void execute(CheckedRunnable runnable) {
 		super.execute(runnable);
+	}
+	
+	/**
+	 * Returns a {@link ServerStatus status object} that summarizes the sessions
+	 * currently running and agents currently waiting to start sessions.
+	 * 
+	 * @return a server summary
+	 */
+	public ServerStatus getServerStatus() {
+		Set<Session> sessions = new LinkedHashSet<>();
+		for(Agent agent : playing)
+			sessions.add(agent.getSession());
+		List<ServerStatus.Playing> playing = new ArrayList<>(sessions.size());
+		for(Session session : sessions)
+			playing.add(new ServerStatus.Playing(session));
+		List<ServerStatus.Waiting> waiting = new ArrayList<>(this.waiting.size());
+		for(Join join : this.waiting) {
+			Titled agent = database.getAgent(join.name);
+			if(agent == null)
+				agent = new Entry(join.name);
+			Titled world = database.getWorld(join.world);
+			if(world == null)
+				world = new Entry(join.world);
+			Titled partner = database.getAgent(join.partner);
+			if(partner == null)
+				partner = new Entry(join.partner);
+			waiting.add(new ServerStatus.Waiting(agent, world, join.role, partner, join.getTimestamp()));
+		}
+		return new ServerStatus(playing, waiting);
 	}
 	
 	/**
