@@ -1,5 +1,6 @@
 package edu.uky.cs.nil.tt;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -281,5 +282,50 @@ public class Session {
 	 */
 	protected void setResult(Stop stop) {
 		this.result = new Result(stop);
+	}
+	
+	/**
+	 * Returns the earliest {@link Timestamped timestamp} of any event or report
+	 * in this session.
+	 * 
+	 * @return the earliest timestamp of every event or report in this session
+	 */
+	public long getStartTime() {
+		long start = Instant.now().getEpochSecond();
+		for(Event event : getEvents())
+			start = Math.min(start, event.getTimestamp());
+		for(Report report : getReports())
+			start = Math.min(start, report.getTimestamp());
+		if(getResult() != null)
+			start = Math.min(start, getResult().getTimestamp());
+		return start;
+	}
+	
+	/**
+	 * Returns the latest {@link Timestamped timestamp} of any event or report
+	 * in this session or the ending of the session result if it is later.
+	 * 
+	 * @return the latest timestamp of any event, report, or result in this
+	 * session
+	 */
+	public long getEndTime() {
+		long end = 0;
+		for(Event event : getEvents())
+			end = Math.max(end, event.getTimestamp());
+		for(Report report : getReports())
+			end = Math.max(end, report.getTimestamp());
+		if(getResult() != null)
+			end = Math.max(end, getResult().getTimestamp());
+		return end;
+	}
+	
+	/**
+	 * Returns the duration of this session in milliseconds. As long as this
+	 * session has not ended, this method may return different values.
+	 * 
+	 * @return the duration of this session in milliseconds
+	 */
+	public long getDuration() {
+		return getEndTime() - getStartTime();
 	}
 }

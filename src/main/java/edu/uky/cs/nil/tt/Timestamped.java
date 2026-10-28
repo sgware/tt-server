@@ -14,7 +14,7 @@ public interface Timestamped {
 	 * 
 	 * @author Stephen G. Ware
 	 */
-	public static class Adapter {
+	public static class Adapter implements Timestamped {
 		
 		/**
 		 * The time this object as the number of milliseconds from the epoch
@@ -23,11 +23,26 @@ public interface Timestamped {
 		public final long time;
 		
 		/**
+		 * Creates a new timestamped object with a given timestamp.
+		 * 
+		 * @param time a timestamp as the number of milliseconds from the epoch
+		 * (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
+		 */
+		public Adapter(long time) {
+			this.time = time;
+		}
+		
+		/**
 		 * Creates a new timestamped object whose timestamp is {@link
 		 * Instant#now()}.
 		 */
 		public Adapter() {
-			this.time = Instant.now().toEpochMilli();
+			this(Instant.now().toEpochMilli());
+		}
+		
+		@Override
+		public long getTimestamp() {
+			return time;
 		}
 	}
 	
