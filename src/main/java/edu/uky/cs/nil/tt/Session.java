@@ -24,7 +24,7 @@ import edu.uky.cs.nil.tt.world.Turn;
  * 
  * @author Stephen G. Ware
  */
-public class Session {
+public class Session implements Timestamped {
 		
 	/**
 	 * An event represents a single {@link Turn turn} during a storytelling
@@ -213,6 +213,17 @@ public class Session {
 	@Override
 	public String toString() {
 		return "[Session: world=\"" + world.getName() + "\" gm=\"" + gm + "\" player=\"" + player + "\"]";
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * This method returns the time this session started and is equivalent to
+	 * {@link #getStartTime()}.
+	 */
+	@Override
+	public long getTimestamp() {
+		return getStartTime();
 	}
 	
 	/**
