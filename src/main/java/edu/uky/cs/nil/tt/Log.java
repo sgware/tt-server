@@ -17,13 +17,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
- * A log is used to record system messages and session data.
+ * A log is used to record system messages, server status, and session data.
  * <p>
- * A server log has two basic functions:
+ * A server log has three basic functions:
  * <ul>
  * <li>Write system message to standard output and (optionally) a file.</li>
- * <li>Record completed storytelling {@link Session sessions}, each in its own
- * file in a directory.</li>
+ * <li>Update a file reflecting the current server status.</li>
+ * <li>Record completed storytelling {@link Session sessions}.</li>
  * </ul>
  * <p>
  * To avoid creating huge files, a new system log file is created for each day
@@ -106,6 +106,12 @@ public class Log implements AutoCloseable {
 	/** The (possibly buffered) writer for system log messages */
 	private Writer writer = null;
 	
+	/** The file to which the current server status will be written */
+	private final File status;
+	
+	/** Used to encode obejcts in JSON format */
+	private final Gson gson;
+	
 	/** The directory to which completed session files will be written */
 	private final File sessions;
 	
@@ -114,12 +120,15 @@ public class Log implements AutoCloseable {
 	 * 
 	 * @param logs the directory to which system log files should be written,
 	 * or null if system logs messages should not be recorded
+	 * @param status the file to which the current server status will be
+	 * written, or null if the current server status should not be recorded
 	 * @param sessions the directory to which completed session files should be
 	 * written, or null if sessions should not be recorded
 	 * @throws IOException if a problem occurs when creating or opening the log
 	 * files or session directory
 	 */
-	public Log(File logs, File sessions) throws IOException {
+	public Log(File logs, File status, File sessions) throws IOException {
+		// System Log Messages
 		if(logs == null) {
 			append("Server logs will not be written to file.");
 			this.logs = null;
@@ -133,6 +142,19 @@ public class Log implements AutoCloseable {
 			checkDate();
 			append("Server logs will be written to \"" + logs.getPath() + "\".");
 		}
+		// Server Status
+		if(status == null) {
+			append("Server status will not be written to file.");
+			this.status = null;
+		}
+		else if(status.exists() && status.isDirectory())
+			throw new IOException("The path \"" + sessions.getPath() + "\" is a directory.");
+		else {
+			this.status = status;
+			append("Server status will be written to \"" + status.getPath() + "\".");
+		}
+		this.gson = new GsonBuilder().setPrettyPrinting().create();
+		// Session Logs
 		if(sessions == null) {
 			append("Sessions will not be written to file.");
 			this.sessions = null;
@@ -170,6 +192,24 @@ public class Log implements AutoCloseable {
 	public void append(String message, Throwable throwable) {
 		checkDate();
 		append(message, throwable, this);
+	}
+	
+	/**
+	 * Updates the server status file with the server's current status, if a
+	 * server status file is being maintained.
+	 * 
+	 * @param status an object summarizing the current state of the server
+	 * @throws IOException if a problem occurs while writing the status file 
+	 */
+	public void update(ServerStatus status) throws IOException {
+		if(this.status == null)
+			return;
+		File temporary = new File(this.status.getAbsolutePath() + ".tmp");
+		try(BufferedWriter writer = new BufferedWriter(new FileWriter(temporary))) {
+			gson.toJson(status, writer);
+		}
+		java.nio.file.Files.move(temporary.toPath(), this.status.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+		temporary.delete();
 	}
 	
 	/**
@@ -234,6 +274,8 @@ public class Log implements AutoCloseable {
 	
 	@Override
 	public void close() throws IOException {
+		if(status != null)
+			status.delete();
 		if(log != null) {
 			writer.flush();
 			log.close();

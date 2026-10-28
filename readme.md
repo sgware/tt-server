@@ -53,7 +53,7 @@ like this:
     <dependency>
       <groupId>edu.uky.cs.nil.tt</groupId>
       <artifactId>tt-server</artifactId>
-      <version>0.10.0</version> <!-- use most recent version -->
+      <version>0.11.0</version> <!-- use most recent version -->
     </dependency>
   </dependencies>
   ...
@@ -184,7 +184,9 @@ Special thanks to Molly Siler for her help with testing and development.
 ## Version History
 
 - Version 0.11.0: Server now starts a new log file every day to avoid creating
-  one huge file. Some common elements refactored.
+  one huge file. Current server status is now written to a file which can easily
+	be parsed by other programs. Some common elements refactored. Command line
+	argument keys modified to use full words instead of single letters.
 - Version 0.10.0: Removed client objects and moved them to a separate project.
 - Version 0.9.2: Updated entity descriptions and added additional information
   to session logs.

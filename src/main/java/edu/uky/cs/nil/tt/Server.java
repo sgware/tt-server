@@ -51,6 +51,8 @@ public class Server extends SecureSerialServerSocket {
 	 * 
 	 * @param logs the directory where system messages will be recorded, or null
 	 * if the server should not record system logs
+	 * @param status the file to which the server's current status will be
+	 * written, or null if the server should not write its status to file
 	 * @param sessions the directory where the server should write completed
 	 * session files, or null if the server should not record session data
 	 * @param database the existing database the server should use (if the file
@@ -62,10 +64,10 @@ public class Server extends SecureSerialServerSocket {
 	 * @throws IOException if a problem occurs while reading the various files
 	 * created or read during setup
 	 */
-	public Server(File logs, File sessions, File database, int port) throws IOException {
+	public Server(File logs, File status, File sessions, File database, int port) throws IOException {
 		super(port);
 		try {
-			this.log = new Log(logs, sessions);
+			this.log = new Log(logs, status, sessions);
 		}
 		catch(Exception exception) {
 			Log.append("An error occurred while creating the server logs:", exception, null);
@@ -102,6 +104,7 @@ public class Server extends SecureSerialServerSocket {
 			log.append("Warning: The system property \"javax.net.ssl.keyStorePassword\" is not set. The server may not be able to establish SSL sockets.");
 		super.connect();
 		log.append("Server now listening for new connections on port " + getPort() + ".");
+		log.update(getServerStatus());
 	}
 	
 	@Override
@@ -149,7 +152,9 @@ public class Server extends SecureSerialServerSocket {
 	
 	/**
 	 * Returns a {@link ServerStatus status object} that summarizes the sessions
-	 * currently running and agents currently waiting to start sessions.
+	 * currently running and agents currently waiting to start sessions. This
+	 * list will include agents and worlds that are not publicly listed in the
+	 * database and is not meant to be shown to users.
 	 * 
 	 * @return a server summary
 	 */
@@ -226,6 +231,8 @@ public class Server extends SecureSerialServerSocket {
 		// Make matches.
 		waiting.add(join);
 		makeMatches();
+		// Update the server status file.
+		log.update(getServerStatus());
 	}
 	
 	/**
@@ -384,6 +391,8 @@ public class Server extends SecureSerialServerSocket {
 		// When sessions end, this may free up resources for new sessions, so
 		// check for new matches.
 		execute(() -> makeMatches());
+		// Update the server status file.
+		log.update(getServerStatus());
 	}
 		
 	@Override
