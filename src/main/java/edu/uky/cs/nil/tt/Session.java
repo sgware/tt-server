@@ -24,7 +24,7 @@ import edu.uky.cs.nil.tt.world.Turn;
  * 
  * @author Stephen G. Ware
  */
-public class Session implements Timestamped {
+public class Session implements Duration {
 		
 	/**
 	 * An event represents a single {@link Turn turn} during a storytelling
@@ -214,18 +214,7 @@ public class Session implements Timestamped {
 	public String toString() {
 		return "[Session: world=\"" + world.getName() + "\" gm=\"" + gm + "\" player=\"" + player + "\"]";
 	}
-	
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * This method returns the time this session started and is equivalent to
-	 * {@link #getStartTime()}.
-	 */
-	@Override
-	public long getTimestamp() {
-		return getStartTime();
-	}
-	
+		
 	/**
 	 * Returns an unmodifiable list of all events {@link
 	 * #append(Turn, State, State) appended} to this session so far.
@@ -295,12 +284,7 @@ public class Session implements Timestamped {
 		this.result = new Result(stop);
 	}
 	
-	/**
-	 * Returns the earliest {@link Timestamped timestamp} of any event or report
-	 * in this session.
-	 * 
-	 * @return the earliest timestamp of every event or report in this session
-	 */
+	@Override
 	public long getStartTime() {
 		long start = Instant.now().getEpochSecond();
 		for(Event event : getEvents())
@@ -312,13 +296,7 @@ public class Session implements Timestamped {
 		return start;
 	}
 	
-	/**
-	 * Returns the latest {@link Timestamped timestamp} of any event or report
-	 * in this session or the ending of the session result if it is later.
-	 * 
-	 * @return the latest timestamp of any event, report, or result in this
-	 * session
-	 */
+	@Override
 	public long getEndTime() {
 		long end = -1;
 		for(Event event : getEvents())
@@ -328,15 +306,5 @@ public class Session implements Timestamped {
 		if(getResult() != null)
 			end = Math.max(end, getResult().getTimestamp());
 		return end;
-	}
-	
-	/**
-	 * Returns the duration of this session in milliseconds. As long as this
-	 * session has not ended, this method may return different values.
-	 * 
-	 * @return the duration of this session in milliseconds
-	 */
-	public long getDuration() {
-		return getEndTime() - getStartTime();
 	}
 }

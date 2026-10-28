@@ -1,9 +1,6 @@
 package edu.uky.cs.nil.tt.io;
 
-import java.time.Instant;
-
 import edu.uky.cs.nil.tt.Role;
-import edu.uky.cs.nil.tt.Timestamped;
 import edu.uky.cs.nil.tt.Utilities;
 
 /**
@@ -14,7 +11,7 @@ import edu.uky.cs.nil.tt.Utilities;
  * 
  * @author Stephen G. Ware
  */
-public class Join extends Message implements Timestamped {
+public class Join extends Message {
 	
 	/** The new agent's name */
 	public final String name;
@@ -45,12 +42,6 @@ public class Join extends Message implements Timestamped {
 	public final String partner;
 	
 	/**
-	 * The time this agent joined the server as the number of milliseconds from
-	 * the epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
-	 */
-	public transient long start = Instant.now().toEpochMilli();
-	
-	/**
 	 * Constructs a new join message with an agent's credentials and
 	 * preferences.
 	 * 
@@ -63,16 +54,13 @@ public class Join extends Message implements Timestamped {
 	 * preference
 	 * @param partner the name of the partner this new agent wants to play with,
 	 * or null if they have no preference
-	 * @param start the time at which this agent joined the server, as the number
-	 * of milliseconds from the epoch
 	 */
-	public Join(String name, String password, String world, Role role, String partner, long start) {
+	public Join(String name, String password, String world, Role role, String partner) {
 		this.name = name;
 		this.password = password;
 		this.world = world;
 		this.role = role;
 		this.partner = partner;
-		this.start = start;
 	}
 	
 	@Override
@@ -96,12 +84,6 @@ public class Join extends Message implements Timestamped {
 			Utilities.requireName(world);
 		if(partner != null)
 			Utilities.requireName(partner);
-		start = Instant.now().toEpochMilli();
-	}
-	
-	@Override
-	public long getTimestamp() {
-		return start;
 	}
 	
 	/**
@@ -110,7 +92,7 @@ public class Join extends Message implements Timestamped {
 	 * @return a copy of this message with no password
 	 */
 	public Join removePassword() {
-		return new Join(name, null, world, role, partner, start);
+		return new Join(name, null, world, role, partner);
 	}
 	
 	/**

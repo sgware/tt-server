@@ -66,10 +66,7 @@ public class Log implements AutoCloseable {
 		}
 		append(string.toString().trim(), log, System.err);
 	}
-	
-	/** The timestamp format prepended to all log messages */
-	private static DateTimeFormatter timestamp = null;
-	
+		
 	/**
 	 * Writes a system message to a print stream (typically {@link System#out
 	 * standard output} or {@link System#err standard error output}) and to a
@@ -81,9 +78,7 @@ public class Log implements AutoCloseable {
 	 * @param system the print stream to write to
 	 */
 	private static final void append(String message, Log log, PrintStream system) {
-		if(timestamp == null)
-			timestamp = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'").withZone(ZoneOffset.UTC);
-		message = "[" + timestamp.format(Instant.now()) + "] " + message + "\n";
+		message = "[" + Timestamped.toString(Instant.now()) + "] " + message + "\n";
 		system.append(message);
 		if(log != null && log.writer != null) {
 			try {
