@@ -1,6 +1,7 @@
 package edu.uky.cs.nil.tt;
 
 import java.net.InetAddress;
+import java.time.Duration;
 import java.util.Objects;
 import java.util.Random;
 
@@ -237,6 +238,40 @@ public class Utilities {
 		catch(NumberFormatException cause) {
 			throw new IllegalArgumentException("The string \"" + string + "\" cannot be parsed as an integer.");
 		}
+	}
+	
+	/**
+	 * Converts a number of milliseconds into a short string that expresses the
+	 * duration in days, hours, minutes, and seconds.
+	 * 
+	 * @param milliseconds a number of milliseconds
+	 * @return a short string that expresses the duration in days, hours,
+	 * minutes, and seconds
+	 */
+	public static final String msToString(long milliseconds) {
+		if(milliseconds == 0)
+			return "0s";
+		else if(milliseconds < 1000)
+			return "1s";
+		Duration duration = Duration.ofMillis(milliseconds);
+		long days = duration.toDaysPart();
+		int hours = duration.toHoursPart();
+		int minutes = duration.toMinutesPart();
+		int seconds = duration.toSecondsPart();
+		String string = "";
+		boolean append = days > 0;
+		if(append)
+			string += days + "d";
+		append = append || hours > 0;
+		if(append)
+			string += hours + "h";
+		append = append || minutes > 0;
+		if(append)
+			string += minutes + "m";
+		append = true;
+		if(append)
+			string += seconds + "s";
+		return string;
 	}
 	
 	/**

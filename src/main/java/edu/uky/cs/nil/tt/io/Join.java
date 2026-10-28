@@ -1,6 +1,9 @@
 package edu.uky.cs.nil.tt.io;
 
+import java.time.Instant;
+
 import edu.uky.cs.nil.tt.Role;
+import edu.uky.cs.nil.tt.Timestamped;
 import edu.uky.cs.nil.tt.Utilities;
 
 /**
@@ -11,7 +14,7 @@ import edu.uky.cs.nil.tt.Utilities;
  * 
  * @author Stephen G. Ware
  */
-public class Join extends Message {
+public class Join extends Message implements Timestamped {
 	
 	/** The new agent's name */
 	public final String name;
@@ -40,6 +43,12 @@ public class Join extends Message {
 	 * they are willing to play with any partner
 	 */
 	public final String partner;
+	
+	/**
+	 * The time this message was sent or received as the number of milliseconds
+	 * from the epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
+	 */
+	public transient long time = Instant.now().toEpochMilli();
 	
 	/**
 	 * Constructs a new join message with an agent's credentials and
@@ -84,6 +93,12 @@ public class Join extends Message {
 			Utilities.requireName(world);
 		if(partner != null)
 			Utilities.requireName(partner);
+		time = Instant.now().toEpochMilli();
+	}
+	
+	@Override
+	public long getTimestamp() {
+		return time;
 	}
 	
 	/**

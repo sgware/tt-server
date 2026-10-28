@@ -1,6 +1,5 @@
 package edu.uky.cs.nil.tt;
 
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,35 +26,13 @@ import edu.uky.cs.nil.tt.world.Turn;
 public class Session {
 		
 	/**
-	 * A timestamped object records the moment at which it was created.
-	 * 
-	 * @author Stephen G. Ware
-	 */
-	public static class Timestamped {
-		
-		/**
-		 * The time this object was created, as the number of milliseconds from
-		 * the epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
-		 */
-		public final long time;
-		
-		/**
-		 * Constructs a new timestamped object and records the moment at which
-		 * it was created.
-		 */
-		public Timestamped() {
-			this.time = Instant.now().toEpochMilli();
-		}
-	}
-	
-	/**
 	 * An event represents a single {@link Turn turn} during a storytelling
 	 * session as well as the actual state of the story world after the turn
 	 * and the state of the world as perceived by the player.
 	 * 
 	 * @author Stephen G. Ware
 	 */
-	public static class Event extends Timestamped {
+	public static class Event extends Timestamped.Adapter {
 		
 		/**
 		 * The turn which occurred, or null if this event records the initial
@@ -107,7 +84,7 @@ public class Session {
 	 * 
 	 * @author Stephen G. Ware
 	 */
-	public static class Report extends Timestamped {
+	public static class Report extends Timestamped.Adapter {
 		
 		/** The role who sent this report */
 		public final Role role;
@@ -152,7 +129,7 @@ public class Session {
 	 * 
 	 * @author Stephen G. Ware
 	 */
-	public static class Result extends Timestamped {
+	public static class Result extends Timestamped.Adapter {
 		
 		/**
 		 * One of the endings defined by the story world, or null if this
