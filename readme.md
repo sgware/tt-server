@@ -1,10 +1,10 @@
 # Tandem Tales Server
 
-Tandem Tales is a platform that facilities simple text-based two-player
-interactive storytelling sessions between a player who controls one character in
-the story and a game master who controls all of the other characters and the
-environment. Tandem Tales connects human players with each other and with AI
-agents to study collaborative storytelling.
+[Tandem Tales](https://sgware.github.io/tt) is a platform that facilities simple
+text-based two-player interactive storytelling sessions between a player who
+controls one character in the story and a game master who controls all of the
+other characters and the environment. Tandem Tales connects human players with
+each other and with AI agents to study collaborative storytelling.
 
 The server maintains a database of story worlds and a list of known storytelling
 agents. Using a simple JSON protocol, clients can connect, specify what story
@@ -53,7 +53,7 @@ like this:
     <dependency>
       <groupId>edu.uky.cs.nil.tt</groupId>
       <artifactId>tt-server</artifactId>
-      <version>0.11.0</version> <!-- use most recent version -->
+      <version>1.0.0</version> <!-- use most recent version -->
     </dependency>
   </dependencies>
   ...
@@ -88,15 +88,15 @@ Start the server with logs that will be written to the default locations, with
 the default database file, and using the self-signed certificate like this.
 Replace `***` below with the server keystore password used above.
 ```
-java -Djavax.net.ssl.keyStore="server.keystore" -Djavax.net.ssl.keyStorePassword="***" -jar jar/tt-server.jar -l -s -db
+java -Djavax.net.ssl.keyStore="server.keystore" -Djavax.net.ssl.keyStorePassword="***" -jar jar/tt-server.jar -logs -status -sessions -database
 ```
 
 The server's database contains two important lists. The first is a list of story
 worlds. Only story worlds in the database can be played. The second is a list of
-reserved agent names. When an agent name is reserved, the server will only allow
-an agent with that name to connect if it provides the correct password. This
-allows the server to limit the use of certain agent names to specific trusted
-agents.
+reserved agent names. When an agent name is reserved and a password is set, the
+server will only allow an agent with that name to connect if it provides the
+correct password. This allows the server to limit the use of certain agent names
+to specific trusted agents.
 
 Worlds and agents each have a name, a title, and a description. They can either
 be listed or unlisted. When a world or agent is listed, the server will
@@ -183,6 +183,7 @@ Special thanks to Molly Siler for her help with testing and development.
 
 ## Version History
 
+- Version 1.0.0: First major release.
 - Version 0.11.0: Server now starts a new log file every day to avoid creating
   one huge file. Current server status is now written to a file which can easily
 	be parsed by other programs. Some common elements refactored. Command line
@@ -208,7 +209,7 @@ BiBTeX entry:
 @inproceedings{ware2026tandemtales,
   title={{Tandem Tales}: a paired storytelling research platform},
   author={Ware, Stephen G. and Siler, Molly and Senanayake, Lasantha},
-  booktitle={Proceedings of the Experimental AI in Games workshop at the 22nd AAAI conference on Artificial Intelligence and Interactive Digital Entertainment},
+  booktitle={Proceedings of the Experimental {AI} in Games workshop at the 22nd AAAI conference on Artificial Intelligence and Interactive Digital Entertainment},
   year={2026}
 }
 ```
