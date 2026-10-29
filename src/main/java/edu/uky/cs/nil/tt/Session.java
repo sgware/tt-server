@@ -286,7 +286,7 @@ public class Session implements Duration {
 	
 	@Override
 	public long getStartTime() {
-		long start = Instant.now().getEpochSecond();
+		long start = Instant.now().toEpochMilli();
 		for(Event event : getEvents())
 			start = Math.min(start, event.getTimestamp());
 		for(Report report : getReports())
