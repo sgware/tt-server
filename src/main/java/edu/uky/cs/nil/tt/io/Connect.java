@@ -7,9 +7,9 @@ import edu.uky.cs.nil.tt.Settings;
 import edu.uky.cs.nil.tt.Utilities;
 
 /**
- * The connect message is sent from the {edu.uky.cs.nil.tt.Server server} to an
- * {@link edu.uky.cs.nil.tt.Agent agent} as soon as the agent connects to give
- * details about which story worlds and agents are available for play.
+ * The connect message is sent from the {@link edu.uky.cs.nil.tt.Server server}
+ * to an {@link edu.uky.cs.nil.tt.Agent agent} as soon as the agent connects to
+ * give details about which story worlds and agents are available for play.
  * 
  * @author Stephen G. Ware
  */

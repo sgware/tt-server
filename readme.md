@@ -1,10 +1,10 @@
 # Tandem Tales Server
 
-[Tandem Tales](https://sgware.github.io/tt) is a platform that facilities simple
-text-based two-player interactive storytelling sessions between a player who
-controls one character in the story and a game master who controls all of the
-other characters and the environment. Tandem Tales connects human players with
-each other and with AI agents to study collaborative storytelling.
+[Tandem Tales](https://sgware.github.io/tt) is a platform that facilitates
+simple text-based two-player interactive storytelling sessions between a player
+who controls one character in the story and a game master who controls all of
+the other characters and the environment. Tandem Tales connects human players
+with each other and with AI agents to study collaborative storytelling.
 
 The server maintains a database of story worlds and a list of known storytelling
 agents. Using a simple JSON protocol, clients can connect, specify what story
@@ -64,7 +64,7 @@ like this:
 
 Tandem Tales uses secure sockets via the
 [Java Secure Socket Extension (JSSE)](https://docs.oracle.com/en/java/javase/25/security/java-secure-socket-extension-jsse-reference-guide.html).
-When running a public Tandom Tales server, you should obtain a certificate from
+When running a public Tandem Tales server, you should obtain a certificate from
 a certificate authority.
 
 You can test the server locally by creating a self-signed certificate like this.
@@ -81,14 +81,14 @@ key is needed by any client that wishes to connect.
 Assuming you are in the project root directory (`tt-server`), you can show the
 Tandem Tales Server usage message like this.
 ```
-java -jar jar/tt-server.jar -help
+java -jar build/jar/tt-server.jar -help
 ```
 
 Start the server with logs that will be written to the default locations, with
 the default database file, and using the self-signed certificate like this.
 Replace `***` below with the server keystore password used above.
 ```
-java -Djavax.net.ssl.keyStore="server.keystore" -Djavax.net.ssl.keyStorePassword="***" -jar jar/tt-server.jar -logs -status -sessions -database
+java -Djavax.net.ssl.keyStore="server.keystore" -Djavax.net.ssl.keyStorePassword="***" -jar build/jar/tt-server.jar -logs -status -sessions -database
 ```
 
 The server's database contains two important lists. The first is a list of story
@@ -140,7 +140,7 @@ privacy of those who use it:
   are encouraged not to do.
 - When clients take turns in a storytelling session, they are choosing from a
   pre-defined list of possible actions. They cannot take arbitrary actions that
-  they define. This allows the server strict control over the types of content
+  they define. This gives the server strict control over the types of content
   clients might see during a story. When offered a choice of actions, clients
   simply respond with the index of their choice, meaning they cannot take turns
   out of sequence and cannot take actions which are not allowed in the current
@@ -172,7 +172,7 @@ Tandem Tales is released under the GNU General Public License version 3.0 (GPL
 3). This means you are free to share and modify this software, even for
 commercial purposes, as long as you give credit to the original creators and you
 also release your modifications under the GPL 3 license. See the license file
-for details. The University of Kentucky retains all right not specifically
+for details. The University of Kentucky retains all rights not specifically
 granted.
 
 To license Tandem Tales for a project not compatible with the terms of the GPL
@@ -186,8 +186,8 @@ Special thanks to Molly Siler for her help with testing and development.
 - Version 1.0.0: First major release.
 - Version 0.11.0: Server now starts a new log file every day to avoid creating
   one huge file. Current server status is now written to a file which can easily
-	be parsed by other programs. Some common elements refactored. Command line
-	argument keys modified to use full words instead of single letters.
+  be parsed by other programs. Some common elements refactored. Command line
+  argument keys modified to use full words instead of single letters.
 - Version 0.10.0: Removed client objects and moved them to a separate project.
 - Version 0.9.2: Updated entity descriptions and added additional information
   to session logs.
@@ -203,7 +203,7 @@ Please cite this paper when referring to Tandem Tales:
 > Games workshop at the 22nd AAAI conference on Artificial Intelligence and
 > Interactive Digital Entertainment, 2026.
 
-BiBTeX entry:
+BibTeX entry:
 
 ```
 @inproceedings{ware2026tandemtales,

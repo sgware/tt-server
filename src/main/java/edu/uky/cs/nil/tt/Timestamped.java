@@ -43,8 +43,8 @@ public interface Timestamped {
 	public static class Adapter implements Timestamped, Comparable<Timestamped> {
 		
 		/**
-		 * The time this object as the number of milliseconds from the epoch
-		 * (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
+		 * The time this object was created as the number of milliseconds from
+		 * the epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
 		 */
 		public final long time;
 		
@@ -78,10 +78,11 @@ public interface Timestamped {
 	}
 	
 	/**
-	 * Returns the time this object as the number of milliseconds from the epoch
-	 * (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)
+	 * Returns the time this object was created as the number of milliseconds
+	 * from the epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time
+	 * (UTC).
 	 * 
-	 * @return the objects timestamp in milliseconds from the epoch in UTC
+	 * @return the object's timestamp in milliseconds from the epoch in UTC
 	 */
 	public long getTimestamp();
 }

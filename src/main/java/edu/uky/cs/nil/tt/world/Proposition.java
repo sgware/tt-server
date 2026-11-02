@@ -145,7 +145,7 @@ public class Proposition implements Predicate<State>, Expression {
 	 * 
 	 * @param operator the operator which defines the type and behavior of the
 	 * proposition
-	 * @param arguments the arguments which will be evaluate by the operator in
+	 * @param arguments the arguments which will be evaluated by the operator in
 	 * a given state
 	 */
 	public Proposition(Operator operator, Expression...arguments) {

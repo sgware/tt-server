@@ -10,8 +10,8 @@ import edu.uky.cs.nil.tt.Utilities;
 
 /**
  * An encoding is a method for translating data types to and from Java {@code
- * String}s so they can serialized, saved to file, and transmitted between the
- * {@link edu.uky.cs.nil.tt.Server server} and its {@link
+ * String}s so they can be serialized, saved to file, and transmitted between
+ * the {@link edu.uky.cs.nil.tt.Server server} and its {@link
  * edu.uky.cs.nil.tt.Agent agents}. Encodings are primarily used to encode the
  * {@link Value values} of {@link Variable variables} in a {@link State state}
  * (see {@link Variable#encoding}).
@@ -23,7 +23,7 @@ import edu.uky.cs.nil.tt.Utilities;
 public abstract class Encoding implements Named {
 	
 	/**
-	 * The prefixed used by all {@link Encoding.UnsignedIntegerEncoding unsigned
+	 * The prefix used by all {@link Encoding.UnsignedIntegerEncoding unsigned
 	 * integer encodings}
 	 */
 	public static final String UNSIGNED_INTEGER = "uint";
@@ -68,7 +68,7 @@ public abstract class Encoding implements Named {
 		}
 	};
 	
-	/** And encoding for session {@link Role} values */
+	/** An encoding for session {@link Role} values */
 	public static final Encoding ROLE = new Encoding(Role.class.getSimpleName()) {
 		
 		@Override
@@ -97,7 +97,7 @@ public abstract class Encoding implements Named {
 		}
 	};
 	
-	/** And encoding for {@link Turn.Type} values */
+	/** An encoding for {@link Turn.Type} values */
 	public static final Encoding TURN_TYPE = new Encoding("turntype") {
 		
 		/** The encoding for {@link Turn.Type#PROPOSE} */
@@ -157,8 +157,8 @@ public abstract class Encoding implements Named {
 	 * Returns the encoding method with a given name.
 	 * 
 	 * @param name the name of the desired encoding
-	 * @return the encoding objects with the given name
-	 * @throws IllegalArgumentException if the given names does not match a
+	 * @return the encoding object with the given name
+	 * @throws IllegalArgumentException if the given name does not match a
 	 * known encoding
 	 */
 	public static Encoding get(String name) {
@@ -211,7 +211,7 @@ public abstract class Encoding implements Named {
 	 * clear how many bits are required to represent other objects of the same
 	 * type in the same {@link World story world}. For example, {@link Entity}
 	 * is an {@link Encoded encoded} object. A story world with 3 entities would
-	 * require 2 bits to represent an etity ({@code 00} for {@code null}, {@code
+	 * require 2 bits to represent an entity ({@code 00} for {@code null}, {@code
 	 * 01} for the first entity, {@code 10} for the second entity, and {@code 11}
 	 * for the third entity). All entities in that story world should return a
 	 * string of length 2, even if they must be padded with {@code 0}'s, to make
@@ -234,17 +234,17 @@ public abstract class Encoding implements Named {
 	 * method can be used both as a decoder and also as a means of checking that
 	 * an already decoded value is correctly formatted.
 	 * <p>
-	 * For example, if this encoding represent an unsigned integer with a
+	 * For example, if this encoding represents an unsigned integer with a
 	 * certain number of bits, this method can be used to decode a string of
 	 * {@code 1}'s and {@code 0}'s into the original integer; however, if it is
 	 * passed a number object, this method can check that the number is of the
 	 * correct format (i.e. that it is an integer and that it is small enough
 	 * that it could be encoded using this encoding's number of bits).
 	 * 
-	 * @param value an encoding string or a decided object which needs to be
+	 * @param value an encoding string or a decoded object which needs to be
 	 * checked for correctness
 	 * @return the object that produced the encoding, or the original object
-	 * (or something eqivalent) if this method is being used to check the
+	 * (or something equivalent) if this method is being used to check the
 	 * correctness of a decoded object
 	 * @throws IllegalArgumentException if the given object cannot be decoded or
 	 * is not properly formatted
@@ -372,7 +372,7 @@ public abstract class Encoding implements Named {
 		public final Class<? extends Unique> type;
 		
 		/**
-		 * A short natural language phrase describing of the type of object this
+		 * A short natural language phrase describing the type of object this
 		 * encoding encodes and decodes
 		 */
 		public final String description;
@@ -383,7 +383,7 @@ public abstract class Encoding implements Named {
 		 * @param name this encoding's name
 		 * @param bits the number of bits used by this encoding
 		 * @param type the type of object encoded and decoded
-		 * @param description a short natural language phrase describing of the
+		 * @param description a short natural language phrase describing the
 		 * type of object this encoding will encode and decode
 		 */
 		protected UniqueObjectEncoding(String name, int bits, Class<? extends Unique> type, String description) {
@@ -437,8 +437,8 @@ public abstract class Encoding implements Named {
 		/**
 		 * Creates an entity encoding that uses a given number of bits.
 		 * 
-		 * @param name the name should always begin with string {@code "entity"}
-		 * followed by the number of bits used in the encoding
+		 * @param name the name should always begin with the string {@code
+		 * "entity"} followed by the number of bits used in the encoding
 		 */
 		public EntityEncoding(String name) {
 			super("entity", toBits("entity", name), Entity.class, "entity");
@@ -455,8 +455,8 @@ public abstract class Encoding implements Named {
 		/**
 		 * Creates an action encoding that uses a given number of bits.
 		 * 
-		 * @param name the name should always begin with string {@code "action"}
-		 * followed by the number of bits used in the encoding
+		 * @param name the name should always begin with the string {@code
+		 * "action"} followed by the number of bits used in the encoding
 		 */
 		public ActionEncoding(String name) {
 			super("action", toBits("action", name), Action.class, "action");
@@ -473,8 +473,8 @@ public abstract class Encoding implements Named {
 		/**
 		 * Creates an ending encoding that uses a given number of bits.
 		 * 
-		 * @param name the name should always begin with string {@code "ending"}
-		 * followed by the number of bits used in the encoding
+		 * @param name the name should always begin with the string {@code
+		 * "ending"} followed by the number of bits used in the encoding
 		 */
 		public EndingEncoding(String name) {
 			super("ending", toBits("ending", name), Ending.class, "ending");

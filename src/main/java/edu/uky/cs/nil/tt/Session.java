@@ -277,7 +277,7 @@ public class Session implements Duration {
 	 * session to end.
 	 * 
 	 * @param stop the message which caused the session to end and which
-	 * contains the pre-definded ending (if any) and a message explaining why
+	 * contains the pre-defined ending (if any) and a message explaining why
 	 * the session ended
 	 */
 	protected void setResult(Stop stop) {

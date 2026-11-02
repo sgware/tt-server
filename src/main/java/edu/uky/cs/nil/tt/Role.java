@@ -16,7 +16,7 @@ public enum Role {
 	GAME_MASTER,
 	
 	/**
-	 * The player role, who controls one characters, often the main character
+	 * The player role, who controls one character, often the main character
 	 * of the story
 	 */
 	PLAYER;
@@ -24,7 +24,7 @@ public enum Role {
 	/**
 	 * Returns the partner of this role. If this role is the game master, this
 	 * method returns the player. If this role is the player, this method
-	 * return the game master.
+	 * returns the game master.
 	 * 
 	 * @return the partner of this role
 	 */

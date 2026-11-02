@@ -21,7 +21,7 @@ import com.google.gson.GsonBuilder;
  * <p>
  * A server log has three basic functions:
  * <ul>
- * <li>Write system message to standard output and (optionally) a file.</li>
+ * <li>Write system messages to standard output and (optionally) a file.</li>
  * <li>Update a file reflecting the current server status.</li>
  * <li>Record completed storytelling {@link Session sessions}.</li>
  * </ul>
@@ -97,7 +97,7 @@ public class Log implements AutoCloseable {
 	/** The directory to which system logs will be written */
 	private final File logs;
 	
-	/** The date the current system log files was created */
+	/** The date the current system log file was created */
 	private LocalDate today = null;
 	
 	/** The file writer for the current system log */
@@ -109,7 +109,7 @@ public class Log implements AutoCloseable {
 	/** The file to which the current server status will be written */
 	private final File status;
 	
-	/** Used to encode obejcts in JSON format */
+	/** Used to encode objects in JSON format */
 	private final Gson gson;
 	
 	/** The directory to which completed session files will be written */
@@ -119,7 +119,7 @@ public class Log implements AutoCloseable {
 	 * Constructs a new server log.
 	 * 
 	 * @param logs the directory to which system log files should be written,
-	 * or null if system logs messages should not be recorded
+	 * or null if system log messages should not be recorded
 	 * @param status the file to which the current server status will be
 	 * written, or null if the current server status should not be recorded
 	 * @param sessions the directory to which completed session files should be
@@ -215,7 +215,7 @@ public class Log implements AutoCloseable {
 	/**
 	 * Generates a {@link Utilities#getRandomName() random name} and writes the
 	 * details of a completed storytelling {@link Session session} to a file
-	 * with that name in the session file directory (if session are being
+	 * with that name in the session file directory (if sessions are being
 	 * recorded). If sessions are not being recorded, this method does nothing
 	 * and returns null.
 	 * 

@@ -5,8 +5,8 @@ import edu.uky.cs.nil.tt.Utilities;
 
 /**
  * The join message is the first message sent from an {@link
- * edu.uky.cs.nil.tt.Agent agent} to the {edu.uky.cs.nil.tt.Server server} to
- * provide the agent's credentials and its preferences for what story world,
+ * edu.uky.cs.nil.tt.Agent agent} to the {@link edu.uky.cs.nil.tt.Server server}
+ * to provide the agent's credentials and its preferences for what story world,
  * role, and partner they want for their session.
  * 
  * @author Stephen G. Ware

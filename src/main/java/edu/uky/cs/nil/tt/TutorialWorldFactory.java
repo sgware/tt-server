@@ -6,7 +6,7 @@ import edu.uky.cs.nil.tt.world.*;
 import edu.uky.cs.nil.tt.world.Describer.*;
 
 /**
- * A example of how to create a {@link LogicalWorld logical story world model}.
+ * An example of how to create a {@link LogicalWorld logical story world model}.
  * This example produces a small story world model that can teach players the
  * basic features of Tandem Tales.
  * 

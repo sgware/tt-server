@@ -7,7 +7,7 @@ import edu.uky.cs.nil.tt.Utilities;
 /**
  * A variable is a {@link SignedAsset signed asset} that represents a feature of
  * the {@link World story world} {@link State state} that can change. A {@link
- * State state} assign a {@link Value value} to each of a story world's
+ * State state} assigns a {@link Value value} to each of a story world's
  * variables.
  * 
  * @author Stephen G. Ware

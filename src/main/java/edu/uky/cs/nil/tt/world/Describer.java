@@ -37,9 +37,9 @@ import edu.uky.cs.nil.tt.Utilities;
  * <li>Turns that {@link Turn.Type#PROPOSE propose} an action should be
  * described in present tense as a character under the control of the proposer
  * trying or offering to do something.</li>
- * <li>Turns the {@link Turn.Type#FAIL fail} should be described in present
+ * <li>Turns that {@link Turn.Type#FAIL fail} should be described in present
  * tense as the proposing character attempting to do the action but failing or
- * as a character until the control of the other role refusing an offer.</li>
+ * as a character under the control of the other role refusing an offer.</li>
  * </ul>
  * 
  * @author Stephen G. Ware
@@ -538,7 +538,7 @@ public class Describer {
 	 * Returns the first rule from this describer that {@link Rule#matches(Map)
 	 * matches} a given context.
 	 * 
-	 * @param context a map of keys to the value that describe an object to be
+	 * @param context a map of keys to the values that describe an object to be
 	 * described
 	 * @return the first rule which would be used to describe an object with
 	 * the given context
@@ -621,7 +621,7 @@ public class Describer {
 				return Objects.toString(object);
 		}
 		else {
-			// Substitue keys
+			// Substitute keys
 			String string = rule.template;
 			for(Map.Entry<Key, Object> entry : context.entrySet()) {
 				String key = "{" + entry.getKey().toString() + "}";

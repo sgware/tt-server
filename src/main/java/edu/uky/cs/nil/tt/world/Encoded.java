@@ -2,7 +2,7 @@ package edu.uky.cs.nil.tt.world;
 
 /**
  * An encoded object has a unique string of {@code 1}'s and {@code 0}'s that
- * uniquely distinguishes it object from others of the same type in the same
+ * uniquely distinguishes the object from others of the same type in the same
  * {@link World story world}. Encodings are typically produced by the {@link
  * Encoding#encode(Object)} method.
  * 

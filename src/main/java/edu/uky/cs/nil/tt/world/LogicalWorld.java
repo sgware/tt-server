@@ -30,7 +30,7 @@ import edu.uky.cs.nil.tt.Utilities;
  */
 public class LogicalWorld extends WorldModel {
 	
-	/** Propositions that define when an entity can be seen by player */
+	/** Propositions that define when an entity can be seen by the player */
 	private final Proposition[] entityVisibility;
 	
 	/**
@@ -50,8 +50,8 @@ public class LogicalWorld extends WorldModel {
 	private final Proposition[] actionPreconditions;
 	
 	/**
-	 * Effects which describe how actions modify the world state when the occur,
-	 * where the effects at index n correspond to action n
+	 * Effects which describe how actions modify the world state when they
+	 * occur, where the effects at index n correspond to action n
 	 */
 	private final Effect[][] actionEffects;
 	
@@ -156,7 +156,7 @@ public class LogicalWorld extends WorldModel {
 	 * depends on {@link #getVisibility(Entity) the entity's visibility}.
 	 * 
 	 * @param role the role whose ability to see is being checked
-	 * @param entity the entity whose viability is being checked
+	 * @param entity the entity whose visibility is being checked
 	 * @param state the state in which the check will occur
 	 * @return true if the role can see the entity in the given state, false
 	 * otherwise
@@ -232,7 +232,7 @@ public class LogicalWorld extends WorldModel {
 	
 	/**
 	 * Returns a logical proposition that defines when the {@link Role#PLAYER
-	 * player} can see a varaiable's value. If no proposition has been {@link
+	 * player} can see a variable’s value. If no proposition has been {@link
 	 * #setVisibility(Variable, Proposition) set}, this method returns the
 	 * constant {@link Proposition#TRUE true}.
 	 * <p>
@@ -282,8 +282,8 @@ public class LogicalWorld extends WorldModel {
 	}
 	
 	/**
-	 * Checks whether the given action is available is available to the given
-	 * role in the given state. An action is available to a role when {@link
+	 * Checks whether the given action is available to the given role in the
+	 * given state. An action is available to a role when {@link
 	 * #getPrecondition(Action) its precondition} is satisfied in the current
 	 * state and the role {@link Action#consents(Role) consents} to the action
 	 * (i.e. has to approve taking the action).
@@ -329,7 +329,7 @@ public class LogicalWorld extends WorldModel {
 	 * #setEffects(Action, Effect...) set}, this method returns an empty array.
 	 * 
 	 * @param action an action from this story world
-	 * @return an (possibly empty) array of effects that express how the action
+	 * @return a (possibly empty) array of effects that express how the action
 	 * modifies a state
 	 */
 	public Effect[] getEffects(Action action) {
@@ -363,13 +363,13 @@ public class LogicalWorld extends WorldModel {
 	 * Checks whether the given action would be seen by the given role if it
 	 * happened in the given state. The {@link Role#GAME_MASTER game master}
 	 * can always see all actions. Whether the {@link Role#PLAYER player} can
-	 * see a an action occur depends on {@link #getVisibility(Action) the
+	 * see an action occur depends on {@link #getVisibility(Action) the
 	 * action's visibility}.
 	 * 
 	 * @param role the role whose ability to see is being checked
 	 * @param action the action whose visibility is being checked
 	 * @param state the state in which the check will occur
-	 * @return true if the role would see the action occurs in the given state,
+	 * @return true if the role would see the action occur in the given state,
 	 * false otherwise
 	 */
 	public boolean isVisible(Role role, Action action, State state) {
@@ -416,9 +416,9 @@ public class LogicalWorld extends WorldModel {
 	 * Returns a logical proposition that defines when an ending should occur.
 	 * If no proposition has been {@link #setCondition(Ending, Proposition)
 	 * set}, this method returns the constant {@link Proposition#FALSE false}.
-	 * These conditions are checked an action changes the story state, in order
-	 * by {@link #getEndings() ending}. If any conditions evaluates to true,
-	 * the story immediately ends with the corresponding ending.
+	 * These conditions are checked when an action changes the story state, in
+	 * order by {@link #getEndings() ending}. If any condition evaluates to
+	 * true, the story immediately ends with the corresponding ending.
 	 * 
 	 * @param ending an ending from this story world
 	 * @return a proposition that will evaluate to true in states where the
@@ -448,7 +448,7 @@ public class LogicalWorld extends WorldModel {
 	 * describing} the initial assignment of every variable.
 	 * 
 	 * @param role the role to whom the text will be shown
-	 * @return the introductory text show to that role at the start of the story
+	 * @return the introductory text shown to that role at the start of the story
 	 */
 	public String getIntroduction(Role role) {
 		String text = introduction[role.ordinal()];
@@ -467,7 +467,7 @@ public class LogicalWorld extends WorldModel {
 	 * beginning of the story.
 	 * 
 	 * @param role the role to whom the text will be shown
-	 * @param text the introductory text show to that role at the start of the
+	 * @param text the introductory text shown to that role at the start of the
 	 * story
 	 */
 	public void setIntroduction(Role role, String text) {
@@ -476,14 +476,14 @@ public class LogicalWorld extends WorldModel {
 	
 	/**
 	 * Returns a phrase or sentence to describe an object to the given role
-	 * using this world models' {@link #getDescriber() describer}.
+	 * using this world model's {@link #getDescriber() describer}.
 	 * <p>
 	 * If the object given is an {@link Assignment} or {@link Turn}, the
 	 * description will be a {@link Describer#getSentence(Object) sentence}.
 	 * For all other objects, the description will be a {@link
 	 * Describer#getPhrase(Object) phrase}.
 	 * 
-	 * @param object the object to describer
+	 * @param object the object to describe
 	 * @param to the role to whom the object will be described
 	 * @return a description of the object as a phrase or sentence
 	 */

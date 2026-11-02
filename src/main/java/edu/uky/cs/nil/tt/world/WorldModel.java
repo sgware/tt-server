@@ -78,9 +78,9 @@ public abstract class WorldModel extends World {
 	 * object. For the {@link Role#GAME_MASTER game master}, the initial status
 	 * should completely and accurately define the initial state of all
 	 * variables and entities. For the {@link Role#PLAYER player}, the initial
-	 * status should should define the initial state of all variables and
-	 * entities that the player knows about at the start of the story. The
-	 * initial status should have no {@link Status#getHistory() history}.
+	 * status should define the initial state of all variables and entities that
+	 * the player knows about at the start of the story. The initial status
+	 * should have no {@link Status#getHistory() history}.
 	 * 
 	 * @param role the role whose initial status is desired
 	 * @return the initial status of the story world for that role

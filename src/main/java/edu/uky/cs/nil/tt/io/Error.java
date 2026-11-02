@@ -3,9 +3,9 @@ package edu.uky.cs.nil.tt.io;
 import edu.uky.cs.nil.tt.Utilities;
 
 /**
- * The error message is sent from the {edu.uky.cs.nil.tt.Server server} to an
- * {@link edu.uky.cs.nil.tt.Agent agent} if one of the agent's messages causes
- * a problem or is incorrectly formatted.
+ * The error message is sent from the {@link edu.uky.cs.nil.tt.Server server} to
+ * an {@link edu.uky.cs.nil.tt.Agent agent} if one of the agent's messages
+ * causes a problem or is incorrectly formatted.
  * 
  * @author Stephen G. Ware
  */
@@ -17,7 +17,7 @@ public class Error extends Message {
 	/**
 	 * Constructs a new error message.
 	 * 
-	 * @param message a string explaning the error
+	 * @param message a string explaining the error
 	 */
 	public Error(String message) {
 		this.message = message;
@@ -28,7 +28,7 @@ public class Error extends Message {
 	 * exception's message} as the message.
 	 * 
 	 * @param exception the exception that caused an error and whose message
-	 * should be send to the agent
+	 * should be sent to the agent
 	 */
 	public Error(Exception exception) {
 		this(exception.getMessage());

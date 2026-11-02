@@ -42,7 +42,7 @@ public interface Value extends Expression {
 	}
 	
 	/**
-	 * If this value represents a Boolean, this method convert it into a Java
+	 * If this value represents a Boolean, this method converts it into a Java
 	 * {@code boolean}; all other values are converted to {@code false}.
 	 * 
 	 * @return a Java {@code boolean}, or {@code false} if this value does not
@@ -53,7 +53,7 @@ public interface Value extends Expression {
 	}
 	
 	/**
-	 * If this value represents a number, this method convert it into a Java
+	 * If this value represents a number, this method converts it into a Java
 	 * {@code double}; all other values are converted to {@link Double#NaN}.
 	 * 
 	 * @return a Java {@code double}, or NaN if this value represents NaN or is
@@ -65,7 +65,7 @@ public interface Value extends Expression {
 	
 	/**
 	 * If this value represents an {@link Entity}, this method returns that
-	 * entity; all other values are converted to {code null}.
+	 * entity; all other values are converted to {@code null}.
 	 * 
 	 * @return an entity, or {@code null} if this value is not an entity
 	 */

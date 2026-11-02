@@ -74,10 +74,10 @@ public class Database {
 		
 		/**
 		 * Returns whether this entry should advertise itself as being available
-		 * (listed) or whether this entry should not advertise that is is
+		 * (listed) or whether this entry should not advertise that it is
 		 * available (unlisted).
 		 * 
-		 * @return true is this entry is listed, false otherwise
+		 * @return true if this entry is listed, false otherwise
 		 */
 		public boolean getListed() {
 			return listed;
@@ -508,7 +508,7 @@ public class Database {
 	
 	/**
 	 * Returns the entry for the agent with the given name or null if the
-	 * database has no agent that name. This method may return an {@link
+	 * database has no agent with that name. This method may return an {@link
 	 * Listable#getListed() unlisted} agent.
 	 * 
 	 * @param name the name of the agent whose entry is desired

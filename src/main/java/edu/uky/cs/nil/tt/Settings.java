@@ -44,7 +44,7 @@ public class Settings {
 	public static final long AGENT_TIMEOUT = 180000; // 3 minutes
 	
 	/**
-	 * The number of passed turn in a row which causes a session to be
+	 * The number of passed turns in a row which causes a session to be
 	 * automatically stopped
 	 */
 	public static final int PASS_LIMIT = 6;

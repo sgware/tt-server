@@ -16,9 +16,9 @@ public interface Logical {
 	 * substitution defines how some logical formula (the input to the function)
 	 * should be replaced with a different formula (the output of the function).
 	 * 
-	 * @param substitution a function which maps logical formula that should be
+	 * @param substitution a function which maps logical formulas that should be
 	 * replaced to the formula they should be replaced with
-	 * @return an identical object, except that its logical formula have been
+	 * @return an identical object, except that its logical formulas have been
 	 * replaced according to the substitution
 	 */
 	public Logical substitute(Function<Object, Object> substitution);

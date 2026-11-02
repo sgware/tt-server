@@ -4,8 +4,8 @@ import edu.uky.cs.nil.tt.Utilities;
 
 /**
  * The choice message is sent from an {@link edu.uky.cs.nil.tt.Agent agent} to
- * the {edu.uky.cs.nil.tt.Server server} to signal what turn the agent wants
- * to take.
+ * the {@link edu.uky.cs.nil.tt.Server server} to signal what turn the agent
+ * wants to take.
  * 
  * @author Stephen G. Ware
  */

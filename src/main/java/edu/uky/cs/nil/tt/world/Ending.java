@@ -10,7 +10,7 @@ import java.util.function.Function;
  */
 public final class Ending extends SignedAsset implements Comparable<Ending>, Encoded {
 	
-	/** The action's {@link Encoded code} */
+	/** The ending's {@link Encoded code} */
 	private final String code;
 	
 	/**
@@ -52,7 +52,7 @@ public final class Ending extends SignedAsset implements Comparable<Ending>, Enc
 	}
 	
 	/**
-	 * Returns a new ending that is the same as this ending, except this its
+	 * Returns a new ending that is the same as this ending, except that its
 	 * {@link Encoded code} is the given value.
 	 * 
 	 * @param code the code the new ending should have

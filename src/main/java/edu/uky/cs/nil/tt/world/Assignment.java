@@ -7,7 +7,7 @@ import edu.uky.cs.nil.tt.Described;
 import edu.uky.cs.nil.tt.Utilities;
 
 /**
- * An assignment is a {@link Logical logical formula} that assets that some
+ * An assignment is a {@link Logical logical formula} that asserts that some
  * {@link Variable variable} in a {@link World story world} has a {@link
  * Value value}.
  * 
@@ -29,7 +29,7 @@ public class Assignment implements Described, Encoded, Logical {
 	 */
 	public final boolean visible;
 	
-	/** A natural language description of this assignments */
+	/** A natural language description of this assignment */
 	private final String description;
 	
 	/** The {@link Encoded code} for this assignment */

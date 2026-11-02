@@ -51,7 +51,7 @@ public final class Entity extends Asset implements Comparable<Entity>, Named, En
 	}
 	
 	/**
-	 * Returns a new entity that is the same as this entity, except this its
+	 * Returns a new entity that is the same as this entity, except that its
 	 * {@link Encoded code} is the given value.
 	 * 
 	 * @param code the code the new entity should have

@@ -57,8 +57,8 @@ public class Server extends SecureSerialServerSocket {
 	 * session files, or null if the server should not record session data
 	 * @param database the existing database the server should use (if the file
 	 * exists), or the file where the server should save its database (if the
-	 * file does not exist), or null if the server start with an empty database
-	 * and not save it to file
+	 * file does not exist), or null if the server should start with an empty
+	 * database and not save it to file
 	 * @param port the network port on which the server should listen for new
 	 * connections
 	 * @throws IOException if a problem occurs while reading the various files
@@ -258,7 +258,7 @@ public class Server extends SecureSerialServerSocket {
 	 * This method finds a single pair of compatible agents who are waiting for
 	 * a session and, if one is found, starts a session for them.
 	 * 
-	 * @return true if a compatible pairs of agents was found and a session
+	 * @return true if a compatible pair of agents was found and a session
 	 * started, or false if not
 	 * @throws Exception if a problem occurs while matching agents
 	 */
@@ -311,7 +311,7 @@ public class Server extends SecureSerialServerSocket {
 	 * 
 	 * @param first the join request of the first agent
 	 * @param second the join request of the second agent
-	 * @return true if the requests from these agents is compatible and allowed
+	 * @return true if the requests from these agents are compatible and allowed
 	 * by the server, false otherwise
 	 */
 	private final boolean matches(Join first, Join second) {

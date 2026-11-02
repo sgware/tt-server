@@ -4,8 +4,8 @@ import edu.uky.cs.nil.tt.Utilities;
 
 /**
  * The report message is sent from an {@link edu.uky.cs.nil.tt.Agent agent} to
- * the {edu.uky.cs.nil.tt.Server server} to indicate the value of a question on
- * a survey about the session they are playing.
+ * the {@link edu.uky.cs.nil.tt.Server server} to indicate the value of a
+ * question on a survey about the session they are playing.
  * 
  * @author Stephen G. Ware
  */

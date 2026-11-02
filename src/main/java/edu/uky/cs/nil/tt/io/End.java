@@ -1,10 +1,10 @@
 package edu.uky.cs.nil.tt.io;
 
 /**
- * The end message is sent from the {edu.uky.cs.nil.tt.Server server} to an
- * {@link edu.uky.cs.nil.tt.Agent agent} to indicate that the session had ended
- * and that they should now disconnect. If the server is logging sessions, this
- * message contains ID of the logged session.
+ * The end message is sent from the {@link edu.uky.cs.nil.tt.Server server} to
+ * an {@link edu.uky.cs.nil.tt.Agent agent} to indicate that the session has
+ * ended and that they should now disconnect. If the server is logging sessions,
+ * this message contains the ID of the logged session.
  * 
  * @author Stephen G. Ware
  */

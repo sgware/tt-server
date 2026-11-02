@@ -21,7 +21,7 @@ import com.sgware.serialsoc.SimpleSerialSocket;
 
 /**
  * An agent represents an individual connection to a {@link Server server} that
- * can server as one of the {@link Role roles} in a {@link Session session}.
+ * can serve as one of the {@link Role roles} in a {@link Session session}.
  * <p>
  * Every agent is assigned a unique, sequential {@link #id ID number} when it is
  * created. These ID numbers have no special meaning; they exist mainly to
@@ -340,7 +340,7 @@ public class Agent extends SimpleSerialSocket implements Named {
 	 * @param join the join message containing the agent's identity and
 	 * preferences
 	 * @throws Exception if a problem occurs while establishing this agent's
-	 * identify or preferences
+	 * identity or preferences
 	 * @throws IllegalStateException if the agent has previously established its
 	 * identity
 	 * @throws IllegalArgumentException if the agent failed to provide the
@@ -403,7 +403,7 @@ public class Agent extends SimpleSerialSocket implements Named {
 	 * This method is called each time a {@link Choice choice} message is
 	 * received to take the chosen {@link Turn turn} in the agent's session.
 	 * Choices can only be made after a session starts, before it stops, and
-	 * when it is this agent's turn. Once a turn is taken, both agent in the
+	 * when it is this agent's turn. Once a turn is taken, both agents in the
 	 * session are {@link #onTurn(Turn) notified}.
 	 * 
 	 * @param choice the choice that specifies which turn the agent wants to
@@ -454,7 +454,7 @@ public class Agent extends SimpleSerialSocket implements Named {
 	}
 	
 	/**
-	 * This method is called each time a new turn is taken in the this agent's
+	 * This method is called each time a new turn is taken in this agent's
 	 * session. The agent updates their current story status and sends the
 	 * relevant information over the socket.
 	 * 
@@ -515,7 +515,7 @@ public class Agent extends SimpleSerialSocket implements Named {
 	@Override
 	/**
 	 * This method is called regularly by the clock to check things that are
-	 * time-sensative but not triggered by events, such as disconnecting agents
+	 * time-sensitive but not triggered by events, such as disconnecting agents
 	 * who have taken too long to send a message.
 	 * 
 	 * @throws Exception if a problem occurs while this method is running

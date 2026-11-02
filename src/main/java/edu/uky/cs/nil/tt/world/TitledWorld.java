@@ -24,7 +24,7 @@ public class TitledWorld extends World implements Titled {
 	 * 
 	 * @param name the unique system name for the world
 	 * @param title the short natural language title of the world
-	 * @param description the short natural language description of the
+	 * @param description the longer natural language description of the
 	 * world
 	 * @param entities a collection of objects that exist in the world
 	 * @param variables a collection of variables whose values can change

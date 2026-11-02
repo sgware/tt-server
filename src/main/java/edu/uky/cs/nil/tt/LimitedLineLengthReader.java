@@ -18,7 +18,7 @@ public class LimitedLineLengthReader extends Reader {
 	/** The reader from which characters will be read */
 	private final Reader wrapped;
 	
-	/** The number of characters which may be read an end of line */
+	/** The number of characters which may be read before an end of line */
 	private final int limit;
 	
 	/**

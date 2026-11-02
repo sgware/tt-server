@@ -21,7 +21,7 @@ public class Status {
 	/** All turns that have happened so far in the session */
 	private final Turn[] history;
 	
-	/** The current values of all variables the story world */
+	/** The current values of all variables in the story world */
 	private final State state;
 	
 	/**
@@ -109,7 +109,7 @@ public class Status {
 	
 	/**
 	 * Returns an unmodifiable list of all the {@link Entity entities} that
-	 * {@link #role this role} can current see. Each one will have a {@link
+	 * {@link #role this role} can currently see. Each one will have a {@link
 	 * Entity#getDescription() natural language description} that gives some
 	 * helpful context about it. Note that not all entities in the story world
 	 * will be in this list; if an entity cannot be seen it is excluded.
@@ -123,7 +123,7 @@ public class Status {
 	/**
 	 * Returns an unmodifiable list of next {@link Turn turns} that {@link #role
 	 * this role} can take next in the session. This list will be empty if the
-	 * story had ended or if it is not this role's turn to act.
+	 * story has ended or if it is not this role's turn to act.
 	 * 
 	 * @return a list of available next turns
 	 */

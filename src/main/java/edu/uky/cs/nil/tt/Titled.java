@@ -1,7 +1,7 @@
 package edu.uky.cs.nil.tt;
 
 /**
- * A titled object is has a unique system {@link Named name}, a short natural
+ * A titled object has a unique system {@link Named name}, a short natural
  * language title, and a longer natural language {@link Described description}.
  * 
  * @author Stephen G. Ware

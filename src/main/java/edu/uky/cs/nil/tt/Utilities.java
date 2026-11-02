@@ -134,7 +134,7 @@ public class Utilities {
 	 * @param description a short description of the purpose of the number, used
 	 * in the message of the exception which is thrown if the number is not
 	 * less than or equal to the upper bound
-	 * @throws IllegalArgumentException if the number if not less than or equal
+	 * @throws IllegalArgumentException if the number is not less than or equal
 	 * to the given upper bound
 	 */
 	public static final void requireLessThanOrEqualTo(long number, long max, String description) {
@@ -192,13 +192,13 @@ public class Utilities {
 	}
 	
 	/**
-	 * Concatenates two non-empty string with a space between them. If the first
-	 * or second string is empty, no space will be added between them.
+	 * Concatenates two non-empty strings with a space between them. If the
+	 * first or second string is empty, no space will be added between them.
 	 * 
 	 * @param s1 the first string, or null
 	 * @param s2 the second string, or null
-	 * @return the results of concatenating s1 and s2, and if both strings were
-	 * non-null and non-empty, as space is added between them
+	 * @return the result of concatenating s1 and s2, and if both strings were
+	 * non-null and non-empty, a space is added between them
 	 */
 	public static final String spaced(String s1, String s2) {
 		String left = s1 == null ? "" : s1;

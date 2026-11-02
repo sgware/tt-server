@@ -4,13 +4,13 @@ import edu.uky.cs.nil.tt.Role;
 import edu.uky.cs.nil.tt.world.Ending;
 
 /**
- * The stop message can be sent from either the {edu.uky.cs.nil.tt.Server
+ * The stop message can be sent from either the {@link edu.uky.cs.nil.tt.Server
  * server} or the {@link edu.uky.cs.nil.tt.Agent agent} to indicate that no more
  * turns will happen in the session (though {@link Report reports} may still
  * happen) and that the session should end soon.
  * <p>
  * An agent can send the stop message (1) if they want to stop a session early
- * before the story had reached one of its defined endings, or (2) to indicate
+ * before the story has reached one of its defined endings, or (2) to indicate
  * they are finished and have no more {@link Report reports} to send. After an
  * agent sends the stop message, they may not send any more messages (including
  * reports), though they may stay connected to wait for the {@link End end}
@@ -88,7 +88,7 @@ public class Stop extends Message {
 	
 	/**
 	 * Constructs a stop message with a string explaining how the session
-	 * ended before it reached a pre-definded ending.
+	 * ended before it reached a pre-defined ending.
 	 * 
 	 * @param message a string explaining why the session ended
 	 */

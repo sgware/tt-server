@@ -4,8 +4,8 @@ import edu.uky.cs.nil.tt.Utilities;
 import edu.uky.cs.nil.tt.world.Status;
 
 /**
- * The updates message is sent from the {edu.uky.cs.nil.tt.Server server} to an
- * {@link edu.uky.cs.nil.tt.Agent agent} each time a turn is taken and the
+ * The update message is sent from the {@link edu.uky.cs.nil.tt.Server server}
+ * to an {@link edu.uky.cs.nil.tt.Agent agent} each time a turn is taken and the
  * state of the story world changes. An update is also sent immediately after
  * a session {@link Start starts} to give the story world's initial state.
  * 

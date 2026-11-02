@@ -9,8 +9,8 @@ package edu.uky.cs.nil.tt;
  * <pre>
  * -k1 value -k2 -k3
  * </pre>
- * Then they contain three keys (starting with dashed). The first key has one
- * value, {@code "value"}, and the second two keys do not have values.
+ * Then they contain three keys (starting with dashes). The first key has one
+ * value, {@code "value"}, and the other two keys do not have values.
  * 
  * @author Stephen G. Ware
  */
@@ -23,9 +23,9 @@ public class Arguments {
 	private final boolean[] used;
 	
 	/**
-	 * Constructs a new command line argument lists.
+	 * Constructs a new command line argument list.
 	 * 
-	 * @param args the array of string passed to the Java main method
+	 * @param args the array of strings passed to the Java main method
 	 */
 	public Arguments(String[] args) {
 		this.args = args;
@@ -35,7 +35,7 @@ public class Arguments {
 	/**
 	 * Returns the number of arguments in this set.
 	 * 
-	 * @return the number or arguments
+	 * @return the number of arguments
 	 */
 	public int size() {
 		return args.length;
@@ -83,7 +83,7 @@ public class Arguments {
 	
 	/**
 	 * Returns the value immediately after a given key, or null if the key does
-	 * not appear or has not value after it. The key should be given without its
+	 * not appear or has no value after it. The key should be given without its
 	 * preceding dash, and case is ignored when searching for the key. For
 	 * example, if this method is called with {@code "key"} and {@code "value"},
 	 * it will return {@code "value"} if {@code "-KEY"} appears in the list of

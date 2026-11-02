@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 /**
  * A constant is a {@link Value logical value} that always exists in all {@link
- * World story worlds}, such a the Boolean concepts of True and False, numbers,
+ * World story worlds}, such as the Boolean concepts of True and False, numbers,
  * and so on.
  * 
  * @author Stephen G. Ware

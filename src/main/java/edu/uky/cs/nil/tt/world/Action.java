@@ -36,7 +36,7 @@ public final class Action extends SignedAsset implements Comparable<Action>, Enc
 	 * @param id the action's unique ID number
 	 * @param signature the action's unique signature
 	 * @param consenting an array of entities representing characters in the
-	 * the story world who need to agree to take the action
+	 * story world who need to agree to take the action
 	 * @param description the action's description
 	 * @param code the action's code
 	 */
@@ -68,7 +68,7 @@ public final class Action extends SignedAsset implements Comparable<Action>, Enc
 	 * Returns an unmodifiable set of entities in the story world representing
 	 * the characters who need to agree to take the action. An action with no
 	 * consenting characters represents an accident or happening that can occur
-	 * and time it is convenient for the story. An action with one consenting
+	 * at any time it is convenient for the story. An action with one consenting
 	 * character means it is taken by a single character. An action with two or
 	 * more consenting characters means it is a joint action taken by many
 	 * characters who all need to have a reason to do it. Note that a character
@@ -95,7 +95,7 @@ public final class Action extends SignedAsset implements Comparable<Action>, Enc
 	
 	/**
 	 * Returns a new action that is the same as this action, except that its
-	 * consenting characters is the given set.
+	 * consenting characters are the given set.
 	 * 
 	 * @param consenting the consenting characters the new action should have
 	 * @return an action identical to this action, except with the given
@@ -116,7 +116,7 @@ public final class Action extends SignedAsset implements Comparable<Action>, Enc
 	}
 	
 	/**
-	 * Returns a new action that is the same as this action, except this its
+	 * Returns a new action that is the same as this action, except that its
 	 * {@link Encoded code} is the given value.
 	 * 
 	 * @param code the code the new action should have
@@ -129,7 +129,7 @@ public final class Action extends SignedAsset implements Comparable<Action>, Enc
 	/**
 	 * Returns true if the given story role controls one or more of the {@link
 	 * #getConsenting() consenting characters} for this action. An action with
-	 * no consenting character requires on the consent of the game master. An
+	 * no consenting character requires only the consent of the game master. An
 	 * action whose only consenting character is the player character requires
 	 * only the consent of the player. All other actions require the consent of
 	 * both roles.

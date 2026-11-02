@@ -3,7 +3,7 @@ package edu.uky.cs.nil.tt;
 import java.util.List;
 
 /**
- * An object the summarizes the the server's status by listing all sessions that
+ * An object that summarizes the the server's status by listing all sessions that
  * are currently {@link ServerStatus.Playing running} and all agents that are
  * currently {@link ServerStatus.Waiting waiting}.
  * 
@@ -33,7 +33,7 @@ public class ServerStatus {
 		 * @param gm the name, title, and description of the game master agent
 		 * @param player the name, title, and description of the player agent
 		 * @param world the name, title, and description of the story world
-		 * @param start the moment when the sessions started as the number of
+		 * @param start the moment when the session started as the number of
 		 * milliseconds from the epoch (1970-01-01T00:00:00Z) in Coordinated
 		 * Universal Time (UTC)
 		 */

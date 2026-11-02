@@ -181,7 +181,7 @@ public class World implements Named {
 	}
 	
 	/**
-	 * Returns the entity the represents the {@link
+	 * Returns the entity that represents the {@link
 	 * edu.uky.cs.nil.tt.Role#PLAYER player} character in this story world.
 	 * 
 	 * @return the player character entity
@@ -203,8 +203,8 @@ public class World implements Named {
 	
 	/**
 	 * If this story world contains an entity matching the name of the given
-	 * entity, the entity from this story world world with that name is
-	 * returned; otherwise, an exception is thrown.
+	 * entity, the entity from this story world with that name is returned;
+	 * otherwise, an exception is thrown.
 	 * 
 	 * @param entity an entity
 	 * @return the entity from this story world with the same name as the given
@@ -294,8 +294,8 @@ public class World implements Named {
 	
 	/**
 	 * If this story world contains a variable matching the name of the given
-	 * variable, the variable from this story world world with that name is
-	 * returned; otherwise, an exception is thrown.
+	 * variable, the variable from this story world with that name is returned;
+	 * otherwise, an exception is thrown.
 	 * 
 	 * @param variable a variable
 	 * @return the variable from this story world with the same name as the
@@ -328,7 +328,7 @@ public class World implements Named {
 	 * 
 	 * @param id the ID number of the desired variable
 	 * @return the variable with that ID number
-	 * @throws IndexOutOfBoundsException if there is no variables in this story
+	 * @throws IndexOutOfBoundsException if there are no variables in this story
 	 * world with that ID number
 	 */
 	public Variable getVariable(int id) {
@@ -412,8 +412,8 @@ public class World implements Named {
 	
 	/**
 	 * If this story world contains an action matching the name of the given
-	 * action, the action from this story world world with that name is
-	 * returned; otherwise, an exception is thrown.
+	 * action, the action from this story world with that name is returned;
+	 * otherwise, an exception is thrown.
 	 * 
 	 * @param action an action
 	 * @return the action from this story world with the same name as the given
@@ -527,8 +527,8 @@ public class World implements Named {
 	
 	/**
 	 * If this story world contains an ending matching the name of the given
-	 * ending, the ending from this story world world with that name is
-	 * returned; otherwise, an exception is thrown.
+	 * ending, the ending from this story world with that name is returned;
+	 * otherwise, an exception is thrown.
 	 * 
 	 * @param ending an ending
 	 * @return the ending from this story world with the same name as the given
@@ -652,7 +652,7 @@ public class World implements Named {
 	
 	/**
 	 * If this story world contains an asset matching the name of the given
-	 * asset, the asset from this story world world with that name is returned;
+	 * asset, the asset from this story world with that name is returned;
 	 * otherwise, an exception is thrown.
 	 * 
 	 * @param <A> the type of asset being validated

@@ -11,7 +11,7 @@ import java.time.Instant;
 public interface Duration {
 	
 	/**
-	 * Converts a length of time into concise, human-readable text expresses
+	 * Converts a length of time into concise, human-readable text expressed
 	 * as a number of days, hours, minutes, and seconds.
 	 * 
 	 * @param milliseconds the length of time in milliseconds
@@ -111,7 +111,7 @@ public interface Duration {
 		private final long start;
 		
 		/**
-		 * Constructs a ongoing duration from its start time.
+		 * Constructs an ongoing duration from its start time.
 		 * 
 		 * @param start the start time as the number of milliseconds from the
 		 * epoch (1970-01-01T00:00:00Z) in Coordinated Universal Time (UTC)

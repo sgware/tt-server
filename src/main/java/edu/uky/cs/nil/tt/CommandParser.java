@@ -304,7 +304,7 @@ public class CommandParser extends Thread {
 	}
 	
 	/**
-	 * Returns a list of all of the command this parser can recognize.
+	 * Returns a list of all of the commands this parser can recognize.
 	 * 
 	 * @return a list of commands this parser can recognize
 	 */
@@ -323,7 +323,7 @@ public class CommandParser extends Thread {
 	}
 	
 	/**
-	 * Adds a new command to the list of command this parser can recognize.
+	 * Adds a new command to the list of commands this parser can recognize.
 	 * 
 	 * @param command the new command that will be recognized
 	 */
@@ -357,7 +357,7 @@ public class CommandParser extends Thread {
 	
 	/**
 	 * Attempts to parse and execute a command from a string, typically one
-	 * typed into {@link System#out standard input}.
+	 * typed into {@link System#in standard input}.
 	 * 
 	 * @param command the string to attempt to parse as a command
 	 * @throws Exception if the command cannot be parsed or if a problem

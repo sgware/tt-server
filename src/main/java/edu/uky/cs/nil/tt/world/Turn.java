@@ -149,7 +149,7 @@ public class Turn implements Described, Encoded {
 	}
 	
 	/**
-	 * Returns a new turn that is the same as this turn, except this its {@link
+	 * Returns a new turn that is the same as this turn, except that its {@link
 	 * Described description} is the given value.
 	 * 
 	 * @param description the description the new turn should have

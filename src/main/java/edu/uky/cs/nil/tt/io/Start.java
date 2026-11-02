@@ -5,9 +5,9 @@ import edu.uky.cs.nil.tt.Utilities;
 import edu.uky.cs.nil.tt.world.TitledWorld;
 
 /**
- * The start message is sent from the {edu.uky.cs.nil.tt.Server server} to an
- * {@link edu.uky.cs.nil.tt.Agent agent} when a partner has been found and their
- * session begins.
+ * The start message is sent from the {@link edu.uky.cs.nil.tt.Server server} to
+ * an {@link edu.uky.cs.nil.tt.Agent agent} when a partner has been found and
+ * their session begins.
  * 
  * @author Stephen G. Ware
  */

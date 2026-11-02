@@ -50,9 +50,9 @@ public class Effect implements Logical {
 	 * Constructs a new effect with a condition, variable, and value.
 	 * 
 	 * @param condition a condition which, if true, means the effect will occur,
-	 * and if false, means the condition will not occur, and if null, will be
+	 * and if false, means the effect will not occur, and if null, will be
 	 * ignored (treated like it is true)
-	 * @param variable the variables whose value will be changed
+	 * @param variable the variable whose value will be changed
 	 * @param value an expression whose value will be assigned to the variable
 	 */
 	public Effect(Proposition condition, Variable variable, Expression value) {
@@ -68,7 +68,7 @@ public class Effect implements Logical {
 	 * Constructs a new effect with a variable and value and whose condition is
 	 * {@code null}.
 	 * 
-	 * @param variable the variables whose value will be changed
+	 * @param variable the variable whose value will be changed
 	 * @param value an expression whose value will be assigned to the variable
 	 */
 	public Effect(Variable variable, Expression value) {
@@ -123,7 +123,7 @@ public class Effect implements Logical {
 	 * @param after the state to which this effect will be applied (this state
 	 * will not be modified by this method)
 	 * @return a copy of the after state with this effect's variable set to this
-	 * effect's value (if the condition was null or hold in the before state),
+	 * effect's value (if the condition was null or holds in the before state),
 	 * or the after state if the condition does not hold in the before state
 	 */
 	public State apply(State before, State after) {

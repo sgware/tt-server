@@ -92,7 +92,7 @@ public class State implements Described, Encoded {
 	}
 	
 	/**
-	 * Returns a new state that is the same as this state, except this its
+	 * Returns a new state that is the same as this state, except that its
 	 * {@link Described description} is the given value.
 	 * 
 	 * @param description the description the new state should have
@@ -146,7 +146,7 @@ public class State implements Described, Encoded {
 	 * variable in the given assignment set to the given value.
 	 * 
 	 * @param assignment an assignment the new state should contain
-	 * @return a new state the reflects the given assignment
+	 * @return a new state that reflects the given assignment
 	 */
 	public State set(Assignment assignment) {
 		Assignment[] assignments = this.assignments.clone();
