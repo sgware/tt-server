@@ -83,7 +83,7 @@ public class Server extends SecureSerialServerSocket {
 			this.log.close();
 			throw exception;
 		}
-		this.log.append("Server created.");
+		this.log.append("Server v" + Settings.VERSION + " started.");
 	}
 	
 	/**
