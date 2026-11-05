@@ -212,19 +212,6 @@ public class Server extends SecureSerialServerSocket {
 	}
 	
 	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * On each tick, the server checks the list of waiting agents and removes
-	 * any that are no longer connected.
-	 */
-	@Override
-	protected void tick() throws Exception {
-		// Remove any waiting agents who have disconnected and update status.
-		if(waiting.removeIf(join -> !join.getAgent().getConnected()))
-			log.update(getServerStatus());
-	}
-	
-	/**
 	 * This method is called each time a new {@link Agent agent} sends its
 	 * {@link Join join} message. This method will register the new join
 	 * request and try to {@link #makeMatches() make matches} between pairs
