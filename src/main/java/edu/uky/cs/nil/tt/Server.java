@@ -212,6 +212,17 @@ public class Server extends SecureSerialServerSocket {
 	}
 	
 	/**
+	 * Every {@link Agent agent} calls this method exactly once as soon as it
+	 * {@link Agent#onConnect() connects} to the server.
+	 * 
+	 * @param agent the agent that has just connected
+	 * @throws Exception if a problem occurs while handling the connection
+	 */
+	protected void onConnect(Agent agent) throws Exception {
+		log.append("Agent " + agent.id + " connected from IP address " + Utilities.toIPAddress(agent.getRemoteAddress()) + ".");
+	}
+	
+	/**
 	 * This method is called each time a new {@link Agent agent} sends its
 	 * {@link Join join} message. This method will register the new join
 	 * request and try to {@link #makeMatches() make matches} between pairs
@@ -399,6 +410,21 @@ public class Server extends SecureSerialServerSocket {
 		execute(() -> makeMatches());
 		// Update the server status file.
 		log.update(getServerStatus());
+	}
+	
+	/**
+	 * Every {@link Agent agent} calls this method exactly once after it has
+	 * {@link Agent#onDisconnect() disconnected} from the server.
+	 * 
+	 * @param agent the agent that has just disconnected
+	 * @throws Exception if a problem occurs while handling the disconnection
+	 */
+	protected void onDisconnect(Agent agent) throws Exception {
+		// If this agent was waiting, remove their join request from the list
+		// and update the server status.
+		if(waiting.removeIf(join -> !join.getAgent().getConnected()))
+			log.update(getServerStatus());
+		log.append("Agent " + agent.id + " disconnected.");
 	}
 		
 	@Override

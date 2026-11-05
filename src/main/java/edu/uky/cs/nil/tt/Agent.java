@@ -269,7 +269,7 @@ public class Agent extends SimpleSerialSocket implements Named {
 	
 	@Override
 	protected void onConnect() throws Exception {
-		server.log.append("Agent " + id + " connected from IP address " + Utilities.toIPAddress(getRemoteAddress()) + ".");
+		server.onConnect(this);
 		Connect connect = new Connect(server.database.getListedWorlds(), server.database.getListedAgents(), server.getAvailable());
 		send(connect);
 	}
@@ -587,7 +587,7 @@ public class Agent extends SimpleSerialSocket implements Named {
 	
 	@Override
 	protected void onDisconnect() throws Exception {
-		server.log.append("Agent " + id + " disconnected.");
 		connected = false;
+		server.onDisconnect(this);
 	}
 }
