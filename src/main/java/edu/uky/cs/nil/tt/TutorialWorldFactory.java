@@ -163,7 +163,7 @@ public class TutorialWorldFactory {
 		describer.add(new Rule().roleIs(Role.PLAYER).turnIs(Turn.Type.PROPOSE).nameIs("give").when(Key.ARG_0, player).to(Role.PLAYER).write("Offer {ARG_1} to {ARG_2}."));
 		describer.add(new Rule().roleIs(Role.PLAYER).turnIs(Turn.Type.PROPOSE).nameIs("give").when(Key.ARG_2, player).to(Role.PLAYER).write("Request {ARG_1} from {ARG_0}."));
 		describer.add(new Rule().turnIs(Turn.Type.SUCCEED).nameIs("give").write("{ARG_0} {GIVE} {ARG_1} to {ARG_2}"));
-		describer.add(new Rule().turnIs(Turn.Type.FAIL).nameIs("give").write("{ARG_0} {OFFER} {ARG_1} to {ARG_2}, but {ARG_2} refuses."));
+		describer.add(new Rule().turnIs(Turn.Type.FAIL).nameIs("give").write("{ARG_0} {OFFER} {ARG_1} to {ARG_2}, but {ARG_2} {REFUSE}."));
 		describer.add(new Rule().roleIs(Role.GAME_MASTER).turnIs(Turn.Type.FAIL).nameIs("give").when(Key.ARG_2, player).write("{ARG_2} {REQUEST} {ARG_1} from {ARG_0}, but {ARG_0} {REFUSE}."));
 		describer.add(new Rule().roleIs(Role.PLAYER).turnIs(Turn.Type.FAIL).nameIs("give").when(Key.ARG_0, player).write("{ARG_2} {REQUEST} {ARG_1} from {ARG_0}, but {ARG_0} {REFUSE}."));
 		// Trade Actions
