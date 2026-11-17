@@ -2754,7 +2754,7 @@
           "TURN_TYPE": "FAIL",
           "NAME": "give"
         },
-        "template": "{ARG_0} {OFFER} {ARG_1} to {ARG_2}, but {ARG_2} refuses."
+        "template": "{ARG_0} {OFFER} {ARG_1} to {ARG_2}, but {ARG_2} {REFUSE}."
       },
       {
         "context": {
