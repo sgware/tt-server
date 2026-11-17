@@ -41,7 +41,7 @@ public class Settings {
 	 * The amount of time in milliseconds an agent has to send an expected
 	 * message before they will be disconnected for inactivity 
 	 */
-	public static final long AGENT_TIMEOUT = 180000; // 3 minutes
+	public static final long AGENT_TIMEOUT = 65000; // 1 minute + 5 seconds
 	
 	/**
 	 * The number of passed turns in a row which causes a session to be
